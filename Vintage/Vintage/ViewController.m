@@ -7,12 +7,18 @@
 //
 
 #import "ViewController.h"
+#import "ItemScannedController.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+
+- (IBAction)itemScanned:(id)sender {
+    
+    [self.navigationController pushViewController:[ItemScannedController new] animated:YES];
+}
 
 - (void)viewDidLoad
 {

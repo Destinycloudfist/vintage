@@ -18,6 +18,9 @@
 		585269C616E2D5F900E7823D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 585269C516E2D5F900E7823D /* Default-568h@2x.png */; };
 		585269C916E2D5F900E7823D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269C816E2D5F900E7823D /* ViewController.m */; };
 		585269CC16E2D5F900E7823D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585269CA16E2D5F900E7823D /* ViewController.xib */; };
+		585269D816E2D97800E7823D /* ItemScannedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269D616E2D97800E7823D /* ItemScannedController.m */; };
+		585269D916E2D97800E7823D /* ItemScannedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585269D716E2D97800E7823D /* ItemScannedController.xib */; };
+		585269DB16E2DB4D00E7823D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269DA16E2DB4D00E7823D /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		585269C716E2D5F900E7823D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		585269C816E2D5F900E7823D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		585269CB16E2D5F900E7823D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		585269D516E2D97800E7823D /* ItemScannedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemScannedController.h; sourceTree = "<group>"; };
+		585269D616E2D97800E7823D /* ItemScannedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemScannedController.m; sourceTree = "<group>"; };
+		585269D716E2D97800E7823D /* ItemScannedController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemScannedController.xib; sourceTree = "<group>"; };
+		585269DA16E2DB4D00E7823D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585269DB16E2DB4D00E7823D /* CoreLocation.framework in Frameworks */,
 				585269B016E2D5F900E7823D /* UIKit.framework in Frameworks */,
 				585269B216E2D5F900E7823D /* Foundation.framework in Frameworks */,
 				585269B416E2D5F900E7823D /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +64,7 @@
 		585269A316E2D5F900E7823D = {
 			isa = PBXGroup;
 			children = (
+				585269DA16E2DB4D00E7823D /* CoreLocation.framework */,
 				585269B516E2D5F900E7823D /* Vintage */,
 				585269AE16E2D5F900E7823D /* Frameworks */,
 				585269AD16E2D5F900E7823D /* Products */,
@@ -83,6 +92,7 @@
 		585269B516E2D5F900E7823D /* Vintage */ = {
 			isa = PBXGroup;
 			children = (
+				585269D416E2D92B00E7823D /* ItemScannedController */,
 				585269D216E2D83500E7823D /* AppDelegate */,
 				585269D316E2D83B00E7823D /* ViewController */,
 				585269B616E2D5F900E7823D /* Supporting Files */,
@@ -121,6 +131,16 @@
 				585269CA16E2D5F900E7823D /* ViewController.xib */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		585269D416E2D92B00E7823D /* ItemScannedController */ = {
+			isa = PBXGroup;
+			children = (
+				585269D516E2D97800E7823D /* ItemScannedController.h */,
+				585269D616E2D97800E7823D /* ItemScannedController.m */,
+				585269D716E2D97800E7823D /* ItemScannedController.xib */,
+			);
+			name = ItemScannedController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +199,7 @@
 				585269C416E2D5F900E7823D /* Default@2x.png in Resources */,
 				585269C616E2D5F900E7823D /* Default-568h@2x.png in Resources */,
 				585269CC16E2D5F900E7823D /* ViewController.xib in Resources */,
+				585269D916E2D97800E7823D /* ItemScannedController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +213,7 @@
 				585269BC16E2D5F900E7823D /* main.m in Sources */,
 				585269C016E2D5F900E7823D /* AppDelegate.m in Sources */,
 				585269C916E2D5F900E7823D /* ViewController.m in Sources */,
+				585269D816E2D97800E7823D /* ItemScannedController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
