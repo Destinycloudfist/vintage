@@ -314,4 +314,35 @@
     return array;
 }
 
++ (NSArray*)loadModelsForClasses:(NSArray*)classes
+{
+    NSMutableArray *array = [@[] mutableCopy];
+    
+    NSMutableSet *set = [NSMutableSet set];
+    
+    for(NSString *key in [[ModelBackend shared] keys]) {
+        
+        for(Class class in classes) {
+            
+            NSString *className = [class description];
+            
+            if([key hasPrefix:className] && [key characterAtIndex:className.length] == '.') {
+                
+                NSArray *array = [[key componentsSeparatedByString:@"."] subarrayWithRange:NSMakeRange(0, 2)];
+                
+                [set addObject:[array componentsJoinedByString:@"."]];
+            }
+        }
+    }
+    
+    for(NSString *key in set) {
+        
+        id model = [self loadModelForKey:key];
+        
+        [array addObject:model];
+    }
+    
+    return array;
+}
+
 @end

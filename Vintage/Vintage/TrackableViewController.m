@@ -55,7 +55,16 @@
 
 - (IBAction)transfer
 {
+    VesselListViewcontroller *controller = [VesselListViewcontroller new];
     
+    controller.delegate = self;
+    
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (void)vesselList:(VesselListViewcontroller *)controller selectedVessel:(Vessel *)vessel
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
