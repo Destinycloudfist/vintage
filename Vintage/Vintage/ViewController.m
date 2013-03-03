@@ -45,9 +45,16 @@
         barrel.uniqueId = self.tagIdField.text;
     }
     
-    BarrelViewController *controller = [[BarrelViewController alloc] init];
+    BarrelViewController *controller = [[BarrelViewController alloc] initWithBarrel:barrel];
     
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.tagIdField.text = @"";
+    
+    [self reloadBarrels];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -63,17 +70,18 @@
     
     if(!cell) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
     
     Barrel *barrel = [self.barrels objectAtIndex:indexPath.row];
     
     cell.textLabel.text = barrel.uniqueId;
+    cell.detailTextLabel.text = barrel.notes;
     
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Barrel *barrel = [self.barrels objectAtIndex:indexPath.row];
     
@@ -94,8 +102,6 @@
     [super viewDidLoad];
     
     self.title = @"Vintage";
-    
-    [self reloadBarrels];
 }
 
 @end

@@ -46,6 +46,8 @@
 
 - (IBAction)save:(id)sender
 {
+    self.barrel.notes = self.notesTextView.text;
+    
     [self.barrel save];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
