@@ -1,0 +1,181 @@
+{
+    "xcode_project": "Vintage.xcodeproj", 
+    "moms": [], 
+    "sources": [
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/ViewController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/main.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/BarrelViewController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/Barrel.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/AppDelegate.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/Model.m", 
+            "flags": [], 
+            "defines": {}
+        }
+    ], 
+    "infoplists": [
+        "./Vintage/Vintage-Info.plist"
+    ], 
+    "defines": {
+        "__IPHONE_OS_VERSION_MIN_REQUIRED": 60100, 
+        "NS_BLOCK_ASSERTIONS": 1
+    }, 
+    "pchs": [
+        "./Vintage/Vintage-Prefix.pch"
+    ], 
+    "assets": [
+        {
+            "asset": "Vintage/Default.png", 
+            "target": "Default.png"
+        }, 
+        {
+            "asset": "Vintage/en.lproj/ViewController.xib", 
+            "target": null
+        }, 
+        {
+            "asset": "Vintage/Default@2x.png", 
+            "target": "Default@2x.png"
+        }, 
+        {
+            "asset": "Vintage/BarrellViewController.xib", 
+            "target": null
+        }, 
+        {
+            "asset": "Vintage/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
+        }, 
+        {
+            "asset": "Vintage/en.lproj/InfoPlist.strings", 
+            "target": "en.lproj/InfoPlist.strings"
+        }
+    ], 
+    "type": "app", 
+    "header_paths": [
+        {
+            "type": "iquote", 
+            "header_path": "Vintage-generated-files.hmap", 
+            "hmap": {}
+        }, 
+        {
+            "type": "I", 
+            "header_path": "Vintage-own-target-headers.hmap", 
+            "hmap": {}
+        }, 
+        {
+            "type": "I", 
+            "header_path": "Vintage-all-target-headers.hmap", 
+            "hmap": {}
+        }, 
+        {
+            "type": "iquote", 
+            "header_path": "Vintage-project-headers.hmap", 
+            "hmap": {
+                "AppDelegate.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "AppDelegate.h", 
+                    "key": "AppDelegate.h"
+                }, 
+                "ViewController.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "ViewController.h", 
+                    "key": "ViewController.h"
+                }, 
+                "Barrel.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "Barrel.h", 
+                    "key": "Barrel.h"
+                }, 
+                "Vintage-Prefix.pch": {
+                    "prefix": "Vintage/", 
+                    "suffix": "Vintage-Prefix.pch", 
+                    "key": "Vintage-Prefix.pch"
+                }, 
+                "Model.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "Model.h", 
+                    "key": "Model.h"
+                }, 
+                "BarrelViewController.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "BarrelViewController.h", 
+                    "key": "BarrelViewController.h"
+                }
+            }
+        }
+    ], 
+    "modules": [], 
+    "flags": [
+        "-DNS_BLOCK_ASSERTIONS=1", 
+        "-fwritable-strings", 
+        "-fobjc-arc", 
+        "-fasm-blocks", 
+        "-fno-asm", 
+        "-fpascal-strings", 
+        "-Wempty-body", 
+        "-Wno-deprecated-declarations", 
+        "-Wreturn-type", 
+        "-Wswitch", 
+        "-Wparentheses", 
+        "-Wformat", 
+        "-Wuninitialized", 
+        "-Wunused-value", 
+        "-Wunused-variable", 
+        {
+            "flag": "-Winvalid-offsetof", 
+            "type": "c++"
+        }, 
+        {
+            "flag": "-Wprotocol", 
+            "type": "objc"
+        }
+    ], 
+    "deps": [
+        "UIKit", 
+        "UIKit", 
+        "Foundation", 
+        "CoreGraphics"
+    ], 
+    "config": {
+        "APPLICATION_IDENTIFIER": "com.dustin.Vintage", 
+        "TEMPLATE_VALUES": {
+            "PRODUCT_NAME": "Vintage", 
+            "EXECUTABLE_NAME": "Vintage"
+        }, 
+        "LONG_VERSION": "1.0", 
+        "SHORT_VERSION": "1.0", 
+        "APPLICATION_NAME": "Vintage", 
+        "APPLICATION_FULL_NAME": "Vintage"
+    }
+}
