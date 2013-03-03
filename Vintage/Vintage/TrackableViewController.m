@@ -7,6 +7,7 @@
 //
 
 #import "TrackableViewController.h"
+#import "TransferViewController.h"
 
 @interface TrackableViewController ()
 
@@ -65,6 +66,14 @@
 - (void)vesselList:(VesselListViewcontroller *)controller selectedVessel:(Vessel *)vessel
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    TransferViewController *newController = [TransferViewController new];
+    
+    newController.trackable = self.trackable;
+    newController.fromVessel = [Model loadModelForKey:self.trackable.vesselKey];
+    newController.toVessel = vessel;
+    
+    [self.navigationController pushViewController:newController animated:YES];
 }
 
 @end

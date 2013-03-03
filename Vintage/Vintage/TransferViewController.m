@@ -29,6 +29,11 @@
     self.toLabel.text = [[self.toVessel class] description];
 }
 
+- (NSString*)printDouble:(double)number
+{
+    return [NSString stringWithFormat:@"%.2f", number];
+}
+
 - (void)updateRemaining
 {
     double amount = self.trackable.volume.doubleValue;
@@ -37,7 +42,7 @@
     
     amount -= self.wastedVolume.text.doubleValue;
     
-    self.wastedVolume.text = [@(amount) description];
+    self.remainingLabel.text = [self printDouble:amount];
 }
 
 - (IBAction)transferVolumeChanged:(id)sender
@@ -52,7 +57,7 @@
 
 - (IBAction)transferSliderChanged:(id)sender
 {
-    self.transferVolume.text = [@(self.trackable.volume.doubleValue * self.transferVolumeSlider.value) description];
+    self.transferVolume.text = [self printDouble:self.trackable.volume.doubleValue * self.transferVolumeSlider.value];
     
     [self updateRemaining];
 }
@@ -62,5 +67,70 @@
     [self updateRemaining];
 }
 
+- (IBAction)confirmTap:(id)sender
+{
+    Trackable *newTrackable = [Trackable new];
+    
+    newTrackable.date = [NSDate date];
+    newTrackable.volume = @(self.transferVolume.text.doubleValue);
+    newTrackable.vesselKey = self.toVessel.key;
+    newTrackable.vintage = self.trackable.vintage;
+    newTrackable.year = self.trackable.year;
+    newTrackable.notes = self.trackable.notes;
+    
+    [newTrackable save];
+    
+    self.toVessel.trackableKey = newTrackable.key;
+    
+    [self.toVessel save];
+    
+    if(self.wastedVolume.text.doubleValue > 0.0) {
+        
+        Trackable *newTrackable = [Trackable new];
+        
+        newTrackable.date = [NSDate date];
+        newTrackable.isWaste = @(YES);
+        newTrackable.volume = @(self.wastedVolume.text.doubleValue);
+        newTrackable.vesselKey = self.toVessel.key;
+        newTrackable.vintage = self.trackable.vintage;
+        newTrackable.year = self.trackable.year;
+        newTrackable.notes = self.trackable.notes;
+        
+        [newTrackable save];
+    }
+    
+    double amount = self.trackable.volume.doubleValue;
+
+    amount -= self.transferVolume.text.doubleValue;
+
+    amount -= self.wastedVolume.text.doubleValue;
+    
+    self.trackable.isDeleted = @(YES);
+    [self.trackable save];
+    
+    if(amount > 0.0) {
+        
+        Trackable *newTrackable = [Trackable new];
+        
+        newTrackable.date = [NSDate date];
+        newTrackable.volume = @(amount);
+        newTrackable.vesselKey = self.toVessel.key;
+        newTrackable.vintage = self.trackable.vintage;
+        newTrackable.year = self.trackable.year;
+        newTrackable.notes = self.trackable.notes;
+        
+        [newTrackable save];
+        
+        self.fromVessel.trackableKey = newTrackable.key;
+    }
+    else {
+        
+        self.fromVessel.trackableKey = nil;
+    }
+    
+    [self.fromVessel save];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

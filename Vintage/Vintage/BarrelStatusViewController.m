@@ -38,7 +38,9 @@
         
         Trackable *trackable = [Model loadModelForKey:self.barrel.trackableKey];
         
-        [self.contentsButton setTitle:trackable.prettyDescription forState:UIControlStateNormal];
+        NSString *str = [NSString stringWithFormat:@"%@ gallons of %@", trackable.volume, trackable.vintage];
+        
+        [self.contentsButton setTitle:str forState:UIControlStateNormal];
     }
 }
 

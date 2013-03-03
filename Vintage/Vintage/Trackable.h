@@ -12,8 +12,9 @@
 
 @property (nonatomic) NSDate *date;
 @property (nonatomic) NSNumber *isDeleted;
+@property (nonatomic) NSNumber *isWaste;
 @property (nonatomic) NSNumber *volume;
-@property (nonatomic) NSString *containerKey;
+@property (nonatomic) NSString *vesselKey;
 
 @property (nonatomic) NSString *vintage;
 @property (nonatomic) NSString *year;

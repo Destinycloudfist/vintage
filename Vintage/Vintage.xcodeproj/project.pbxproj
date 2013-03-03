@@ -496,8 +496,6 @@
 		58526A6316E3967B00E7823D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				58526A6B16E3B6E700E7823D /* TransferViewController */,
-				58526A6516E3B27E00E7823D /* VesselListViewcontroller */,
 				585269D416E2D92B00E7823D /* BarrelViewController */,
 				58526A3F16E37D7600E7823D /* BarrelStatusViewController */,
 				58526A2116E3791200E7823D /* BottlesViewController */,
@@ -511,6 +509,8 @@
 				58526A3316E37D2100E7823D /* TankStatusViewController */,
 				58526A5D16E38FF800E7823D /* TrackableViewController */,
 				58526A4516E3886300E7823D /* TrackableListViewController */,
+				58526A6B16E3B6E700E7823D /* TransferViewController */,
+				58526A6516E3B27E00E7823D /* VesselListViewcontroller */,
 				58526A2D16E3795200E7823D /* WaitForTapController */,
 			);
 			name = Controllers;
