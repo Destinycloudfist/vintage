@@ -200,6 +200,7 @@
 		585269B516E2D5F900E7823D /* Vintage */ = {
 			isa = PBXGroup;
 			children = (
+				58526A6416E3977A00E7823D /* ModelInternals */,
 				585269E416E2EBDC00E7823D /* Models */,
 				58526A6316E3967B00E7823D /* Controllers */,
 				585269D316E2D83B00E7823D /* ViewController */,
@@ -274,14 +275,12 @@
 		585269E416E2EBDC00E7823D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				585269E516E300AC00E7823D /* ModelBackend */,
-				585269E016E2E8BC00E7823D /* Model */,
-				58526A1516E3512300E7823D /* Source */,
-				58526A0D16E33B7A00E7823D /* Trackable */,
-				58526A0016E32B8C00E7823D /* Vessel */,
-				58526A0116E32B9500E7823D /* Tank */,
 				585269DC16E2E86000E7823D /* Barrel */,
 				58526A0516E339FA00E7823D /* Bottles */,
+				58526A1516E3512300E7823D /* Source */,
+				58526A0116E32B9500E7823D /* Tank */,
+				58526A0D16E33B7A00E7823D /* Trackable */,
+				58526A0016E32B8C00E7823D /* Vessel */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -487,22 +486,31 @@
 		58526A6316E3967B00E7823D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				58526A5D16E38FF800E7823D /* TrackableViewController */,
-				58526A4516E3886300E7823D /* TrackableListViewController */,
-				58526A3F16E37D7600E7823D /* BarrelStatusViewController */,
-				58526A3916E37D6200E7823D /* BottlesStatusViewController */,
-				58526A3316E37D2100E7823D /* TankStatusViewController */,
-				58526A2D16E3795200E7823D /* WaitForTapController */,
-				58526A2716E3793400E7823D /* TankViewController */,
-				58526A2116E3791200E7823D /* BottlesViewController */,
-				58526A1B16E378D500E7823D /* NewVesselController */,
 				585269D416E2D92B00E7823D /* BarrelViewController */,
+				58526A3F16E37D7600E7823D /* BarrelStatusViewController */,
+				58526A2116E3791200E7823D /* BottlesViewController */,
+				58526A3916E37D6200E7823D /* BottlesStatusViewController */,
 				585269FB16E32B5F00E7823D /* ModelViewController */,
+				58526A1B16E378D500E7823D /* NewVesselController */,
+				58526A4B16E38BDA00E7823D /* SourceListViewController */,
 				58526A5716E38EBF00E7823D /* SourceStatusViewController */,
 				58526A5116E38CBB00E7823D /* SourceViewController */,
-				58526A4B16E38BDA00E7823D /* SourceListViewController */,
+				58526A2716E3793400E7823D /* TankViewController */,
+				58526A3316E37D2100E7823D /* TankStatusViewController */,
+				58526A5D16E38FF800E7823D /* TrackableViewController */,
+				58526A4516E3886300E7823D /* TrackableListViewController */,
+				58526A2D16E3795200E7823D /* WaitForTapController */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		58526A6416E3977A00E7823D /* ModelInternals */ = {
+			isa = PBXGroup;
+			children = (
+				585269E516E300AC00E7823D /* ModelBackend */,
+				585269E016E2E8BC00E7823D /* Model */,
+			);
+			name = ModelInternals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
