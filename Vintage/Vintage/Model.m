@@ -217,6 +217,15 @@
     return model;
 }
 
++ (id<ModelProtocol>)createModel:(Class)class
+{
+    Model *model = [class new];
+    
+    model.uniqueId = [[ModelBackend shared] generateUniqueId];
+    
+    return model;
+}
+
 + (NSArray*)loadModels:(Class)class
 {
     NSMutableArray *array = [@[] mutableCopy];

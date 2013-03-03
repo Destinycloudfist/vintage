@@ -30,6 +30,9 @@
 
 + (id<ModelProtocol>)loadModel:(Class)class withUniqueId:(id)uniqueId;
 
+/// Creates a new model of the given class with a generic uniqueId.
++ (id<ModelProtocol>)createModel:(Class)class;
+
 + (NSArray*)loadModels:(Class)class;
 
 - (void)save;

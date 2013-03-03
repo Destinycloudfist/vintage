@@ -89,6 +89,11 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
     return self;
 }
 
+- (NSString*)generateUniqueId
+{
+    return [[self.firebase push] name];
+}
+
 - (NSArray*)keys
 {
     return [[NSUserDefaults standardUserDefaults] arrayForKey:@"firebase_keys"];
