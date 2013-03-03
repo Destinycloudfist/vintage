@@ -26,6 +26,8 @@
 
 @property (nonatomic, weak) id<ModelDelegate> delegate;
 
+@property (nonatomic, strong) NSString *uniqueId;
+
 + (id<ModelProtocol>)loadModel:(Class)class withUniqueId:(id)uniqueId;
 
 + (NSArray*)loadModels:(Class)class;

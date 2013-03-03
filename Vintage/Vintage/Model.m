@@ -151,6 +151,8 @@
 
 - (void)save
 {
+    NSParameterAssert(self.uniqueId);
+    
     NSArray *oldKeys = [[ModelBackend shared] keys];
     NSMutableArray *keys = oldKeys ? [oldKeys mutableCopy] : [@[] mutableCopy];
     
@@ -178,13 +180,6 @@
     }
     
     [[ModelBackend shared] synchronize];
-}
-
-- (id)uniqueId
-{
-    NSAssert(NO, @"uniqueId not implemented on %@", [self class]);
-    
-    return nil;
 }
 
 + (id<ModelProtocol>)loadModel:(Class)class withUniqueId:(id)uniqueId

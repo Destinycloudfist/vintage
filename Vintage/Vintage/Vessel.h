@@ -6,8 +6,12 @@
 //  Copyright (c) 2013 Dustin Dettmer. All rights reserved.
 //
 
-#import "Model.h"
+#import "Trackable.h"
 
-@interface Vessel : Model
-@property (nonatomic, assign) float volume;
+@interface Vessel : Trackable
+
+@property (nonatomic, strong) NSString *sourceId;
+
+@property (nonatomic, strong) NSNumber *volume;
+
 @end

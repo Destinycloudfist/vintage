@@ -30,6 +30,9 @@
 		58526A0216E32BB600E7823D /* Tank.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269FD16E32B7A00E7823D /* Tank.m */; };
 		58526A0316E32BB800E7823D /* Vessel.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269FF16E32B7A00E7823D /* Vessel.m */; };
 		58526A0416E32BBE00E7823D /* ModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269FA16E32B5B00E7823D /* ModelViewController.m */; };
+		58526A0816E33A1A00E7823D /* Bottles.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A0716E33A1A00E7823D /* Bottles.m */; };
+		58526A0C16E33B7000E7823D /* Waste.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A0B16E33B7000E7823D /* Waste.m */; };
+		58526A1016E33BAB00E7823D /* Trackable.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A0F16E33BAB00E7823D /* Trackable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,12 @@
 		585269FD16E32B7A00E7823D /* Tank.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tank.m; sourceTree = "<group>"; };
 		585269FE16E32B7A00E7823D /* Vessel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vessel.h; sourceTree = "<group>"; };
 		585269FF16E32B7A00E7823D /* Vessel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vessel.m; sourceTree = "<group>"; };
+		58526A0616E33A1A00E7823D /* Bottles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bottles.h; sourceTree = "<group>"; };
+		58526A0716E33A1A00E7823D /* Bottles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bottles.m; sourceTree = "<group>"; };
+		58526A0A16E33B7000E7823D /* Waste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Waste.h; sourceTree = "<group>"; };
+		58526A0B16E33B7000E7823D /* Waste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Waste.m; sourceTree = "<group>"; };
+		58526A0E16E33BAB00E7823D /* Trackable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trackable.h; sourceTree = "<group>"; };
+		58526A0F16E33BAB00E7823D /* Trackable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trackable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,10 +216,13 @@
 			isa = PBXGroup;
 			children = (
 				585269E516E300AC00E7823D /* ModelBackend */,
-				58526A0116E32B9500E7823D /* Tank */,
-				58526A0016E32B8C00E7823D /* Vessel */,
 				585269E016E2E8BC00E7823D /* Model */,
+				58526A0D16E33B7A00E7823D /* Trackable */,
+				58526A0016E32B8C00E7823D /* Vessel */,
+				58526A0116E32B9500E7823D /* Tank */,
 				585269DC16E2E86000E7823D /* Barrel */,
+				58526A0516E339FA00E7823D /* Bottles */,
+				58526A0916E33B5200E7823D /* Waste */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -264,6 +276,33 @@
 				585269FD16E32B7A00E7823D /* Tank.m */,
 			);
 			name = Tank;
+			sourceTree = "<group>";
+		};
+		58526A0516E339FA00E7823D /* Bottles */ = {
+			isa = PBXGroup;
+			children = (
+				58526A0616E33A1A00E7823D /* Bottles.h */,
+				58526A0716E33A1A00E7823D /* Bottles.m */,
+			);
+			name = Bottles;
+			sourceTree = "<group>";
+		};
+		58526A0916E33B5200E7823D /* Waste */ = {
+			isa = PBXGroup;
+			children = (
+				58526A0A16E33B7000E7823D /* Waste.h */,
+				58526A0B16E33B7000E7823D /* Waste.m */,
+			);
+			name = Waste;
+			sourceTree = "<group>";
+		};
+		58526A0D16E33B7A00E7823D /* Trackable */ = {
+			isa = PBXGroup;
+			children = (
+				58526A0E16E33BAB00E7823D /* Trackable.h */,
+				58526A0F16E33BAB00E7823D /* Trackable.m */,
+			);
+			name = Trackable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +382,9 @@
 				58526A0216E32BB600E7823D /* Tank.m in Sources */,
 				58526A0316E32BB800E7823D /* Vessel.m in Sources */,
 				58526A0416E32BBE00E7823D /* ModelViewController.m in Sources */,
+				58526A0816E33A1A00E7823D /* Bottles.m in Sources */,
+				58526A0C16E33B7000E7823D /* Waste.m in Sources */,
+				58526A1016E33BAB00E7823D /* Trackable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

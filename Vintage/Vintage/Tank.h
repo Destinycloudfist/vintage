@@ -10,4 +10,7 @@
 
 @interface Tank : Vessel
 
+@property (nonatomic, strong) NSString *ph;
+@property (nonatomic, strong) NSString *brix;
+
 @end
