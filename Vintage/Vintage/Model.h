@@ -28,6 +28,8 @@
 
 @property (nonatomic, strong) NSString *uniqueId;
 
++ (id<ModelProtocol>)loadModelForKey:(NSString*)key;
+
 + (id<ModelProtocol>)loadModel:(Class)class withUniqueId:(id)uniqueId;
 
 /// Creates a new model of the given class with a generic uniqueId.

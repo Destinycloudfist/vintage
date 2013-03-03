@@ -182,6 +182,15 @@
     [[ModelBackend shared] synchronize];
 }
 
++ (id<ModelProtocol>)loadModelForKey:(NSString *)key
+{
+    NSArray *array = [key componentsSeparatedByString:@"."];
+    
+    Class class = objc_lookUpClass([[array objectAtIndex:0] UTF8String]);
+    
+    return [self loadModel:class withUniqueId:[array objectAtIndex:1]];
+}
+
 + (id<ModelProtocol>)loadModel:(Class)class withUniqueId:(id)uniqueId
 {
     id model = [class new];
