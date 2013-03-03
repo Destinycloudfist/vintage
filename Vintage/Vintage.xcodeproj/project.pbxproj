@@ -27,6 +27,9 @@
 		585269F416E3126400E7823D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269F316E3126400E7823D /* CFNetwork.framework */; };
 		585269F616E3127400E7823D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269F516E3127400E7823D /* libicucore.dylib */; };
 		585269F816E3129200E7823D /* Firebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269F716E3129200E7823D /* Firebase.a */; };
+		58526A0216E32BB600E7823D /* Tank.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269FD16E32B7A00E7823D /* Tank.m */; };
+		58526A0316E32BB800E7823D /* Vessel.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269FF16E32B7A00E7823D /* Vessel.m */; };
+		58526A0416E32BBE00E7823D /* ModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269FA16E32B5B00E7823D /* ModelViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,12 @@
 		585269F316E3126400E7823D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		585269F516E3127400E7823D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		585269F716E3129200E7823D /* Firebase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Firebase.a; sourceTree = "<group>"; };
+		585269F916E32B5B00E7823D /* ModelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelViewController.h; sourceTree = "<group>"; };
+		585269FA16E32B5B00E7823D /* ModelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelViewController.m; sourceTree = "<group>"; };
+		585269FC16E32B7A00E7823D /* Tank.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tank.h; sourceTree = "<group>"; };
+		585269FD16E32B7A00E7823D /* Tank.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tank.m; sourceTree = "<group>"; };
+		585269FE16E32B7A00E7823D /* Vessel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vessel.h; sourceTree = "<group>"; };
+		585269FF16E32B7A00E7823D /* Vessel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vessel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +133,7 @@
 			children = (
 				585269E416E2EBDC00E7823D /* Models */,
 				585269D416E2D92B00E7823D /* BarrelViewController */,
+				585269FB16E32B5F00E7823D /* ModelViewController */,
 				585269D216E2D83500E7823D /* AppDelegate */,
 				585269D316E2D83B00E7823D /* ViewController */,
 				585269B616E2D5F900E7823D /* Supporting Files */,
@@ -196,6 +206,8 @@
 		585269E416E2EBDC00E7823D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				58526A0116E32B9500E7823D /* Tank */,
+				58526A0016E32B8C00E7823D /* Vessel */,
 				585269E516E300AC00E7823D /* ModelBackend */,
 				585269E016E2E8BC00E7823D /* Model */,
 				585269DC16E2E86000E7823D /* Barrel */,
@@ -225,6 +237,33 @@
 			);
 			name = Firebase;
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		585269FB16E32B5F00E7823D /* ModelViewController */ = {
+			isa = PBXGroup;
+			children = (
+				585269F916E32B5B00E7823D /* ModelViewController.h */,
+				585269FA16E32B5B00E7823D /* ModelViewController.m */,
+			);
+			name = ModelViewController;
+			sourceTree = "<group>";
+		};
+		58526A0016E32B8C00E7823D /* Vessel */ = {
+			isa = PBXGroup;
+			children = (
+				585269FE16E32B7A00E7823D /* Vessel.h */,
+				585269FF16E32B7A00E7823D /* Vessel.m */,
+			);
+			name = Vessel;
+			sourceTree = "<group>";
+		};
+		58526A0116E32B9500E7823D /* Tank */ = {
+			isa = PBXGroup;
+			children = (
+				585269FC16E32B7A00E7823D /* Tank.h */,
+				585269FD16E32B7A00E7823D /* Tank.m */,
+			);
+			name = Tank;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +340,9 @@
 				585269DF16E2E87500E7823D /* Barrel.m in Sources */,
 				585269E316E2E8C500E7823D /* Model.m in Sources */,
 				585269E816E300D500E7823D /* ModelBackend.m in Sources */,
+				58526A0216E32BB600E7823D /* Tank.m in Sources */,
+				58526A0316E32BB800E7823D /* Vessel.m in Sources */,
+				58526A0416E32BBE00E7823D /* ModelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

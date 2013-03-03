@@ -20,13 +20,13 @@
 
 @implementation BarrelViewController
 
-- (id)initWithBarrel:(Barrel*)barrel
+- (id)initWithModel:(Model *)model
 {
-    self = [super init];
+    self = [super initWithModel:model];
     
     if(self) {
         
-        self.barrel = barrel;
+        self.barrel = (Barrel *)model;
     }
     
     return self;
