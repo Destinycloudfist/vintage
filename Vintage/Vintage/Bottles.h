@@ -10,8 +10,10 @@
 
 @interface Bottles : Vessel
 
-@property (nonatomic, strong) NSNumber *numberOfCases;
-@property (nonatomic, strong) NSNumber *bottlesPerCase;
-@property (nonatomic, strong) NSNumber *volumePerBottle;
+@property (nonatomic) NSNumber *numberOfCases;
+@property (nonatomic) NSNumber *bottlesPerCase;
+@property (nonatomic) NSNumber *volumePerBottle;
+@property (nonatomic) NSString *type;
+@property (nonatomic) NSString *color;
 
 @end

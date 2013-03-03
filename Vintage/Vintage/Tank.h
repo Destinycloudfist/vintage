@@ -10,4 +10,7 @@
 
 @interface Tank : Vessel
 
+@property (nonatomic) NSString *shape;
+@property (nonatomic) NSNumber *coolingJacket;
+
 @end

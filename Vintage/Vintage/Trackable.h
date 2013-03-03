@@ -10,28 +10,28 @@
 
 @interface Trackable : Model
 
-@property (nonatomic, strong) NSDate *date;
-@property (nonatomic, strong) NSNumber *isDeleted;
-@property (nonatomic, strong) NSNumber *volume;
-@property (nonatomic, strong) NSString *containerKey;
+@property (nonatomic) NSDate *date;
+@property (nonatomic) NSNumber *isDeleted;
+@property (nonatomic) NSNumber *volume;
+@property (nonatomic) NSString *containerKey;
 
-@property (nonatomic, strong) NSString *vintage;
-@property (nonatomic, strong) NSString *year;
-@property (nonatomic, strong) NSString *notes;
+@property (nonatomic) NSString *vintage;
+@property (nonatomic) NSString *year;
+@property (nonatomic) NSString *notes;
 
 // Array of NSNumbers holding doubles and an array of NSDates
 // holding the dates of the readings respectively.
-@property (nonatomic, strong) NSArray *phReadings;
-@property (nonatomic, strong) NSArray *phReadingDates;
+@property (nonatomic) NSArray *phReadings;
+@property (nonatomic) NSArray *phReadingDates;
 
-// Array of NSNumbers holding doubles of and an array of NSDates
+// Array of NSNumbers holding doubles and an array of NSDates
 // holding the dates of the readings respectively.
-@property (nonatomic, strong) NSArray *bixReadings;
-@property (nonatomic, strong) NSArray *bixReadingDates;
+@property (nonatomic) NSArray *brixReadings;
+@property (nonatomic) NSArray *brixReadingDates;
 
 // Array of NSStrings holding keys to Trackable objects and NSNumbers holding
 // doubles of gallons respectively.
-@property (nonatomic, strong) NSArray *sourceKeys;
-@property (nonatomic, strong) NSArray *sourceVolumes;
+@property (nonatomic) NSArray *sourceKeys;
+@property (nonatomic) NSArray *sourceVolumes;
 
 @end

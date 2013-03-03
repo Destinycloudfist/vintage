@@ -10,6 +10,8 @@
 
 @interface Vessel : Model
 
-@property (nonatomic, strong) NSNumber *volume;
+@property (nonatomic) NSNumber *volume;
+@property (nonatomic) NSString *trackableKey;
+@property (nonatomic) NSArray *oldTrackableKeys;
 
 @end

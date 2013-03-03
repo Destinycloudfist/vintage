@@ -10,4 +10,7 @@
 
 @interface Barrel : Vessel
 
+@property (nonatomic) NSString *toast;
+@property (nonatomic) NSString *material;
+
 @end
