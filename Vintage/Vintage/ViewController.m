@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "BarrelViewController.h"
 #import "ModelBackend.h"
+#import "NewVesselController.h"
+#import "BarrelStatusViewController.h"
 
 @interface ViewController ()
 
@@ -43,15 +45,7 @@
         return;
     }
     
-    Barrel *barrel = [Model loadModel:[Barrel class] withUniqueId:self.tagIdField.text];
-    
-    if(!barrel) {
-        
-        barrel = [Barrel new];
-        barrel.uniqueId = self.tagIdField.text;
-    }
-    
-    BarrelViewController *controller = [[BarrelViewController alloc] initWithModel:barrel];
+    NewVesselController *controller = [NewVesselController new];
     
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -90,7 +84,9 @@
 {
     Barrel *barrel = [self.barrels objectAtIndex:indexPath.row];
     
-    BarrelViewController *controller = [[BarrelViewController alloc] initWithModel:barrel];
+    BarrelStatusViewController *controller = [BarrelStatusViewController new];
+    
+    controller.barrel = barrel;
     
     [self.navigationController pushViewController:controller animated:YES];
 }

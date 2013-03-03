@@ -164,7 +164,10 @@
 
 - (void)save
 {
-    NSParameterAssert(self.uniqueId);
+    if(!self.uniqueId) {
+        
+        self.uniqueId = [[ModelBackend shared] generateUniqueId];
+    }
     
     NSArray *oldKeys = [[ModelBackend shared] keys];
     NSMutableArray *keys = oldKeys ? [oldKeys mutableCopy] : [@[] mutableCopy];

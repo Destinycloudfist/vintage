@@ -7,48 +7,41 @@
 //
 
 #import "BarrelViewController.h"
+#import "Barrel.h"
+#import "BarrelStatusViewController.h"
 
 @interface BarrelViewController ()
 
-@property (nonatomic, strong) Barrel *barrel;
-
-@property (weak, nonatomic) IBOutlet UITextField *vintage;
-@property (weak, nonatomic) IBOutlet UITextField *year;
-@property (weak, nonatomic) IBOutlet UITextView *notesTextView;
+@property (weak, nonatomic) IBOutlet UITextField *gallons;
+@property (weak, nonatomic) IBOutlet UITextField *toast;
+@property (weak, nonatomic) IBOutlet UITextField *material;
 
 @end
 
 @implementation BarrelViewController
 
-- (id)initWithModel:(Model *)model
-{
-    self = [super initWithModel:model];
-    
-    if(self) {
-        
-        self.barrel = (Barrel *)model;
-    }
-    
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.title = [self.barrel.uniqueId description];
-}
-
-- (IBAction)cancel:(id)sender
-{
-    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (IBAction)save:(id)sender
 {
-    [self.barrel save];
+    Barrel *barrel = [Barrel new];
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    barrel.volume = @([self.gallons.text doubleValue]);
+    barrel.toast = self.toast.text;
+    barrel.material = self.material.text;
+    
+    [barrel save];
+    
+    BarrelStatusViewController *controller = [BarrelStatusViewController new];
+    
+    controller.barrel = barrel;
+    
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

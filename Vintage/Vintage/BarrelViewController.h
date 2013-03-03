@@ -10,6 +10,6 @@
 #import "ModelViewController.h"
 #import "Barrel.h"
 
-@interface BarrelViewController : ModelViewController
+@interface BarrelViewController : UIViewController
 
 @end

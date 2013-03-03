@@ -33,6 +33,20 @@
 		58526A0816E33A1A00E7823D /* Bottles.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A0716E33A1A00E7823D /* Bottles.m */; };
 		58526A1016E33BAB00E7823D /* Trackable.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A0F16E33BAB00E7823D /* Trackable.m */; };
 		58526A1816E3512F00E7823D /* Source.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A1716E3512F00E7823D /* Source.m */; };
+		58526A1F16E3790E00E7823D /* NewVesselController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A1D16E3790E00E7823D /* NewVesselController.m */; };
+		58526A2016E3790E00E7823D /* NewVesselController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A1E16E3790E00E7823D /* NewVesselController.xib */; };
+		58526A2516E3792D00E7823D /* BottlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A2316E3792D00E7823D /* BottlesViewController.m */; };
+		58526A2616E3792D00E7823D /* BottlesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A2416E3792D00E7823D /* BottlesViewController.xib */; };
+		58526A2B16E3794F00E7823D /* TankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A2916E3794F00E7823D /* TankViewController.m */; };
+		58526A2C16E3794F00E7823D /* TankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A2A16E3794F00E7823D /* TankViewController.xib */; };
+		58526A3116E3798200E7823D /* WaitForTapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A2F16E3798200E7823D /* WaitForTapController.m */; };
+		58526A3216E3798200E7823D /* WaitForTapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A3016E3798200E7823D /* WaitForTapController.xib */; };
+		58526A3716E37D5E00E7823D /* TankStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A3516E37D5E00E7823D /* TankStatusViewController.m */; };
+		58526A3816E37D5E00E7823D /* TankStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A3616E37D5E00E7823D /* TankStatusViewController.xib */; };
+		58526A3D16E37D7300E7823D /* BottlesStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A3B16E37D7300E7823D /* BottlesStatusViewController.m */; };
+		58526A3E16E37D7300E7823D /* BottlesStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A3C16E37D7300E7823D /* BottlesStatusViewController.xib */; };
+		58526A4316E37E2500E7823D /* BarrelStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A4116E37E2500E7823D /* BarrelStatusViewController.m */; };
+		58526A4416E37E2500E7823D /* BarrelStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A4216E37E2500E7823D /* BarrelStatusViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +99,27 @@
 		58526A0F16E33BAB00E7823D /* Trackable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trackable.m; sourceTree = "<group>"; };
 		58526A1616E3512F00E7823D /* Source.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Source.h; sourceTree = "<group>"; };
 		58526A1716E3512F00E7823D /* Source.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Source.m; sourceTree = "<group>"; };
+		58526A1C16E3790E00E7823D /* NewVesselController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewVesselController.h; sourceTree = "<group>"; };
+		58526A1D16E3790E00E7823D /* NewVesselController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewVesselController.m; sourceTree = "<group>"; };
+		58526A1E16E3790E00E7823D /* NewVesselController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewVesselController.xib; sourceTree = "<group>"; };
+		58526A2216E3792D00E7823D /* BottlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottlesViewController.h; sourceTree = "<group>"; };
+		58526A2316E3792D00E7823D /* BottlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottlesViewController.m; sourceTree = "<group>"; };
+		58526A2416E3792D00E7823D /* BottlesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottlesViewController.xib; sourceTree = "<group>"; };
+		58526A2816E3794F00E7823D /* TankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankViewController.h; sourceTree = "<group>"; };
+		58526A2916E3794F00E7823D /* TankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankViewController.m; sourceTree = "<group>"; };
+		58526A2A16E3794F00E7823D /* TankViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TankViewController.xib; sourceTree = "<group>"; };
+		58526A2E16E3798200E7823D /* WaitForTapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitForTapController.h; sourceTree = "<group>"; };
+		58526A2F16E3798200E7823D /* WaitForTapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitForTapController.m; sourceTree = "<group>"; };
+		58526A3016E3798200E7823D /* WaitForTapController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaitForTapController.xib; sourceTree = "<group>"; };
+		58526A3416E37D5E00E7823D /* TankStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankStatusViewController.h; sourceTree = "<group>"; };
+		58526A3516E37D5E00E7823D /* TankStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankStatusViewController.m; sourceTree = "<group>"; };
+		58526A3616E37D5E00E7823D /* TankStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TankStatusViewController.xib; sourceTree = "<group>"; };
+		58526A3A16E37D7300E7823D /* BottlesStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottlesStatusViewController.h; sourceTree = "<group>"; };
+		58526A3B16E37D7300E7823D /* BottlesStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottlesStatusViewController.m; sourceTree = "<group>"; };
+		58526A3C16E37D7300E7823D /* BottlesStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottlesStatusViewController.xib; sourceTree = "<group>"; };
+		58526A4016E37E2500E7823D /* BarrelStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrelStatusViewController.h; sourceTree = "<group>"; };
+		58526A4116E37E2500E7823D /* BarrelStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrelStatusViewController.m; sourceTree = "<group>"; };
+		58526A4216E37E2500E7823D /* BarrelStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarrelStatusViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +176,13 @@
 			isa = PBXGroup;
 			children = (
 				585269E416E2EBDC00E7823D /* Models */,
+				58526A3F16E37D7600E7823D /* BarelStatusViewController */,
+				58526A3916E37D6200E7823D /* BottlesStatusViewController */,
+				58526A3316E37D2100E7823D /* TankStatusViewController */,
+				58526A2D16E3795200E7823D /* WaitForTapController */,
+				58526A2716E3793400E7823D /* TankViewController */,
+				58526A2116E3791200E7823D /* BottlesViewController */,
+				58526A1B16E378D500E7823D /* NewVesselController */,
 				585269D416E2D92B00E7823D /* BarrelViewController */,
 				585269FB16E32B5F00E7823D /* ModelViewController */,
 				585269D216E2D83500E7823D /* AppDelegate */,
@@ -305,6 +347,76 @@
 			name = Source;
 			sourceTree = "<group>";
 		};
+		58526A1B16E378D500E7823D /* NewVesselController */ = {
+			isa = PBXGroup;
+			children = (
+				58526A1C16E3790E00E7823D /* NewVesselController.h */,
+				58526A1D16E3790E00E7823D /* NewVesselController.m */,
+				58526A1E16E3790E00E7823D /* NewVesselController.xib */,
+			);
+			name = NewVesselController;
+			sourceTree = "<group>";
+		};
+		58526A2116E3791200E7823D /* BottlesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58526A2216E3792D00E7823D /* BottlesViewController.h */,
+				58526A2316E3792D00E7823D /* BottlesViewController.m */,
+				58526A2416E3792D00E7823D /* BottlesViewController.xib */,
+			);
+			name = BottlesViewController;
+			sourceTree = "<group>";
+		};
+		58526A2716E3793400E7823D /* TankViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58526A2816E3794F00E7823D /* TankViewController.h */,
+				58526A2916E3794F00E7823D /* TankViewController.m */,
+				58526A2A16E3794F00E7823D /* TankViewController.xib */,
+			);
+			name = TankViewController;
+			sourceTree = "<group>";
+		};
+		58526A2D16E3795200E7823D /* WaitForTapController */ = {
+			isa = PBXGroup;
+			children = (
+				58526A2E16E3798200E7823D /* WaitForTapController.h */,
+				58526A2F16E3798200E7823D /* WaitForTapController.m */,
+				58526A3016E3798200E7823D /* WaitForTapController.xib */,
+			);
+			name = WaitForTapController;
+			sourceTree = "<group>";
+		};
+		58526A3316E37D2100E7823D /* TankStatusViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58526A3416E37D5E00E7823D /* TankStatusViewController.h */,
+				58526A3516E37D5E00E7823D /* TankStatusViewController.m */,
+				58526A3616E37D5E00E7823D /* TankStatusViewController.xib */,
+			);
+			name = TankStatusViewController;
+			sourceTree = "<group>";
+		};
+		58526A3916E37D6200E7823D /* BottlesStatusViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58526A3A16E37D7300E7823D /* BottlesStatusViewController.h */,
+				58526A3B16E37D7300E7823D /* BottlesStatusViewController.m */,
+				58526A3C16E37D7300E7823D /* BottlesStatusViewController.xib */,
+			);
+			name = BottlesStatusViewController;
+			sourceTree = "<group>";
+		};
+		58526A3F16E37D7600E7823D /* BarelStatusViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58526A4016E37E2500E7823D /* BarrelStatusViewController.h */,
+				58526A4116E37E2500E7823D /* BarrelStatusViewController.m */,
+				58526A4216E37E2500E7823D /* BarrelStatusViewController.xib */,
+			);
+			name = BarelStatusViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +474,13 @@
 				585269C616E2D5F900E7823D /* Default-568h@2x.png in Resources */,
 				585269CC16E2D5F900E7823D /* ViewController.xib in Resources */,
 				585269D916E2D97800E7823D /* BarrelViewController.xib in Resources */,
+				58526A2016E3790E00E7823D /* NewVesselController.xib in Resources */,
+				58526A2616E3792D00E7823D /* BottlesViewController.xib in Resources */,
+				58526A2C16E3794F00E7823D /* TankViewController.xib in Resources */,
+				58526A3216E3798200E7823D /* WaitForTapController.xib in Resources */,
+				58526A3816E37D5E00E7823D /* TankStatusViewController.xib in Resources */,
+				58526A3E16E37D7300E7823D /* BottlesStatusViewController.xib in Resources */,
+				58526A4416E37E2500E7823D /* BarrelStatusViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +504,13 @@
 				58526A0816E33A1A00E7823D /* Bottles.m in Sources */,
 				58526A1016E33BAB00E7823D /* Trackable.m in Sources */,
 				58526A1816E3512F00E7823D /* Source.m in Sources */,
+				58526A1F16E3790E00E7823D /* NewVesselController.m in Sources */,
+				58526A2516E3792D00E7823D /* BottlesViewController.m in Sources */,
+				58526A2B16E3794F00E7823D /* TankViewController.m in Sources */,
+				58526A3116E3798200E7823D /* WaitForTapController.m in Sources */,
+				58526A3716E37D5E00E7823D /* TankStatusViewController.m in Sources */,
+				58526A3D16E37D7300E7823D /* BottlesStatusViewController.m in Sources */,
+				58526A4316E37E2500E7823D /* BarrelStatusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
