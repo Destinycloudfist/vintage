@@ -8,25 +8,31 @@
 
 #import "TrackableListViewController.h"
 #import "Trackable.h"
+#import "TransferViewController.h"
 
 @interface TrackableListViewController ()
+
+@property (nonatomic, strong) Trackable *trackable;
 
 @end
 
 @implementation TrackableListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return (self.vessel.trackableKey ? 1 : 0) + self.vessel.oldTrackableKeys.count;
+}
+
+- (NSString*)keyForIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *trackableKey = nil;
+    
+    if(indexPath.row == 0 && self.vessel.trackableKey)
+        trackableKey = self.vessel.trackableKey;
+    else
+        trackableKey = [self.vessel.oldTrackableKeys objectAtIndex:indexPath.row - (self.vessel.trackableKey ? 1 : 0)];
+    
+    return trackableKey;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -36,30 +42,35 @@
     if(!cell)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     
-    NSString *trackableKey = nil;
+    Trackable *trackable = [Model loadModelForKey:[self keyForIndexPath:indexPath]];
     
-    if(indexPath.row == 0 && self.vessel.trackableKey)
-        trackableKey = self.vessel.trackableKey;
-    else
-        trackableKey = [self.vessel.oldTrackableKeys objectAtIndex:indexPath.row - (self.vessel.trackableKey ? 1 : 0)];
-    
-    Trackable *trackable = [Model loadModelForKey:trackableKey];
-    
-    cell.textLabel.text = trackable.prettyDescription;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ gallons of %@", trackable.volume, trackable.vintage];
     
     return cell;
 }
 
-- (void)viewDidLoad
+- (void)vesselList:(VesselListViewcontroller *)controller selectedVessel:(Vessel *)vessel
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    TransferViewController *newController = [TransferViewController new];
+    
+    newController.trackable = self.trackable;
+    newController.fromVessel = [Model loadModelForKey:self.trackable.vesselKey];
+    newController.toVessel = vessel;
+    
+    [self.navigationController pushViewController:newController animated:YES];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.trackable = [Model loadModelForKey:[self keyForIndexPath:indexPath]];
+    
+    VesselListViewcontroller *controller = [VesselListViewcontroller new];
+    
+    controller.delegate = self;
+    
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

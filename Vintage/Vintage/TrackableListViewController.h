@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Vessel.h"
+#import "VesselListViewcontroller.h"
 
-@interface TrackableListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface TrackableListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, VesselListDelegate>
 
 @property (nonatomic, strong) Vessel *vessel;
 

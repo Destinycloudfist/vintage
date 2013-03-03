@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     
-    self.label.text = [NSString stringWithFormat:@"%@ gallons %@ %@", self.barrel.volume, self.barrel.toast, self.barrel.material];
+    self.label.text = [NSString stringWithFormat:@"%@ gallon container %@ %@", self.barrel.volume, self.barrel.toast, self.barrel.material];
     
     if(self.barrel.trackableKey) {
         
