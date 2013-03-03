@@ -8,18 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
+@class Model;
+
 @protocol ModelProtocol <NSObject>
 
 - (id)uniqueId;
 
 @end
 
+@protocol ModelDelegate <NSObject>
+
+- (void)modelUpdated:(id<ModelProtocol>)model;
+
+@end
+
 @interface Model : NSObject<ModelProtocol>
 
-- (void)save;
+@property (nonatomic, weak) id<ModelDelegate> delegate;
 
 + (id<ModelProtocol>)loadModel:(Class)class withUniqueId:(id)uniqueId;
 
 + (NSArray*)loadModels:(Class)class;
+
+- (void)save;
 
 @end

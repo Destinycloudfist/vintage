@@ -23,6 +23,10 @@
 		585269DF16E2E87500E7823D /* Barrel.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269DE16E2E87500E7823D /* Barrel.m */; };
 		585269E316E2E8C500E7823D /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269E216E2E8C500E7823D /* Model.m */; };
 		585269E816E300D500E7823D /* ModelBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269E716E300D500E7823D /* ModelBackend.m */; };
+		585269F216E3125A00E7823D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269F116E3125900E7823D /* Security.framework */; };
+		585269F416E3126400E7823D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269F316E3126400E7823D /* CFNetwork.framework */; };
+		585269F616E3127400E7823D /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269F516E3127400E7823D /* libicucore.dylib */; };
+		585269F816E3129200E7823D /* Firebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269F716E3129200E7823D /* Firebase.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,17 @@
 		585269E216E2E8C500E7823D /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		585269E616E300D500E7823D /* ModelBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelBackend.h; sourceTree = "<group>"; };
 		585269E716E300D500E7823D /* ModelBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelBackend.m; sourceTree = "<group>"; };
+		585269EA16E3121800E7823D /* FDataSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDataSnapshot.h; sourceTree = "<group>"; };
+		585269EB16E3121800E7823D /* FEventType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEventType.h; sourceTree = "<group>"; };
+		585269EC16E3121800E7823D /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		585269ED16E3121800E7823D /* FOnDisconnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOnDisconnect.h; sourceTree = "<group>"; };
+		585269EE16E3121800E7823D /* FQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQuery.h; sourceTree = "<group>"; };
+		585269EF16E3121800E7823D /* FQueryParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FQueryParams.h; sourceTree = "<group>"; };
+		585269F016E3121800E7823D /* FTypedefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTypedefs.h; sourceTree = "<group>"; };
+		585269F116E3125900E7823D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		585269F316E3126400E7823D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		585269F516E3127400E7823D /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		585269F716E3129200E7823D /* Firebase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = Firebase.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +74,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585269F616E3127400E7823D /* libicucore.dylib in Frameworks */,
+				585269F416E3126400E7823D /* CFNetwork.framework in Frameworks */,
+				585269F216E3125A00E7823D /* Security.framework in Frameworks */,
 				585269B016E2D5F900E7823D /* UIKit.framework in Frameworks */,
 				585269B216E2D5F900E7823D /* Foundation.framework in Frameworks */,
 				585269B416E2D5F900E7823D /* CoreGraphics.framework in Frameworks */,
+				585269F816E3129200E7823D /* Firebase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,10 +107,14 @@
 		585269AE16E2D5F900E7823D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				585269E916E3121800E7823D /* Firebase */,
 				585269DA16E2DB4D00E7823D /* CoreLocation.framework */,
 				585269AF16E2D5F900E7823D /* UIKit.framework */,
 				585269B116E2D5F900E7823D /* Foundation.framework */,
 				585269B316E2D5F900E7823D /* CoreGraphics.framework */,
+				585269F516E3127400E7823D /* libicucore.dylib */,
+				585269F316E3126400E7823D /* CFNetwork.framework */,
+				585269F116E3125900E7823D /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,6 +134,7 @@
 		585269B616E2D5F900E7823D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				585269F716E3129200E7823D /* Firebase.a */,
 				585269B716E2D5F900E7823D /* Vintage-Info.plist */,
 				585269B816E2D5F900E7823D /* InfoPlist.strings */,
 				585269BB16E2D5F900E7823D /* main.m */,
@@ -186,6 +210,21 @@
 				585269E716E300D500E7823D /* ModelBackend.m */,
 			);
 			name = ModelBackend;
+			sourceTree = "<group>";
+		};
+		585269E916E3121800E7823D /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				585269EA16E3121800E7823D /* FDataSnapshot.h */,
+				585269EB16E3121800E7823D /* FEventType.h */,
+				585269EC16E3121800E7823D /* Firebase.h */,
+				585269ED16E3121800E7823D /* FOnDisconnect.h */,
+				585269EE16E3121800E7823D /* FQuery.h */,
+				585269EF16E3121800E7823D /* FQueryParams.h */,
+				585269F016E3121800E7823D /* FTypedefs.h */,
+			);
+			name = Firebase;
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +389,11 @@
 				GCC_PREFIX_HEADER = "Vintage/Vintage-Prefix.pch";
 				INFOPLIST_FILE = "Vintage/Vintage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vintage\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -363,6 +407,11 @@
 				GCC_PREFIX_HEADER = "Vintage/Vintage-Prefix.pch";
 				INFOPLIST_FILE = "Vintage/Vintage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vintage\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

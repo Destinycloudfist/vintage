@@ -10,6 +10,8 @@
 #import "ModelBackend.h"
 #import <objc/runtime.h>
 
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
 @interface PropertyInfo : NSObject
 
 @property (nonatomic, strong) NSString *name;
@@ -30,6 +32,48 @@
 
 @implementation Model
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (id)init
+{
+    self = [super init];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(objectUpdated:)
+     name:ModelBackendObjectsUpdated
+     object:nil];
+    
+    return self;
+}
+
+- (void)objectUpdated:(NSNotification*)note
+{
+    NSArray *keys = note.object;
+    
+    int updates = 0;
+    
+    for(PropertyInfo *propertyInfo in [self.class getPropertyInfos]) {
+        for(NSString *key in keys) {
+            
+            NSString *propKey = [[self.class description] stringByAppendingFormat:@".%@.%@", self.uniqueId, propertyInfo.name];
+            
+            if([propKey isEqual:key]) {
+                
+                updates++;
+                
+                [self performSelector:propertyInfo.setter withObject:[[ModelBackend shared] objectForKey:key]];
+            }
+        }
+    }
+    
+    if(updates)
+        [self.delegate modelUpdated:self];
+}
+
 + (NSArray*)getPropertyInfos
 {
     NSMutableArray *array = [@[] mutableCopy];
@@ -43,6 +87,9 @@
         PropertyInfo *propertyInfo = [PropertyInfo new];
         
         propertyInfo.name = [NSString stringWithUTF8String:property_getName(properties[i])];
+        
+        if([propertyInfo.name isEqual:@"delegate"])
+            continue;
         
         const char *attrs = property_getAttributes(properties[i]);
         
@@ -82,8 +129,6 @@
     
     return array;
 }
-
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
 - (NSString*)description
 {
