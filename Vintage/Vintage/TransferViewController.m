@@ -130,7 +130,7 @@
     
     [self.fromVessel save];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end
