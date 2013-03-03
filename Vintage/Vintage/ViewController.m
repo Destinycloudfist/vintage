@@ -81,7 +81,7 @@
     
     Barrel *barrel = [self.barrels objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", barrel.vintage, barrel.year];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", barrel.uniqueId];
     
     return cell;
 }

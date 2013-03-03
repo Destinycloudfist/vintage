@@ -37,10 +37,6 @@
     [super viewDidLoad];
     
     self.title = [self.barrel.uniqueId description];
-    
-    self.notesTextView.text = self.barrel.notes;
-    self.vintage.text = self.barrel.vintage;
-    self.year.text = self.barrel.year;
 }
 
 - (IBAction)cancel:(id)sender
@@ -50,10 +46,6 @@
 
 - (IBAction)save:(id)sender
 {
-    self.barrel.notes = self.notesTextView.text;
-    self.barrel.vintage = self.vintage.text;
-    self.barrel.year = self.year.text;
-    
     [self.barrel save];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
