@@ -61,6 +61,10 @@
 		58526A6A16E3B28E00E7823D /* VesselListViewcontroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A6816E3B28E00E7823D /* VesselListViewcontroller.xib */; };
 		58526A6F16E3B6FF00E7823D /* TransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A6D16E3B6FF00E7823D /* TransferViewController.m */; };
 		58526A7016E3B6FF00E7823D /* TransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A6E16E3B6FF00E7823D /* TransferViewController.xib */; };
+		5B7019D216E3FA2100FF95C3 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019D016E3FA2100FF95C3 /* button.png */; };
+		5B7019D316E3FA2100FF95C3 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019D116E3FA2100FF95C3 /* gradient.png */; };
+		5B7019DB16E3FD0600FF95C3 /* top_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019DA16E3FD0600FF95C3 /* top_shadow.png */; };
+		5B7019DD16E3FD0E00FF95C3 /* bottom_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019DC16E3FD0E00FF95C3 /* bottom_shadow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +159,10 @@
 		58526A6C16E3B6FF00E7823D /* TransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferViewController.h; sourceTree = "<group>"; };
 		58526A6D16E3B6FF00E7823D /* TransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferViewController.m; sourceTree = "<group>"; };
 		58526A6E16E3B6FF00E7823D /* TransferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferViewController.xib; sourceTree = "<group>"; };
+		5B7019D016E3FA2100FF95C3 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
+		5B7019D116E3FA2100FF95C3 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
+		5B7019DA16E3FD0600FF95C3 /* top_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_shadow.png; sourceTree = "<group>"; };
+		5B7019DC16E3FD0E00FF95C3 /* bottom_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_shadow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +231,10 @@
 		585269B616E2D5F900E7823D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5B7019DC16E3FD0E00FF95C3 /* bottom_shadow.png */,
+				5B7019DA16E3FD0600FF95C3 /* top_shadow.png */,
+				5B7019D016E3FA2100FF95C3 /* button.png */,
+				5B7019D116E3FA2100FF95C3 /* gradient.png */,
 				585269F716E3129200E7823D /* Firebase.a */,
 				585269B716E2D5F900E7823D /* Vintage-Info.plist */,
 				585269B816E2D5F900E7823D /* InfoPlist.strings */,
@@ -616,6 +628,10 @@
 				58526A6216E3900B00E7823D /* TrackableViewController.xib in Resources */,
 				58526A6A16E3B28E00E7823D /* VesselListViewcontroller.xib in Resources */,
 				58526A7016E3B6FF00E7823D /* TransferViewController.xib in Resources */,
+				5B7019D216E3FA2100FF95C3 /* button.png in Resources */,
+				5B7019D316E3FA2100FF95C3 /* gradient.png in Resources */,
+				5B7019DB16E3FD0600FF95C3 /* top_shadow.png in Resources */,
+				5B7019DD16E3FD0E00FF95C3 /* bottom_shadow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
