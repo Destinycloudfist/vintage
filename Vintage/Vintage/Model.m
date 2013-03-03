@@ -170,6 +170,9 @@
     
     for(PropertyInfo *propertyInfo in [self.class getPropertyInfos]) {
         
+        if([propertyInfo.name isEqual:@"uniqueId"])
+            continue;
+        
         if(i++)
             [str appendFormat:@", "];
         
