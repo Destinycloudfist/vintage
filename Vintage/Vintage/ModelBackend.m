@@ -64,7 +64,7 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
 {
     self = [super init];
     
-    self.firebase = [[Firebase alloc] initWithUrl:@"https://vikrum.firebaseio.com/"];
+    self.firebase = [[Firebase alloc] initWithUrl:@"https://vintage.firebaseio.com/"];
     
     Firebase *fb = [self.firebase child:@"keys"];
     
