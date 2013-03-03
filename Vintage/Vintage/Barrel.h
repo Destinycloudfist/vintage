@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Model.h"
+#import "Vessel.h"
 
-@interface Barrel : Model
+@interface Barrel : Vessel
 
 @property (nonatomic, strong) NSString *uniqueId;
 @property (nonatomic, strong) NSString *vintage;

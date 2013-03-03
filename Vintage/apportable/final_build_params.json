@@ -5,24 +5,24 @@
     ], 
     "assets": [
         {
+            "asset": "Vintage/Default@2x.png", 
+            "target": "Default@2x.png"
+        }, 
+        {
             "asset": "Vintage/Default.png", 
             "target": "Default.png"
+        }, 
+        {
+            "asset": "Vintage/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
         }, 
         {
             "asset": "Vintage/en.lproj/ViewController.xib", 
             "target": null
         }, 
         {
-            "asset": "Vintage/Default@2x.png", 
-            "target": "Default@2x.png"
-        }, 
-        {
             "asset": "Vintage/BarrelViewController.xib", 
             "target": null
-        }, 
-        {
-            "asset": "Vintage/Default-568h@2x.png", 
-            "target": "Default-568h@2x.png"
         }, 
         {
             "asset": "Vintage/en.lproj/InfoPlist.strings", 
@@ -69,20 +69,25 @@
                     "suffix": "AppDelegate.h", 
                     "key": "AppDelegate.h"
                 }, 
+                "Tank.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "Tank.h", 
+                    "key": "Tank.h"
+                }, 
                 "ViewController.h": {
                     "prefix": "Vintage/", 
                     "suffix": "ViewController.h", 
                     "key": "ViewController.h"
                 }, 
-                "Vintage-Prefix.pch": {
-                    "prefix": "Vintage/", 
-                    "suffix": "Vintage-Prefix.pch", 
-                    "key": "Vintage-Prefix.pch"
-                }, 
                 "Barrel.h": {
                     "prefix": "Vintage/", 
                     "suffix": "Barrel.h", 
                     "key": "Barrel.h"
+                }, 
+                "Vintage-Prefix.pch": {
+                    "prefix": "Vintage/", 
+                    "suffix": "Vintage-Prefix.pch", 
+                    "key": "Vintage-Prefix.pch"
                 }, 
                 "Model.h": {
                     "prefix": "Vintage/", 
@@ -93,6 +98,11 @@
                     "prefix": "Vintage/", 
                     "suffix": "BarrelViewController.h", 
                     "key": "BarrelViewController.h"
+                }, 
+                "Vessel.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "Vessel.h", 
+                    "key": "Vessel.h"
                 }, 
                 "ModelBackend.h": {
                     "prefix": "Vintage/", 
@@ -106,13 +116,6 @@
     "sources": [
         {
             "source": "Vintage/main.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/ViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -140,7 +143,7 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/Model.m", 
+            "source": "Vintage/ViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -148,6 +151,27 @@
         }, 
         {
             "source": "Vintage/ModelBackend.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/Vessel.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/Model.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/Tank.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 

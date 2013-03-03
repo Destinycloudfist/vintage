@@ -23,6 +23,8 @@
 		585269DF16E2E87500E7823D /* Barrel.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269DE16E2E87500E7823D /* Barrel.m */; };
 		585269E316E2E8C500E7823D /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269E216E2E8C500E7823D /* Model.m */; };
 		585269E816E300D500E7823D /* ModelBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269E716E300D500E7823D /* ModelBackend.m */; };
+		5B70199916E319F000FF95C3 /* Vessel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B70199816E319F000FF95C3 /* Vessel.m */; };
+		5B70199D16E31A2600FF95C3 /* Tank.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B70199C16E31A2600FF95C3 /* Tank.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,10 @@
 		585269E216E2E8C500E7823D /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		585269E616E300D500E7823D /* ModelBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelBackend.h; sourceTree = "<group>"; };
 		585269E716E300D500E7823D /* ModelBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelBackend.m; sourceTree = "<group>"; };
+		5B70199716E319F000FF95C3 /* Vessel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vessel.h; sourceTree = "<group>"; };
+		5B70199816E319F000FF95C3 /* Vessel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vessel.m; sourceTree = "<group>"; };
+		5B70199B16E31A2600FF95C3 /* Tank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tank.h; sourceTree = "<group>"; };
+		5B70199C16E31A2600FF95C3 /* Tank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tank.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +180,9 @@
 			children = (
 				585269E516E300AC00E7823D /* ModelBackend */,
 				585269E016E2E8BC00E7823D /* Model */,
+				5B70199A16E319F700FF95C3 /* Vessel */,
 				585269DC16E2E86000E7823D /* Barrel */,
+				5B70199E16E31A3500FF95C3 /* Tank */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -186,6 +194,24 @@
 				585269E716E300D500E7823D /* ModelBackend.m */,
 			);
 			name = ModelBackend;
+			sourceTree = "<group>";
+		};
+		5B70199A16E319F700FF95C3 /* Vessel */ = {
+			isa = PBXGroup;
+			children = (
+				5B70199716E319F000FF95C3 /* Vessel.h */,
+				5B70199816E319F000FF95C3 /* Vessel.m */,
+			);
+			name = Vessel;
+			sourceTree = "<group>";
+		};
+		5B70199E16E31A3500FF95C3 /* Tank */ = {
+			isa = PBXGroup;
+			children = (
+				5B70199B16E31A2600FF95C3 /* Tank.h */,
+				5B70199C16E31A2600FF95C3 /* Tank.m */,
+			);
+			name = Tank;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +288,8 @@
 				585269DF16E2E87500E7823D /* Barrel.m in Sources */,
 				585269E316E2E8C500E7823D /* Model.m in Sources */,
 				585269E816E300D500E7823D /* ModelBackend.m in Sources */,
+				5B70199916E319F000FF95C3 /* Vessel.m in Sources */,
+				5B70199D16E31A2600FF95C3 /* Tank.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
