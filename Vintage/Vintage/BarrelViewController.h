@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelViewController.h"
 #import "Barrel.h"
 
-@interface BarrelViewController : UIViewController
-
-- (id)initWithBarrel:(Barrel*)barrel;
+@interface BarrelViewController : ModelViewController
 
 @end

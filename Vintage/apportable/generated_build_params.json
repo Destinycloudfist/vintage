@@ -5,21 +5,14 @@
         {
             "language": "objc", 
             "header_paths": [], 
+            "source": "Vintage/Model.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
             "source": "Vintage/main.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
-            "source": "Vintage/Barrel.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
-            "source": "Vintage/AppDelegate.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -40,6 +33,13 @@
         {
             "language": "objc", 
             "header_paths": [], 
+            "source": "Vintage/AppDelegate.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
             "source": "Vintage/ModelBackend.m", 
             "flags": [], 
             "defines": {}
@@ -54,7 +54,7 @@
         {
             "language": "objc", 
             "header_paths": [], 
-            "source": "Vintage/Model.m", 
+            "source": "Vintage/Barrel.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -62,6 +62,13 @@
             "language": "objc", 
             "header_paths": [], 
             "source": "Vintage/Tank.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/ModelViewController.m", 
             "flags": [], 
             "defines": {}
         }
@@ -86,20 +93,20 @@
             "target": "Default.png"
         }, 
         {
-            "asset": "Vintage/Default-568h@2x.png", 
-            "target": "Default-568h@2x.png"
-        }, 
-        {
-            "asset": "Vintage/en.lproj/ViewController.xib", 
-            "target": null
-        }, 
-        {
             "asset": "Vintage/BarrelViewController.xib", 
             "target": null
         }, 
         {
+            "asset": "Vintage/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
+        }, 
+        {
             "asset": "Vintage/en.lproj/InfoPlist.strings", 
             "target": "en.lproj/InfoPlist.strings"
+        }, 
+        {
+            "asset": "Vintage/en.lproj/ViewController.xib", 
+            "target": null
         }
     ], 
     "type": "app", 
@@ -142,6 +149,11 @@
                     "prefix": "Vintage/", 
                     "suffix": "Vintage-Prefix.pch", 
                     "key": "Vintage-Prefix.pch"
+                }, 
+                "ModelViewController.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "ModelViewController.h", 
+                    "key": "ModelViewController.h"
                 }, 
                 "Barrel.h": {
                     "prefix": "Vintage/", 

@@ -7,15 +7,15 @@
 //
 
 #import "AppDelegate.h"
-
 #import "ViewController.h"
+#import "ModelViewController.h"
+#import "Model.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
@@ -23,6 +23,55 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([[url scheme] isEqualToString:@"nfc"])
+    {
+        return [self readNFCTag:url];
+    }
+    return NO;
+}
+
+- (BOOL)readNFCTag:(NSURL *)url
+{
+    NSString *className = [url host];
+    if (className == nil)
+    {
+        return NO;
+    }
+    NSString *uuid = [url path];
+    if ([uuid length] == 0)
+    {
+        return NO;
+    }
+    
+    Class modelClass = NSClassFromString(className);
+    if (modelClass == Nil)
+    {
+        return NO;
+    }
+    
+    Class viewControllerClass = NSClassFromString([NSString stringWithFormat:@"%@ViewController", className]);
+    Model *model = [Model loadModel:modelClass withUniqueId:uuid];
+    if (viewControllerClass != Nil)
+    {
+        ModelViewController *mvc = [[viewControllerClass alloc] initWithModel:model];
+        [self.viewController.navigationController pushViewController:mvc animated:YES];
+    }
+    
+    return YES;
+}
+
+- (void)writeNFCTag:(NSString *)uuid class:(Class)c
+{
+    NSURL *tagUrl = [[NSURL alloc] initWithScheme:@"nfc-write" host:NSStringFromClass(c) path:uuid];
+    UIApplication *app = [UIApplication sharedApplication];
+    if ([app canOpenURL:tagUrl])
+    {
+        [app openURL:tagUrl];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

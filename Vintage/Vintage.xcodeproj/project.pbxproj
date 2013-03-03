@@ -25,6 +25,7 @@
 		585269E816E300D500E7823D /* ModelBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269E716E300D500E7823D /* ModelBackend.m */; };
 		5B70199916E319F000FF95C3 /* Vessel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B70199816E319F000FF95C3 /* Vessel.m */; };
 		5B70199D16E31A2600FF95C3 /* Tank.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B70199C16E31A2600FF95C3 /* Tank.m */; };
+		5B7019A116E3206200FF95C3 /* ModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7019A016E3206200FF95C3 /* ModelViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		5B70199816E319F000FF95C3 /* Vessel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vessel.m; sourceTree = "<group>"; };
 		5B70199B16E31A2600FF95C3 /* Tank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tank.h; sourceTree = "<group>"; };
 		5B70199C16E31A2600FF95C3 /* Tank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tank.m; sourceTree = "<group>"; };
+		5B70199F16E3206200FF95C3 /* ModelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelViewController.h; sourceTree = "<group>"; };
+		5B7019A016E3206200FF95C3 /* ModelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 			children = (
 				585269E416E2EBDC00E7823D /* Models */,
 				585269D416E2D92B00E7823D /* BarrelViewController */,
+				5B70199F16E3206200FF95C3 /* ModelViewController.h */,
+				5B7019A016E3206200FF95C3 /* ModelViewController.m */,
 				585269D216E2D83500E7823D /* AppDelegate */,
 				585269D316E2D83B00E7823D /* ViewController */,
 				585269B616E2D5F900E7823D /* Supporting Files */,
@@ -290,6 +295,7 @@
 				585269E816E300D500E7823D /* ModelBackend.m in Sources */,
 				5B70199916E319F000FF95C3 /* Vessel.m in Sources */,
 				5B70199D16E31A2600FF95C3 /* Tank.m in Sources */,
+				5B7019A116E3206200FF95C3 /* ModelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -45,7 +45,7 @@
         barrel.uniqueId = self.tagIdField.text;
     }
     
-    BarrelViewController *controller = [[BarrelViewController alloc] initWithBarrel:barrel];
+    BarrelViewController *controller = [[BarrelViewController alloc] initWithModel:barrel];
     
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -84,7 +84,7 @@
 {
     Barrel *barrel = [self.barrels objectAtIndex:indexPath.row];
     
-    BarrelViewController *controller = [[BarrelViewController alloc] initWithBarrel:barrel];
+    BarrelViewController *controller = [[BarrelViewController alloc] initWithModel:barrel];
     
     [self.navigationController pushViewController:controller animated:YES];
 }
