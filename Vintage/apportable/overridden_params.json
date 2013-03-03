@@ -71,7 +71,9 @@
     //   "opengles2"
     //   "touch_filter_move"
     //   "write_external_storage"
-    //"FEATURES": [],
+    "FEATURES": [
+        "portrait",
+    ],
 
     // Typically a reverse DNS identifier for the application
     // developer, e.g., "com.apportable".  It should match the
@@ -168,7 +170,11 @@
     // a string, e.g., "UIKit", or a dictionary specifying the dependency
     // and the environment that it should be used in, e.g.,
     // {"dep": "SomeOtherSystemLib", "env": {"TARGET_OS" : "android"}}
-    "deps": [],
+    "deps": [
+        "Security",
+        "CFNetwork",
+        "icu",
+    ],
     // A list of .m, .mm, .c, .cc, and .cpp files to build.
     // Source files can be a string, e.g. "./main.c",
     // a list consisting of the file path and any special compile flags for that file,
@@ -195,7 +201,10 @@
     // or a dictionary specifying the mom and the environment where it should
     // be used, e.g.,
     // {"mom": "./android-mom.xcdatamodeld", "env": {"TARGET_OS": "android"}}
-    "moms": []
+    "moms": [],
+    "libs": [
+        "libs/android/libFirebase.a",
+    ]
   }
   ,
 

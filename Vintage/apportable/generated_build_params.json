@@ -5,28 +5,7 @@
         {
             "language": "objc", 
             "header_paths": [], 
-            "source": "Vintage/ViewController.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
-            "source": "Vintage/main.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
             "source": "Vintage/BarrelViewController.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
-            "source": "Vintage/Barrel.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -40,7 +19,28 @@
         {
             "language": "objc", 
             "header_paths": [], 
+            "source": "Vintage/main.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/Barrel.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
             "source": "Vintage/Model.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/ViewController.m", 
             "flags": [], 
             "defines": {}
         }
@@ -61,20 +61,20 @@
             "target": "Default.png"
         }, 
         {
-            "asset": "Vintage/en.lproj/ViewController.xib", 
-            "target": null
-        }, 
-        {
             "asset": "Vintage/Default@2x.png", 
             "target": "Default@2x.png"
         }, 
         {
-            "asset": "Vintage/BarrellViewController.xib", 
+            "asset": "Vintage/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
+        }, 
+        {
+            "asset": "Vintage/en.lproj/ViewController.xib", 
             "target": null
         }, 
         {
-            "asset": "Vintage/Default-568h@2x.png", 
-            "target": "Default-568h@2x.png"
+            "asset": "Vintage/BarrelViewController.xib", 
+            "target": null
         }, 
         {
             "asset": "Vintage/en.lproj/InfoPlist.strings", 

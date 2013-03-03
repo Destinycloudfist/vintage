@@ -9,20 +9,20 @@
             "target": "Default.png"
         }, 
         {
-            "asset": "Vintage/en.lproj/ViewController.xib", 
-            "target": null
-        }, 
-        {
             "asset": "Vintage/Default@2x.png", 
             "target": "Default@2x.png"
         }, 
         {
-            "asset": "Vintage/BarrellViewController.xib", 
+            "asset": "Vintage/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
+        }, 
+        {
+            "asset": "Vintage/en.lproj/ViewController.xib", 
             "target": null
         }, 
         {
-            "asset": "Vintage/Default-568h@2x.png", 
-            "target": "Default-568h@2x.png"
+            "asset": "Vintage/BarrelViewController.xib", 
+            "target": null
         }, 
         {
             "asset": "Vintage/en.lproj/InfoPlist.strings", 
@@ -31,6 +31,9 @@
     ], 
     "moms": [], 
     "config": {
+        "FEATURES": [
+            "portrait"
+        ], 
         "APPLICATION_IDENTIFIER": "com.dustin.Vintage", 
         "TEMPLATE_VALUES": {
             "PRODUCT_NAME": "Vintage", 
@@ -97,28 +100,7 @@
     "modules": [], 
     "sources": [
         {
-            "source": "Vintage/ViewController.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/main.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
             "source": "Vintage/BarrelViewController.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/Barrel.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -132,7 +114,28 @@
             "defines": {}
         }, 
         {
+            "source": "Vintage/main.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/Barrel.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
             "source": "Vintage/Model.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/ViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -171,7 +174,13 @@
         "UIKit", 
         "UIKit", 
         "Foundation", 
-        "CoreGraphics"
+        "CoreGraphics", 
+        "Security", 
+        "CFNetwork", 
+        "icu"
+    ], 
+    "libs": [
+        "libs/android/libFirebase.a"
     ], 
     "type": "app", 
     "defines": {
