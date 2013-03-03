@@ -77,7 +77,7 @@
         str = "of ";
     }
     
-    if(trackable.volume.doubleValue > 0.0 && barrel.volume.doubleValue > 0.0)
+    if(trackable.volume.doubleValue > 0.0)
         capacity = 100 * trackable.volume.doubleValue / barrel.volume.doubleValue;
     
     cell.textLabel.text = [NSString stringWithFormat:@"%.0f Gallon %@ at %.0f%% capacity %s%@", barrel.volume.doubleValue, [barrel class], capacity, str, vintage];

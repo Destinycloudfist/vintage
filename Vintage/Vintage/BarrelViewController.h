@@ -12,4 +12,6 @@
 
 @interface BarrelViewController : UIViewController
 
+@property (nonatomic, strong) Barrel *barrel;
+
 @end

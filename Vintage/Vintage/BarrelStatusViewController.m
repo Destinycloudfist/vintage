@@ -9,6 +9,7 @@
 #import "BarrelStatusViewController.h"
 #import "Trackable.h"
 #import "TrackableListViewController.h"
+#import "BarrelViewController.h"
 
 @interface BarrelStatusViewController ()
 
@@ -44,13 +45,25 @@
     }
 }
 
-- (IBAction)contentsTap:(id)sender
-{
+- (IBAction)contentsTap:(id)sender {
+    
     TrackableListViewController *controller = [TrackableListViewController new];
     
     controller.vessel = self.barrel;
     
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)reconfigureTap:(id)sender {
+    
+    BarrelViewController *controller = [BarrelViewController new];
+    
+    controller.barrel = self.barrel;
+    
+    UINavigationController *nav = self.navigationController;
+    
+    [nav popToRootViewControllerAnimated:NO];
+    [nav pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

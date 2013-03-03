@@ -24,21 +24,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.gallons.text = self.barrel.volume.description;
+    self.toast.text = self.barrel.toast;
+    self.material.text = self.barrel.material;
 }
 
 - (IBAction)save:(id)sender
 {
-    Barrel *barrel = [Barrel new];
+    if(!self.barrel)
+        self.barrel = [Barrel new];
     
-    barrel.volume = @([self.gallons.text doubleValue]);
-    barrel.toast = self.toast.text;
-    barrel.material = self.material.text;
+    self.barrel.volume = @([self.gallons.text doubleValue]);
+    self.barrel.toast = self.toast.text;
+    self.barrel.material = self.material.text;
     
-    [barrel save];
+    [self.barrel save];
     
     BarrelStatusViewController *controller = [BarrelStatusViewController new];
     
-    controller.barrel = barrel;
+    controller.barrel = self.barrel;
     
     [self.navigationController popToRootViewControllerAnimated:NO];
     [self.navigationController pushViewController:controller animated:YES];
