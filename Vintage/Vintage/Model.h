@@ -30,6 +30,8 @@
 
 - (NSString*)prettyDescription;
 
+- (NSString*)key;
+
 + (id<ModelProtocol>)loadModelForKey:(NSString*)key;
 
 + (NSArray*)loadModelsForKeys:(NSArray*)keys;

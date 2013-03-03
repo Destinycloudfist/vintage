@@ -29,13 +29,19 @@
     trackable.vintage = self.vintage.text;
     trackable.year = self.year.text;
     
+    trackable.sourceKeys = @[self.source.key];
+    trackable.sourceVolumes = @[trackable.volume];
+    
     [trackable save];
     
     TrackableViewController *controller = [TrackableViewController new];
     
     controller.trackable = trackable;
     
-    [self.navigationController pushViewController:controller animated:YES];
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self.navigationController pushViewController:controller animated:NO];
+    
+    [controller transfer];
 }
 
 @end

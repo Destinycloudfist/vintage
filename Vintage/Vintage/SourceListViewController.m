@@ -8,6 +8,7 @@
 
 #import "SourceListViewController.h"
 #import "SourceViewController.h"
+#import "SourceStatusViewController.h"
 
 @interface SourceListViewController ()
 
@@ -50,6 +51,15 @@
     cell.textLabel.text = [[self.sources objectAtIndex:indexPath.row] prettyDescription];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SourceStatusViewController *controller = [SourceStatusViewController new];
+    
+    controller.source = [self.sources objectAtIndex:indexPath.row];
+    
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

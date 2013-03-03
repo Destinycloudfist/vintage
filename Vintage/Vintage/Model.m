@@ -181,6 +181,11 @@
     return str;
 }
 
+- (NSString*)key
+{
+    return [[[self class] description] stringByAppendingFormat:@".%@", self.uniqueId];
+}
+
 - (void)save
 {
     if(!self.uniqueId) {
@@ -196,17 +201,15 @@
         if([propertyInfo.name isEqualToString:@"uniqueId"])
             continue;
         
-        NSString *key = [[[self class] description] stringByAppendingFormat:@".%@.%@", self.uniqueId, propertyInfo.name];
-        
         id object = nil;
         
         if(propertyInfo.getter)
             object = [self performSelector:propertyInfo.getter];
         
-        if(![keys containsObject:key])
-            [keys addObject:key];
+        if(![keys containsObject:self.key])
+            [keys addObject:self.key];
         
-        [[ModelBackend shared] setObject:object forKey:key];
+        [[ModelBackend shared] setObject:object forKey:self.key];
     }
     
     if(oldKeys.count != keys.count) {

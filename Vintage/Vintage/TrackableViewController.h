@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) Trackable *trackable;
 
+- (IBAction)transfer;
+
 @end

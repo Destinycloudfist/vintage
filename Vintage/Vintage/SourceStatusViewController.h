@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Source.h"
 
 @interface SourceStatusViewController : UIViewController
+
+@property (nonatomic, strong) Source *source;
 
 @end
