@@ -11,13 +11,17 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *tagIdField;
+
 @end
 
 @implementation ViewController
 
 - (IBAction)itemScanned:(id)sender {
     
-    [self.navigationController pushViewController:[ItemScannedController new] animated:YES];
+    ItemScannedController *controller = [[ItemScannedController alloc] initWithTagId:self.tagIdField.text];
+    
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)viewDidLoad

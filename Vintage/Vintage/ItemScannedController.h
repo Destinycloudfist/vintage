@@ -10,4 +10,6 @@
 
 @interface ItemScannedController : UIViewController
 
+- (id)initWithTagId:(NSString*)tagId;
+
 @end
