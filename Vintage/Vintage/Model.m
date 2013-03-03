@@ -162,9 +162,39 @@
     return str;
 }
 
+- (NSString*)prettyDescription
+{
+    NSMutableString *str = [@"" mutableCopy];
+    
+    int i = 0;
+    
+    for(PropertyInfo *propertyInfo in [self.class getPropertyInfos]) {
+        
+        if([propertyInfo.name isEqual:@"uniqueId"])
+            continue;
+        
+        if(i++)
+            [str appendFormat:@", "];
+        
+        [str appendFormat:@"%@: %@", propertyInfo.name, [self performSelector:propertyInfo.getter]];
+    }
+    
+    [str appendFormat:@""];
+    
+    return str;
+}
+
+- (NSString*)key
+{
+    return [[[self class] description] stringByAppendingFormat:@".%@", self.uniqueId];
+}
+
 - (void)save
 {
-    NSParameterAssert(self.uniqueId);
+    if(!self.uniqueId) {
+        
+        self.uniqueId = [[ModelBackend shared] generateUniqueId];
+    }
     
     NSArray *oldKeys = [[ModelBackend shared] keys];
     NSMutableArray *keys = oldKeys ? [oldKeys mutableCopy] : [@[] mutableCopy];
@@ -174,17 +204,15 @@
         if([propertyInfo.name isEqualToString:@"uniqueId"])
             continue;
         
-        NSString *key = [[[self class] description] stringByAppendingFormat:@".%@.%@", self.uniqueId, propertyInfo.name];
-        
         id object = nil;
         
         if(propertyInfo.getter)
             object = [self performSelector:propertyInfo.getter];
         
-        if(![keys containsObject:key])
-            [keys addObject:key];
+        if(![keys containsObject:self.key])
+            [keys addObject:self.key];
         
-        [[ModelBackend shared] setObject:object forKey:key];
+        [[ModelBackend shared] setObject:object forKey:self.key];
     }
     
     if(oldKeys.count != keys.count) {
@@ -202,6 +230,16 @@
     Class class = objc_lookUpClass([[array objectAtIndex:0] UTF8String]);
     
     return [self loadModel:class withUniqueId:[array objectAtIndex:1]];
+}
+
++ (NSArray*)loadModelsForKeys:(NSArray*)keys
+{
+    NSMutableArray *array = [@[] mutableCopy];
+    
+    for(NSString *key in keys)
+        [array addObject:[self loadModelForKey:key]];
+    
+    return array;
 }
 
 + (id<ModelProtocol>)loadModel:(Class)class withUniqueId:(id)uniqueId

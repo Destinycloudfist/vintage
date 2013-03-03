@@ -28,7 +28,13 @@
 
 @property (nonatomic, strong) NSString *uniqueId;
 
+- (NSString*)prettyDescription;
+
+- (NSString*)key;
+
 + (id<ModelProtocol>)loadModelForKey:(NSString*)key;
+
++ (NSArray*)loadModelsForKeys:(NSArray*)keys;
 
 + (id<ModelProtocol>)loadModel:(Class)class withUniqueId:(id)uniqueId;
 
