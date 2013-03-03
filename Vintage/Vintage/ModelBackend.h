@@ -20,6 +20,8 @@ extern NSString *ModelBackendObjectsUpdated;
 
 + (ModelBackend*)shared;
 
+- (NSString*)generateUniqueId;
+
 - (id)objectForKey:(NSString*)key;
 - (void)setObject:(id)object forKey:(NSString*)key;
 

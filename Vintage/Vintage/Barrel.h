@@ -6,14 +6,11 @@
 //  Copyright (c) 2013 Dustin Dettmer. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "Vessel.h"
 
 @interface Barrel : Vessel
 
-@property (nonatomic, strong) NSString *uniqueId;
-@property (nonatomic, strong) NSString *vintage;
-@property (nonatomic, strong) NSString *year;
-@property (nonatomic, strong) NSString *notes;
+@property (nonatomic) NSString *toast;
+@property (nonatomic) NSString *material;
 
 @end

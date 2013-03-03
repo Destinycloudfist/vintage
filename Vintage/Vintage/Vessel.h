@@ -9,5 +9,9 @@
 #import "Model.h"
 
 @interface Vessel : Model
-@property (nonatomic, assign) float volume;
+
+@property (nonatomic) NSNumber *volume;
+@property (nonatomic) NSString *trackableKey;
+@property (nonatomic) NSArray *oldTrackableKeys;
+
 @end
