@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Barrel.h"
 
-@interface ItemScannedController : UIViewController
+@interface BarrelViewController : UIViewController
 
-- (id)initWithTagId:(NSString*)tagId;
+- (id)initWithBarrel:(Barrel*)barrel;
 
 @end
