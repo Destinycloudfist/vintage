@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *tagIdField;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (nonatomic, strong) NSArray *barrels;
 
 @end
@@ -43,7 +45,7 @@
         barrel.uniqueId = self.tagIdField.text;
     }
     
-    BarrelViewController *controller = [[BarrelViewController alloc] initWithBarrel:barrel];
+    BarrelViewController *controller = [[BarrelViewController alloc] init];
     
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -83,6 +85,8 @@
 - (void)reloadBarrels
 {
     self.barrels = [Model loadModels:[Barrel class]];
+    
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad
@@ -90,6 +94,8 @@
     [super viewDidLoad];
     
     self.title = @"Vintage";
+    
+    [self reloadBarrels];
 }
 
 @end
