@@ -20,7 +20,6 @@
 		585269CC16E2D5F900E7823D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585269CA16E2D5F900E7823D /* ViewController.xib */; };
 		585269D816E2D97800E7823D /* ItemScannedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269D616E2D97800E7823D /* ItemScannedController.m */; };
 		585269D916E2D97800E7823D /* ItemScannedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585269D716E2D97800E7823D /* ItemScannedController.xib */; };
-		585269DB16E2DB4D00E7823D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269DA16E2DB4D00E7823D /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				585269DB16E2DB4D00E7823D /* CoreLocation.framework in Frameworks */,
 				585269B016E2D5F900E7823D /* UIKit.framework in Frameworks */,
 				585269B216E2D5F900E7823D /* Foundation.framework in Frameworks */,
 				585269B416E2D5F900E7823D /* CoreGraphics.framework in Frameworks */,
@@ -340,6 +338,7 @@
 				585269D116E2D5F900E7823D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

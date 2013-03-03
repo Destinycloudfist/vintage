@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-@interface ItemScannedController : UIViewController<CLLocationManagerDelegate>
+@interface ItemScannedController : UIViewController
 
 @end
