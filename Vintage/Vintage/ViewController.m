@@ -70,13 +70,12 @@
     
     if(!cell) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
     Barrel *barrel = [self.barrels objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = barrel.uniqueId;
-    cell.detailTextLabel.text = barrel.notes;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", barrel.vintage, barrel.year];
     
     return cell;
 }
