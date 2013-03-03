@@ -9,20 +9,20 @@
             "target": "Default.png"
         }, 
         {
-            "asset": "Vintage/Default@2x.png", 
-            "target": "Default@2x.png"
-        }, 
-        {
-            "asset": "Vintage/Default-568h@2x.png", 
-            "target": "Default-568h@2x.png"
-        }, 
-        {
             "asset": "Vintage/en.lproj/ViewController.xib", 
             "target": null
         }, 
         {
+            "asset": "Vintage/Default@2x.png", 
+            "target": "Default@2x.png"
+        }, 
+        {
             "asset": "Vintage/BarrelViewController.xib", 
             "target": null
+        }, 
+        {
+            "asset": "Vintage/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
         }, 
         {
             "asset": "Vintage/en.lproj/InfoPlist.strings", 
@@ -93,6 +93,11 @@
                     "prefix": "Vintage/", 
                     "suffix": "BarrelViewController.h", 
                     "key": "BarrelViewController.h"
+                }, 
+                "ModelBackend.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "ModelBackend.h", 
+                    "key": "ModelBackend.h"
                 }
             }
         }
@@ -100,21 +105,14 @@
     "modules": [], 
     "sources": [
         {
-            "source": "Vintage/BarrelViewController.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/AppDelegate.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
             "source": "Vintage/main.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/ViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -128,6 +126,20 @@
             "defines": {}
         }, 
         {
+            "source": "Vintage/AppDelegate.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/BarrelViewController.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
             "source": "Vintage/Model.m", 
             "header_paths": [], 
             "flags": [], 
@@ -135,7 +147,7 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/ViewController.m", 
+            "source": "Vintage/ModelBackend.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
