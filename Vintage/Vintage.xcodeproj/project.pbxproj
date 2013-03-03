@@ -83,11 +83,8 @@
 		585269B516E2D5F900E7823D /* Vintage */ = {
 			isa = PBXGroup;
 			children = (
-				585269BE16E2D5F900E7823D /* AppDelegate.h */,
-				585269BF16E2D5F900E7823D /* AppDelegate.m */,
-				585269C716E2D5F900E7823D /* ViewController.h */,
-				585269C816E2D5F900E7823D /* ViewController.m */,
-				585269CA16E2D5F900E7823D /* ViewController.xib */,
+				585269D216E2D83500E7823D /* AppDelegate */,
+				585269D316E2D83B00E7823D /* ViewController */,
 				585269B616E2D5F900E7823D /* Supporting Files */,
 			);
 			path = Vintage;
@@ -105,6 +102,25 @@
 				585269C516E2D5F900E7823D /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		585269D216E2D83500E7823D /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				585269BE16E2D5F900E7823D /* AppDelegate.h */,
+				585269BF16E2D5F900E7823D /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		585269D316E2D83B00E7823D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				585269C716E2D5F900E7823D /* ViewController.h */,
+				585269C816E2D5F900E7823D /* ViewController.m */,
+				585269CA16E2D5F900E7823D /* ViewController.xib */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
