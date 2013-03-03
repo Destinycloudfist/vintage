@@ -64,7 +64,6 @@
 		585269A316E2D5F900E7823D = {
 			isa = PBXGroup;
 			children = (
-				585269DA16E2DB4D00E7823D /* CoreLocation.framework */,
 				585269B516E2D5F900E7823D /* Vintage */,
 				585269AE16E2D5F900E7823D /* Frameworks */,
 				585269AD16E2D5F900E7823D /* Products */,
@@ -82,6 +81,7 @@
 		585269AE16E2D5F900E7823D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				585269DA16E2DB4D00E7823D /* CoreLocation.framework */,
 				585269AF16E2D5F900E7823D /* UIKit.framework */,
 				585269B116E2D5F900E7823D /* Foundation.framework */,
 				585269B316E2D5F900E7823D /* CoreGraphics.framework */,
