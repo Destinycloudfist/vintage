@@ -42,6 +42,7 @@
 + (id<ModelProtocol>)createModel:(Class)class;
 
 + (NSArray*)loadModels:(Class)class;
++ (NSArray*)loadModelsForClasses:(NSArray*)classes;
 
 - (void)save;
 

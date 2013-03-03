@@ -38,8 +38,10 @@
     
     controller.trackable = trackable;
     
-    [self.navigationController popToRootViewControllerAnimated:NO];
-    [self.navigationController pushViewController:controller animated:NO];
+    UINavigationController *nav = self.navigationController;
+    
+    [nav popToRootViewControllerAnimated:NO];
+    [nav pushViewController:controller animated:NO];
     
     [controller transfer];
 }

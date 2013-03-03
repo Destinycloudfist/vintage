@@ -1,5 +1,5 @@
 //
-//  TrackableViewController.h
+//  TransferViewController.h
 //  Vintage
 //
 //  Created by Dustin Dettmer on 3/3/13.
@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Trackable.h"
-#import "VesselListViewcontroller.h"
+#import "Vessel.h"
 
-@interface TrackableViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, VesselListDelegate>
+@interface TransferViewController : UIViewController
 
 @property (nonatomic, strong) Trackable *trackable;
-
-- (IBAction)transfer;
+@property (nonatomic, strong) Vessel *fromVessel;
+@property (nonatomic, strong) Vessel *toVessel;
 
 @end
