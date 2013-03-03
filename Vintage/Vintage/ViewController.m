@@ -12,6 +12,9 @@
 #import "NewVesselController.h"
 #import "BarrelStatusViewController.h"
 #import "SourceListViewController.h"
+#import "Bottles.h"
+#import "Tank.h"
+#import "Trackable.h"
 
 @interface ViewController ()
 
@@ -31,20 +34,6 @@
 }
 
 - (IBAction)itemScanned:(id)sender {
-    
-    if(!self.tagIdField.text.length) {
-        
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Trouble"
-                              message:@"You must enter a tag id"
-                              delegate:nil
-                              cancelButtonTitle:@"Okay"
-                              otherButtonTitles:nil];
-        
-        [alert show];
-        
-        return;
-    }
     
     NewVesselController *controller = [NewVesselController new];
     
@@ -76,7 +65,22 @@
     
     Barrel *barrel = [self.barrels objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", barrel.uniqueId];
+    Trackable *trackable = [Model loadModelForKey:barrel.trackableKey];
+    
+    float capacity = 0.0f;
+    NSString *vintage = @"";
+    const char *str = "";
+    
+    if(trackable.vintage) {
+        
+        vintage = trackable.vintage;
+        str = "of ";
+    }
+    
+    if(trackable.volume.doubleValue > 0.0 && barrel.volume.doubleValue > 0.0)
+        capacity = 100 * trackable.volume.doubleValue / barrel.volume.doubleValue;
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%.0f Gallon %@ at %.0f%% capacity %s%@", barrel.volume.doubleValue, [barrel class], capacity, str, vintage];
     
     return cell;
 }
@@ -94,7 +98,7 @@
 
 - (void)reloadBarrels
 {
-    self.barrels = [Model loadModels:[Barrel class]];
+    self.barrels = [Model loadModelsForClasses:@[[Barrel class]]];
     
     [self.tableView reloadData];
 }
