@@ -80,52 +80,65 @@
     
     unsigned int outCount, i;
     
-    objc_property_t *properties = class_copyPropertyList([self class], &outCount);
-    
-    for(i = 0; i < outCount; i++) {
+    for(Class class = self.class; class; class = class_getSuperclass(class)) {
         
-        PropertyInfo *propertyInfo = [PropertyInfo new];
-        
-        propertyInfo.name = [NSString stringWithUTF8String:property_getName(properties[i])];
-        
-        if([propertyInfo.name isEqual:@"delegate"])
-            continue;
-        
-        const char *attrs = property_getAttributes(properties[i]);
-        
-        NSString *getter = propertyInfo.name;
-        NSString *setter = nil;
-        
-        NSMutableString *tmp = [[[getter substringToIndex:1] capitalizedString] mutableCopy];
-        
-        [tmp appendString:[getter substringFromIndex:1]];
-        
-        setter = [NSString stringWithFormat:@"set%@:", tmp];
-        
-        if(attrs) {
+        if(class == [Model class]) {
             
-            NSString *str = [NSString stringWithUTF8String:attrs];
+            PropertyInfo *propertyInfo = [PropertyInfo new];
             
-            for(NSString *part in [str componentsSeparatedByString:@","]) {
-                
-                if([part characterAtIndex:0]== 'G')
-                    getter = [part substringFromIndex:1];
-                
-                if([part characterAtIndex:0]== 'S')
-                    setter = [part substringFromIndex:1];
-            }
+            propertyInfo.name = @"uniqueId";
+            propertyInfo.getter = @selector(uniqueId);
+            propertyInfo.setter = @selector(setUniqueId:);
+            
+            [array addObject:propertyInfo];
+            
+            break;
         }
         
-        if(getter)
-            propertyInfo.getter = sel_getUid([getter UTF8String]);
+        objc_property_t *properties = class_copyPropertyList(class, &outCount);
         
-        if(setter)
-            propertyInfo.setter = sel_getUid([setter UTF8String]);
+        for(i = 0; i < outCount; i++) {
+            
+            PropertyInfo *propertyInfo = [PropertyInfo new];
+            
+            propertyInfo.name = [NSString stringWithUTF8String:property_getName(properties[i])];
+            
+            const char *attrs = property_getAttributes(properties[i]);
+            
+            NSString *getter = propertyInfo.name;
+            NSString *setter = nil;
+            
+            NSMutableString *tmp = [[[getter substringToIndex:1] capitalizedString] mutableCopy];
+            
+            [tmp appendString:[getter substringFromIndex:1]];
+            
+            setter = [NSString stringWithFormat:@"set%@:", tmp];
+            
+            if(attrs) {
+                
+                NSString *str = [NSString stringWithUTF8String:attrs];
+                
+                for(NSString *part in [str componentsSeparatedByString:@","]) {
+                    
+                    if([part characterAtIndex:0]== 'G')
+                        getter = [part substringFromIndex:1];
+                    
+                    if([part characterAtIndex:0]== 'S')
+                        setter = [part substringFromIndex:1];
+                }
+            }
+            
+            if(getter)
+                propertyInfo.getter = sel_getUid([getter UTF8String]);
+            
+            if(setter)
+                propertyInfo.setter = sel_getUid([setter UTF8String]);
+            
+            [array addObject:propertyInfo];
+        }
         
-        [array addObject:propertyInfo];
+        free(properties);
     }
-    
-    free(properties);
     
     return array;
 }
@@ -255,7 +268,9 @@
     
     for(NSString *uniqueId in set) {
         
-        [array addObject:[self loadModel:class withUniqueId:uniqueId]];
+        id model = [self loadModel:class withUniqueId:uniqueId];
+        
+        [array addObject:model];
     }
     
     return array;
