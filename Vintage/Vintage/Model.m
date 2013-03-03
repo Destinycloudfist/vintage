@@ -189,6 +189,11 @@
     return [[[self class] description] stringByAppendingFormat:@".%@", self.uniqueId];
 }
 
+- (NSString*)keyForProperty:(NSString*)name
+{
+    return [self.key stringByAppendingFormat:@".%@", name];
+}
+
 - (void)save
 {
     if(!self.uniqueId) {
@@ -209,10 +214,12 @@
         if(propertyInfo.getter)
             object = [self performSelector:propertyInfo.getter];
         
-        if(![keys containsObject:self.key])
-            [keys addObject:self.key];
+        NSString *propKey = [self keyForProperty:propertyInfo.name];
         
-        [[ModelBackend shared] setObject:object forKey:self.key];
+        if(![keys containsObject:propKey])
+            [keys addObject:propKey];
+        
+        [[ModelBackend shared] setObject:object forKey:propKey];
     }
     
     if(oldKeys.count != keys.count) {
