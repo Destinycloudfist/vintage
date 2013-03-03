@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BarrelViewController.h"
+#import "ModelBackend.h"
 
 @interface ViewController ()
 
@@ -20,6 +21,11 @@
 @end
 
 @implementation ViewController
+
+- (void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (IBAction)itemScanned:(id)sender {
     
@@ -101,6 +107,12 @@
     [super viewDidLoad];
     
     self.title = @"Vintage";
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(reloadBarrels)
+     name:ModelBackendKeysUpdated
+     object:nil];
 }
 
 @end

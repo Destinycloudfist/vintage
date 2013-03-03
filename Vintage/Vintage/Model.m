@@ -199,6 +199,8 @@
             
             [model performSelector:propertyInfo.setter withObject:uniqueId];
             
+            propertiesSet++;
+            
             continue;
         }
         
