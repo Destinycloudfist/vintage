@@ -19,7 +19,7 @@
 		585269C916E2D5F900E7823D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269C816E2D5F900E7823D /* ViewController.m */; };
 		585269CC16E2D5F900E7823D /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585269CA16E2D5F900E7823D /* ViewController.xib */; };
 		585269D816E2D97800E7823D /* BarrelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269D616E2D97800E7823D /* BarrelViewController.m */; };
-		585269D916E2D97800E7823D /* BarrelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585269D716E2D97800E7823D /* BarrelViewController.xib */; };
+		585269D916E2D97800E7823D /* VesselViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585269D716E2D97800E7823D /* VesselViewController.xib */; };
 		585269DF16E2E87500E7823D /* Barrel.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269DE16E2E87500E7823D /* Barrel.m */; };
 		585269E316E2E8C500E7823D /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269E216E2E8C500E7823D /* Model.m */; };
 		585269E816E300D500E7823D /* ModelBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269E716E300D500E7823D /* ModelBackend.m */; };
@@ -30,6 +30,7 @@
 		58526A0216E32BB600E7823D /* Tank.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269FD16E32B7A00E7823D /* Tank.m */; };
 		58526A0316E32BB800E7823D /* Vessel.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269FF16E32B7A00E7823D /* Vessel.m */; };
 		58526A0416E32BBE00E7823D /* ModelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585269FA16E32B5B00E7823D /* ModelViewController.m */; };
+		5B7019A416E344AB00FF95C3 /* VesselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7019A316E344AB00FF95C3 /* VesselViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +52,7 @@
 		585269CB16E2D5F900E7823D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		585269D516E2D97800E7823D /* BarrelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarrelViewController.h; sourceTree = "<group>"; };
 		585269D616E2D97800E7823D /* BarrelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarrelViewController.m; sourceTree = "<group>"; };
-		585269D716E2D97800E7823D /* BarrelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarrelViewController.xib; sourceTree = "<group>"; };
+		585269D716E2D97800E7823D /* VesselViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VesselViewController.xib; sourceTree = "<group>"; };
 		585269DA16E2DB4D00E7823D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		585269DD16E2E87500E7823D /* Barrel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Barrel.h; sourceTree = "<group>"; };
 		585269DE16E2E87500E7823D /* Barrel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Barrel.m; sourceTree = "<group>"; };
@@ -76,6 +77,8 @@
 		585269FD16E32B7A00E7823D /* Tank.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tank.m; sourceTree = "<group>"; };
 		585269FE16E32B7A00E7823D /* Vessel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vessel.h; sourceTree = "<group>"; };
 		585269FF16E32B7A00E7823D /* Vessel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vessel.m; sourceTree = "<group>"; };
+		5B7019A216E344AB00FF95C3 /* VesselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VesselViewController.h; sourceTree = "<group>"; };
+		5B7019A316E344AB00FF95C3 /* VesselViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VesselViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +183,6 @@
 			children = (
 				585269D516E2D97800E7823D /* BarrelViewController.h */,
 				585269D616E2D97800E7823D /* BarrelViewController.m */,
-				585269D716E2D97800E7823D /* BarrelViewController.xib */,
 			);
 			name = BarrelViewController;
 			sourceTree = "<group>";
@@ -244,6 +246,9 @@
 			children = (
 				585269F916E32B5B00E7823D /* ModelViewController.h */,
 				585269FA16E32B5B00E7823D /* ModelViewController.m */,
+				5B7019A216E344AB00FF95C3 /* VesselViewController.h */,
+				5B7019A316E344AB00FF95C3 /* VesselViewController.m */,
+				585269D716E2D97800E7823D /* VesselViewController.xib */,
 			);
 			name = ModelViewController;
 			sourceTree = "<group>";
@@ -322,7 +327,7 @@
 				585269C416E2D5F900E7823D /* Default@2x.png in Resources */,
 				585269C616E2D5F900E7823D /* Default-568h@2x.png in Resources */,
 				585269CC16E2D5F900E7823D /* ViewController.xib in Resources */,
-				585269D916E2D97800E7823D /* BarrelViewController.xib in Resources */,
+				585269D916E2D97800E7823D /* VesselViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +348,7 @@
 				58526A0216E32BB600E7823D /* Tank.m in Sources */,
 				58526A0316E32BB800E7823D /* Vessel.m in Sources */,
 				58526A0416E32BBE00E7823D /* ModelViewController.m in Sources */,
+				5B7019A416E344AB00FF95C3 /* VesselViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

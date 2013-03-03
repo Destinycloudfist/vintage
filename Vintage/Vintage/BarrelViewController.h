@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ModelViewController.h"
+#import "VesselViewController.h"
 #import "Barrel.h"
 
-@interface BarrelViewController : ModelViewController
+@interface BarrelViewController : VesselViewController
 
 @end

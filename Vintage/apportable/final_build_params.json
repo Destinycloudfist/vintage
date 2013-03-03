@@ -5,28 +5,28 @@
     ], 
     "assets": [
         {
-            "asset": "Vintage/Default@2x.png", 
-            "target": "Default@2x.png"
+            "asset": "Vintage/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
         }, 
         {
             "asset": "Vintage/Default.png", 
             "target": "Default.png"
         }, 
         {
+            "asset": "Vintage/Default@2x.png", 
+            "target": "Default@2x.png"
+        }, 
+        {
             "asset": "Vintage/BarrelViewController.xib", 
             "target": null
         }, 
         {
-            "asset": "Vintage/Default-568h@2x.png", 
-            "target": "Default-568h@2x.png"
+            "asset": "Vintage/en.lproj/ViewController.xib", 
+            "target": null
         }, 
         {
             "asset": "Vintage/en.lproj/InfoPlist.strings", 
             "target": "en.lproj/InfoPlist.strings"
-        }, 
-        {
-            "asset": "Vintage/en.lproj/ViewController.xib", 
-            "target": null
         }
     ], 
     "moms": [], 
@@ -64,40 +64,70 @@
             "header_path": "Vintage-project-headers.hmap", 
             "type": "iquote", 
             "hmap": {
-                "AppDelegate.h": {
-                    "prefix": "Vintage/", 
-                    "suffix": "AppDelegate.h", 
-                    "key": "AppDelegate.h"
+                "FQuery.h": {
+                    "prefix": "Headers/", 
+                    "suffix": "FQuery.h", 
+                    "key": "FQuery.h"
                 }, 
-                "Tank.h": {
-                    "prefix": "Vintage/", 
-                    "suffix": "Tank.h", 
-                    "key": "Tank.h"
+                "FTypedefs.h": {
+                    "prefix": "Headers/", 
+                    "suffix": "FTypedefs.h", 
+                    "key": "FTypedefs.h"
+                }, 
+                "FEventType.h": {
+                    "prefix": "Headers/", 
+                    "suffix": "FEventType.h", 
+                    "key": "FEventType.h"
+                }, 
+                "FDataSnapshot.h": {
+                    "prefix": "Headers/", 
+                    "suffix": "FDataSnapshot.h", 
+                    "key": "FDataSnapshot.h"
                 }, 
                 "ViewController.h": {
                     "prefix": "Vintage/", 
                     "suffix": "ViewController.h", 
                     "key": "ViewController.h"
                 }, 
-                "Barrel.h": {
-                    "prefix": "Vintage/", 
-                    "suffix": "Barrel.h", 
-                    "key": "Barrel.h"
-                }, 
-                "ModelViewController.h": {
-                    "prefix": "Vintage/", 
-                    "suffix": "ModelViewController.h", 
-                    "key": "ModelViewController.h"
+                "FOnDisconnect.h": {
+                    "prefix": "Headers/", 
+                    "suffix": "FOnDisconnect.h", 
+                    "key": "FOnDisconnect.h"
                 }, 
                 "Vintage-Prefix.pch": {
                     "prefix": "Vintage/", 
                     "suffix": "Vintage-Prefix.pch", 
                     "key": "Vintage-Prefix.pch"
                 }, 
+                "ModelViewController.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "ModelViewController.h", 
+                    "key": "ModelViewController.h"
+                }, 
+                "AppDelegate.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "AppDelegate.h", 
+                    "key": "AppDelegate.h"
+                }, 
+                "Barrel.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "Barrel.h", 
+                    "key": "Barrel.h"
+                }, 
                 "Model.h": {
                     "prefix": "Vintage/", 
                     "suffix": "Model.h", 
                     "key": "Model.h"
+                }, 
+                "FQueryParams.h": {
+                    "prefix": "Headers/", 
+                    "suffix": "FQueryParams.h", 
+                    "key": "FQueryParams.h"
+                }, 
+                "Tank.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "Tank.h", 
+                    "key": "Tank.h"
                 }, 
                 "BarrelViewController.h": {
                     "prefix": "Vintage/", 
@@ -113,19 +143,17 @@
                     "prefix": "Vintage/", 
                     "suffix": "ModelBackend.h", 
                     "key": "ModelBackend.h"
+                }, 
+                "Firebase.h": {
+                    "prefix": "Headers/", 
+                    "suffix": "Firebase.h", 
+                    "key": "Firebase.h"
                 }
             }
         }
     ], 
     "modules": [], 
     "sources": [
-        {
-            "source": "Vintage/Model.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
         {
             "source": "Vintage/main.m", 
             "header_paths": [], 
@@ -134,14 +162,7 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/BarrelViewController.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/ViewController.m", 
+            "source": "Vintage/ModelViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -155,21 +176,21 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/ModelBackend.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/Vessel.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
             "source": "Vintage/Barrel.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/BarrelViewController.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/ModelBackend.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -183,7 +204,21 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/ModelViewController.m", 
+            "source": "Vintage/Model.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/ViewController.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/Vessel.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -220,11 +255,11 @@
     ], 
     "deps": [
         "UIKit", 
+        "CFNetwork", 
+        "Security", 
         "UIKit", 
         "Foundation", 
         "CoreGraphics", 
-        "Security", 
-        "CFNetwork", 
         "icu"
     ], 
     "libs": [
