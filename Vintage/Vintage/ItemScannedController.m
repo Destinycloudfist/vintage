@@ -52,6 +52,8 @@
         
         self.mapImage.image = [UIImage imageWithData:data];
     }];
+    
+    [manager stopUpdatingLocation];
 }
 
 @end
