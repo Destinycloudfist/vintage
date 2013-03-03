@@ -7,8 +7,13 @@
 //
 
 #import "BarrelStatusViewController.h"
+#import "Trackable.h"
+#import "TrackableListViewController.h"
 
 @interface BarrelStatusViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIButton *contentsButton;
 
 @end
 
@@ -26,7 +31,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.label.text = [NSString stringWithFormat:@"%@ gallons %@ %@", self.barrel.volume, self.barrel.toast, self.barrel.material];
+    
+    if(self.barrel.trackableKey) {
+        
+        Trackable *trackable = [Model loadModelForKey:self.barrel.trackableKey];
+        
+        [self.contentsButton setTitle:trackable.prettyDescription forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)contentsTap:(id)sender
+{
+    TrackableListViewController *controller = [TrackableListViewController new];
+    
+    controller.vessel = self.barrel;
+    
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

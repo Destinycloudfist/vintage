@@ -11,6 +11,7 @@
 #import "ModelBackend.h"
 #import "NewVesselController.h"
 #import "BarrelStatusViewController.h"
+#import "SourceListViewController.h"
 
 @interface ViewController ()
 
@@ -96,6 +97,13 @@
     self.barrels = [Model loadModels:[Barrel class]];
     
     [self.tableView reloadData];
+}
+
+- (IBAction)sourcesTap:(id)sender {
+    
+    SourceListViewController *controller = [SourceListViewController new];
+    
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)viewDidLoad

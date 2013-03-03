@@ -162,6 +162,25 @@
     return str;
 }
 
+- (NSString*)prettyDescription
+{
+    NSMutableString *str = [@"" mutableCopy];
+    
+    int i = 0;
+    
+    for(PropertyInfo *propertyInfo in [self.class getPropertyInfos]) {
+        
+        if(i++)
+            [str appendFormat:@", "];
+        
+        [str appendFormat:@"%@: %@", propertyInfo.name, [self performSelector:propertyInfo.getter]];
+    }
+    
+    [str appendFormat:@""];
+    
+    return str;
+}
+
 - (void)save
 {
     if(!self.uniqueId) {
@@ -205,6 +224,16 @@
     Class class = objc_lookUpClass([[array objectAtIndex:0] UTF8String]);
     
     return [self loadModel:class withUniqueId:[array objectAtIndex:1]];
+}
+
++ (NSArray*)loadModelsForKeys:(NSArray*)keys
+{
+    NSMutableArray *array = [@[] mutableCopy];
+    
+    for(NSString *key in keys)
+        [array addObject:[self loadModelForKey:key]];
+    
+    return array;
 }
 
 + (id<ModelProtocol>)loadModel:(Class)class withUniqueId:(id)uniqueId
