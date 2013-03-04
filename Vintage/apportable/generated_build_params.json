@@ -5,42 +5,7 @@
         {
             "language": "objc", 
             "header_paths": [], 
-            "source": "Vintage/Model.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
-            "source": "Vintage/BottlesStatusViewController.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
-            "source": "Vintage/BarrelViewController.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
-            "source": "Vintage/Trackable.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
             "source": "Vintage/main.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
-            "source": "Vintage/AppDelegate.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -54,7 +19,28 @@
         {
             "language": "objc", 
             "header_paths": [], 
+            "source": "Vintage/BarrelViewController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/AppDelegate.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
             "source": "Vintage/Barrel.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/Model.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -90,6 +76,13 @@
             "language": "objc", 
             "header_paths": [], 
             "source": "Vintage/Bottles.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/Trackable.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -132,6 +125,13 @@
             "language": "objc", 
             "header_paths": [], 
             "source": "Vintage/TankStatusViewController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/BottlesStatusViewController.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -236,12 +236,12 @@
             "target": "Default@2x.png"
         }, 
         {
-            "asset": "Vintage/Default-568h@2x.png", 
-            "target": "Default-568h@2x.png"
-        }, 
-        {
             "asset": "Vintage/en.lproj/InfoPlist.strings", 
             "target": "en.lproj/InfoPlist.strings"
+        }, 
+        {
+            "asset": "Vintage/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
         }, 
         {
             "asset": "Vintage/en.lproj/ViewController.xib", 
@@ -346,6 +346,14 @@
         {
             "asset": "Vintage/TankStatusViewController.xib", 
             "target": null
+        }, 
+        {
+            "asset": "Vintage/tank_red.png", 
+            "target": "tank_red.png"
+        }, 
+        {
+            "asset": "Vintage/tank.png", 
+            "target": "tank.png"
         }
     ], 
     "type": "app", 
