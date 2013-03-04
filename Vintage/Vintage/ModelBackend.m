@@ -65,27 +65,13 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
 {
     self = [super init];
     
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(objectReceived:)
+     name:DustyBaseNewIdNotification
+     object:nil];
+    
     self.dustybase = [[DustyBase alloc] initWithUrl:@"http://dustytech.com/dustybase"];
-    
-    DustyBase *fb = [self.dustybase child:@"keys"];
-    
-    // Spawn initial key change monitor
-    [self _setKeys:self.keys monitorDiffsFrom:nil];
-    
-    __weak ModelBackend *weakSelf = self;
-    
-    [fb on:DustyBaseEventTypeValue doCallback:^(id key, id value) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            if(value && ![value isEqual:[NSNull null]]) {
-                
-                NSArray *newKeys = [weakSelf _setKeys:value monitorDiffsFrom:self.keys];
-                
-                [[NSNotificationCenter defaultCenter] postNotificationName:ModelBackendKeysUpdated object:newKeys];
-            }
-        });
-    }];
     
     return self;
 }
@@ -100,51 +86,9 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
     return [[NSUserDefaults standardUserDefaults] arrayForKey:@"firebase_keys"];
 }
 
-- (NSArray*)_setKeys:(NSArray*)keys monitorDiffsFrom:(NSArray*)ourKeys
-{
-    NSMutableArray *newKeys = [@[] mutableCopy];
-    
-    if(![ourKeys isEqualToArray:keys]) {
-        for(NSString *key in keys) {
-            if(![ourKeys containsObject:key]) {
-                
-                [newKeys addObject:key];
-                
-                [self monitorKey:key];
-            }
-        }
-    }
-    
-    if(newKeys.count)
-        [[NSUserDefaults standardUserDefaults] setObject:keys forKey:@"firebase_keys"];
-    
-    return newKeys;
-}
-
 - (void)setKeys:(NSArray*)keys
 {
-    if([self _setKeys:keys monitorDiffsFrom:self.keys].count) {
-        
-        DustyBase *fb = [self.dustybase child:@"keys"];
-        
-        [fb set:keys onComplete:^(NSError *error) {
-            
-            if(error)
-            {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    UIAlertView *alert = [[UIAlertView alloc]
-                                          initWithTitle:@"Trouble"
-                                          message:error.localizedDescription
-                                          delegate:nil
-                                          cancelButtonTitle:@"Okay"
-                                          otherButtonTitles:nil];
-                    
-                    [alert show];
-                });
-            }
-        }];
-    }
+    [[NSUserDefaults standardUserDefaults] setObject:keys forKey:@"firebase_keys"];
 }
 
 - (id)objectForKey:(NSString*)key
@@ -154,7 +98,24 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
 
 - (void)setObjectInLocalCache:(id)object forKey:(NSString *)key
 {
+    NSArray *array = self.keys;
+    
+    if(!array)
+        array = @[];
+    
+    if(![array containsObject:key])
+        self.keys = [array arrayByAddingObject:key];
+    
     [[NSUserDefaults standardUserDefaults] setObject:object forKey:[@"firebase_" stringByAppendingString:key]];
+}
+
+- (void)objectReceived:(NSNotification*)note
+{
+    NSArray *array = note.object;
+    
+    [self setObjectInLocalCache:[array objectAtIndex:1] forKey:[array objectAtIndex:0]];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ModelBackendKeysUpdated object:nil];
 }
 
 - (void)setObject:(id)object forKey:(NSString *)key

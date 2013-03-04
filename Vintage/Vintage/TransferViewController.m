@@ -27,6 +27,8 @@
     
     self.fromLabel.text = [[self.fromVessel class] description];
     self.toLabel.text = [[self.toVessel class] description];
+    
+    [self updateRemaining];
 }
 
 - (NSString*)printDouble:(double)number

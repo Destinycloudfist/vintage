@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-// Notification object is an NSArray of new keys coming in from the server.
 extern NSString *ModelBackendKeysUpdated;
 
 // Notification object is an NSArray of key of the updated object.

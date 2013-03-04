@@ -8,6 +8,8 @@
 
 #import "DustyBase.h"
 
+NSString *DustyBaseNewIdNotification = @"DustyBaseNewIdNotification";
+
 @interface DustyBase()
 
 @property (nonatomic, strong) NSString *url;
@@ -70,17 +72,19 @@
         
         if([self.name isEqualToString:[object objectForKey:@"key"]]) {
             
+            NSData *data = [[object objectForKey:@"value"] dataUsingEncoding:NSUTF8StringEncoding];
+            
+            NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            
+            NSString *key = [object objectForKey:@"key"];
+            
+            key = [key stringByReplacingOccurrencesOfString:@"/" withString:@"."];
+            
+            id value = [array objectAtIndex:0];
+            
             for(void (^callback) (id key, id value) in self.eventBlocks) {
                 
-                NSData *data = [[object objectForKey:@"value"] dataUsingEncoding:NSUTF8StringEncoding];
-                
-                NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                
-                NSString *key = [object objectForKey:@"key"];
-                
-                key = [key stringByReplacingOccurrencesOfString:@"/" withString:@"."];
-                
-                callback(key, [array objectAtIndex:0]);
+                callback(key, value);
             }
         }
     }
@@ -115,9 +119,26 @@
             
             NSParameterAssert(self.step);
             
+            __weak DustyBase *weakSelf = self;
+            
             dispatch_sync(dispatch_get_main_queue(), ^{
                 
-                [self sendEvents:objects];
+                for(NSDictionary *object in objects) {
+                    
+                    NSData *data = [[object objectForKey:@"value"] dataUsingEncoding:NSUTF8StringEncoding];
+                    
+                    NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    
+                    NSString *key = [object objectForKey:@"key"];
+                    
+                    key = [key stringByReplacingOccurrencesOfString:@"/" withString:@"."];
+                    
+                    id value = [array objectAtIndex:0];
+                    
+                    [[NSNotificationCenter defaultCenter] postNotificationName:DustyBaseNewIdNotification object:@[key, value]];
+                }
+                
+                [weakSelf sendEvents:objects];
             });
         }
     }

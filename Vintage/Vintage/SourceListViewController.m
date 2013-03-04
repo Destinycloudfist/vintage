@@ -9,6 +9,7 @@
 #import "SourceListViewController.h"
 #import "SourceViewController.h"
 #import "SourceStatusViewController.h"
+#import "ModelBackend.h"
 
 @interface SourceListViewController ()
 
@@ -26,11 +27,16 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)loadSources
+{
+    self.sources = [Model loadModels:[Source class]];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     BOOL firstTime = self.sources == nil;
     
-    self.sources = [Model loadModels:[Source class]];
+    [self loadSources];
     
     if(!firstTime)
         [self.tableView reloadData];
@@ -60,6 +66,21 @@
     controller.source = [self.sources objectAtIndex:indexPath.row];
     
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)backendKeysUpdated
+{
+    [self loadSources];
+    [self.tableView reloadData];
+}
+
+- (void)viewDidLoad
+{
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(backendKeysUpdated)
+     name:ModelBackendKeysUpdated
+     object:nil];
 }
 
 @end

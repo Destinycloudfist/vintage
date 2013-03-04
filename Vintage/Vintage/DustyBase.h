@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+// Object is an array of two elements, key and value respectively.
+extern NSString *DustyBaseNewIdNotification;
+
 typedef enum DustyBaseEventType {
     DustyBaseEventTypeValue = 0
 } DustyBaseEventType;
@@ -18,6 +21,7 @@ typedef enum DustyBaseEventType {
 
 - (id)initWithUrl:(NSString*)url;
 
+// Deprecated: Don't use this crap. Use DustyBaseNewIdNotification instead.
 - (void)set:(id)value onComplete:(void (^)(NSError* error))callback;
 
 - (void)on:(DustyBaseEventType)eventType doCallback:(void (^) (id key, id value))callback;
