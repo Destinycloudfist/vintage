@@ -77,6 +77,8 @@
     newTrackable.vintage = self.trackable.vintage;
     newTrackable.year = self.trackable.year;
     newTrackable.notes = self.trackable.notes;
+    newTrackable.sourceKeys = @[self.trackable.key];
+    newTrackable.sourceVolumes = @[newTrackable.volume];
     
     [newTrackable save];
     
@@ -95,6 +97,8 @@
         newTrackable.vintage = self.trackable.vintage;
         newTrackable.year = self.trackable.year;
         newTrackable.notes = self.trackable.notes;
+        newTrackable.sourceKeys = @[self.trackable.key];
+        newTrackable.sourceVolumes = @[newTrackable.volume];
         
         [newTrackable save];
     }
@@ -118,6 +122,8 @@
         newTrackable.vintage = self.trackable.vintage;
         newTrackable.year = self.trackable.year;
         newTrackable.notes = self.trackable.notes;
+        newTrackable.sourceKeys = @[self.trackable.key];
+        newTrackable.sourceVolumes = @[newTrackable.volume];
         
         [newTrackable save];
         

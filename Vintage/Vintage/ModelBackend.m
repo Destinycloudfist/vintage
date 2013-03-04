@@ -7,19 +7,19 @@
 //
 
 #import "ModelBackend.h"
-#import "Firebase.h"
+#import "DustyBase.h"
 
 NSString *ModelBackendKeysUpdated = @"ModelBackendKeysUpdated";
 NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
 
 @interface ModelBackend()
 
-@property (nonatomic, strong) Firebase *firebase;
+@property (nonatomic, strong) DustyBase *dustybase;
 
 @end
 
 @implementation ModelBackend
-@synthesize firebase;
+@synthesize dustybase;
 
 + (ModelBackend*)shared
 {
@@ -36,23 +36,24 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
 
 - (NSString*)pathForKey:(NSString*)key
 {
-    return [NSString stringWithFormat:@"object/%@",
-            [key stringByReplacingOccurrencesOfString:@"." withString:@"/"]];
+    return [key stringByReplacingOccurrencesOfString:@"." withString:@"/"];
 }
 
 - (void)monitorKey:(NSString*)key
 {
     __weak ModelBackend *weakSelf = self;
     
-    Firebase *fb = [weakSelf.firebase child:[self pathForKey:key]];
+    DustyBase *fb = [weakSelf.dustybase child:[self pathForKey:key]];
     
-    [fb on:FEventTypeValue doCallback:^(FDataSnapshot *snapshot) {
+    [fb on:DustyBaseEventTypeValue doCallback:^(id key, id value) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            if(![[snapshot val] isEqual:[NSNull null]]) {
+            if(value && ![value isEqual:[NSNull null]]) {
                 
-                [weakSelf setObjectInLocalCache:[snapshot val] forKey:key];
+                [weakSelf setObjectInLocalCache:value forKey:key];
+                
+                NSLog(@"Firing ModelBackendKeysUpdated %@", @[key]);
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:ModelBackendKeysUpdated object:@[key]];
             }
@@ -64,22 +65,22 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
 {
     self = [super init];
     
-    self.firebase = [[Firebase alloc] initWithUrl:@"https://vintage.firebaseio.com/"];
+    self.dustybase = [[DustyBase alloc] initWithUrl:@"http://dustytech.com/dustybase"];
     
-    Firebase *fb = [self.firebase child:@"keys"];
+    DustyBase *fb = [self.dustybase child:@"keys"];
     
     // Spawn initial key change monitor
-    self.keys = self.keys;
+    [self _setKeys:self.keys monitorDiffsFrom:nil];
     
     __weak ModelBackend *weakSelf = self;
     
-    [fb on:FEventTypeValue doCallback:^(FDataSnapshot *snapshot) {
+    [fb on:DustyBaseEventTypeValue doCallback:^(id key, id value) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            if(![[snapshot val] isEqual:[NSNull null]]) {
+            if(value && ![value isEqual:[NSNull null]]) {
                 
-                NSArray *newKeys = [weakSelf _setKeys:[snapshot val]];
+                NSArray *newKeys = [weakSelf _setKeys:value monitorDiffsFrom:self.keys];
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:ModelBackendKeysUpdated object:newKeys];
             }
@@ -91,7 +92,7 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
 
 - (NSString*)generateUniqueId
 {
-    return [[self.firebase push] name];
+    return [[self.dustybase push] name];
 }
 
 - (NSArray*)keys
@@ -99,10 +100,9 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
     return [[NSUserDefaults standardUserDefaults] arrayForKey:@"firebase_keys"];
 }
 
-- (NSArray*)_setKeys:(NSArray*)keys
+- (NSArray*)_setKeys:(NSArray*)keys monitorDiffsFrom:(NSArray*)ourKeys
 {
     NSMutableArray *newKeys = [@[] mutableCopy];
-    NSArray *ourKeys = self.keys;
     
     if(![ourKeys isEqualToArray:keys]) {
         for(NSString *key in keys) {
@@ -115,11 +115,17 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
         }
     }
     
-    if(newKeys.count) {
-        
+    if(newKeys.count)
         [[NSUserDefaults standardUserDefaults] setObject:keys forKey:@"firebase_keys"];
+    
+    return newKeys;
+}
+
+- (void)setKeys:(NSArray*)keys
+{
+    if([self _setKeys:keys monitorDiffsFrom:self.keys].count) {
         
-        Firebase *fb = [self.firebase child:@"keys"];
+        DustyBase *fb = [self.dustybase child:@"keys"];
         
         [fb set:keys onComplete:^(NSError *error) {
             
@@ -139,13 +145,6 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
             }
         }];
     }
-    
-    return newKeys;
-}
-
-- (void)setKeys:(NSArray*)keys
-{
-    [self _setKeys:keys];
 }
 
 - (id)objectForKey:(NSString*)key
@@ -160,9 +159,9 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
 
 - (void)setObject:(id)object forKey:(NSString *)key
 {
-    Firebase *fb = [self.firebase child:[self pathForKey:key]];
+    DustyBase *fb = [self.dustybase child:[self pathForKey:key]];
     
-    [fb set:[object description] onComplete:^(NSError *error) {
+    [fb set:object onComplete:^(NSError *error) {
         
         if(error)
         {
