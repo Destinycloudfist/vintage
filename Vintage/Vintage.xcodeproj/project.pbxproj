@@ -61,6 +61,7 @@
 		58526A6A16E3B28E00E7823D /* VesselListViewcontroller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A6816E3B28E00E7823D /* VesselListViewcontroller.xib */; };
 		58526A6F16E3B6FF00E7823D /* TransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A6D16E3B6FF00E7823D /* TransferViewController.m */; };
 		58526A7016E3B6FF00E7823D /* TransferViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A6E16E3B6FF00E7823D /* TransferViewController.xib */; };
+		58526A7416E412EA00E7823D /* DustyBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A7316E412EA00E7823D /* DustyBase.m */; };
 		5B7019D216E3FA2100FF95C3 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019D016E3FA2100FF95C3 /* button.png */; };
 		5B7019D316E3FA2100FF95C3 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019D116E3FA2100FF95C3 /* gradient.png */; };
 		5B7019DB16E3FD0600FF95C3 /* top_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019DA16E3FD0600FF95C3 /* top_shadow.png */; };
@@ -159,6 +160,8 @@
 		58526A6C16E3B6FF00E7823D /* TransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransferViewController.h; sourceTree = "<group>"; };
 		58526A6D16E3B6FF00E7823D /* TransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransferViewController.m; sourceTree = "<group>"; };
 		58526A6E16E3B6FF00E7823D /* TransferViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TransferViewController.xib; sourceTree = "<group>"; };
+		58526A7216E412EA00E7823D /* DustyBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DustyBase.h; sourceTree = "<group>"; };
+		58526A7316E412EA00E7823D /* DustyBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DustyBase.m; sourceTree = "<group>"; };
 		5B7019D016E3FA2100FF95C3 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
 		5B7019D116E3FA2100FF95C3 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
 		5B7019DA16E3FD0600FF95C3 /* top_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_shadow.png; sourceTree = "<group>"; };
@@ -531,6 +534,7 @@
 		58526A6416E3977A00E7823D /* ModelInternals */ = {
 			isa = PBXGroup;
 			children = (
+				58526A7116E412D700E7823D /* DustyBase */,
 				585269E516E300AC00E7823D /* ModelBackend */,
 				585269E016E2E8BC00E7823D /* Model */,
 			);
@@ -555,6 +559,15 @@
 				58526A6E16E3B6FF00E7823D /* TransferViewController.xib */,
 			);
 			name = TransferViewController;
+			sourceTree = "<group>";
+		};
+		58526A7116E412D700E7823D /* DustyBase */ = {
+			isa = PBXGroup;
+			children = (
+				58526A7216E412EA00E7823D /* DustyBase.h */,
+				58526A7316E412EA00E7823D /* DustyBase.m */,
+			);
+			name = DustyBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -669,6 +682,7 @@
 				58526A6116E3900B00E7823D /* TrackableViewController.m in Sources */,
 				58526A6916E3B28E00E7823D /* VesselListViewcontroller.m in Sources */,
 				58526A6F16E3B6FF00E7823D /* TransferViewController.m in Sources */,
+				58526A7416E412EA00E7823D /* DustyBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
