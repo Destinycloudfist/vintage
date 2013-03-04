@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #if TARGET_OS_ANDROID
+#import <NFC/APNFCManager.h>
 #else
 
 @interface APNFCManager : NSObject
