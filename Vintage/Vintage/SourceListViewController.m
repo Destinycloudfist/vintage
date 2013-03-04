@@ -20,6 +20,15 @@
 
 @implementation SourceListViewController
 
+#ifdef APPORTABLE
+- (id)init
+{
+    self = [super initWithNibName:[[[self class] description] stringByAppendingString:@"Android"] bundle:nil];
+    
+    return self;
+}
+#endif
+
 - (IBAction)addSource:(id)sender {
     
     SourceViewController *controller = [SourceViewController new];
@@ -54,7 +63,7 @@
     if(!cell)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     
-    cell.textLabel.text = [[self.sources objectAtIndex:indexPath.row] prettyDescription];
+    cell.textLabel.text = [[self.sources objectAtIndex:indexPath.row] name];
     
     return cell;
 }

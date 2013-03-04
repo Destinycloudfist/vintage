@@ -28,6 +28,12 @@
     self.fromLabel.text = [[self.fromVessel class] description];
     self.toLabel.text = [[self.toVessel class] description];
     
+    if([self.fromVessel respondsToSelector:@selector(name)])
+        self.fromLabel.text = [(id)self.fromVessel name];
+    
+    if([self.toLabel respondsToSelector:@selector(name)])
+        self.toLabel.text = [(id)self.toVessel name];
+    
     [self updateRemaining];
 }
 

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5844F21916E478F300E1F3DF /* barrel.png in Resources */ = {isa = PBXBuildFile; fileRef = 5844F21816E478F300E1F3DF /* barrel.png */; };
 		5844F21B16E478FA00E1F3DF /* barrel_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 5844F21A16E478FA00E1F3DF /* barrel_red.png */; };
+		5844F21E16E5267300E1F3DF /* ViewControllerAndroid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5844F21C16E5267300E1F3DF /* ViewControllerAndroid.xib */; };
+		5844F22016E5291A00E1F3DF /* SourceListViewControllerAndroid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5844F21F16E5291900E1F3DF /* SourceListViewControllerAndroid.xib */; };
 		585269B016E2D5F900E7823D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269AF16E2D5F900E7823D /* UIKit.framework */; };
 		585269B216E2D5F900E7823D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269B116E2D5F900E7823D /* Foundation.framework */; };
 		585269B416E2D5F900E7823D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269B316E2D5F900E7823D /* CoreGraphics.framework */; };
@@ -76,6 +78,8 @@
 /* Begin PBXFileReference section */
 		5844F21816E478F300E1F3DF /* barrel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrel.png; sourceTree = "<group>"; };
 		5844F21A16E478FA00E1F3DF /* barrel_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrel_red.png; sourceTree = "<group>"; };
+		5844F21D16E5267300E1F3DF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewControllerAndroid.xib; sourceTree = "<group>"; };
+		5844F21F16E5291900E1F3DF /* SourceListViewControllerAndroid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SourceListViewControllerAndroid.xib; sourceTree = "<group>"; };
 		585269AC16E2D5F900E7823D /* Vintage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vintage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		585269AF16E2D5F900E7823D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		585269B116E2D5F900E7823D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -279,6 +283,7 @@
 				585269C716E2D5F900E7823D /* ViewController.h */,
 				585269C816E2D5F900E7823D /* ViewController.m */,
 				585269CA16E2D5F900E7823D /* ViewController.xib */,
+				5844F21C16E5267300E1F3DF /* ViewControllerAndroid.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				58526A4C16E38BEE00E7823D /* SourceListViewController.h */,
 				58526A4D16E38BEE00E7823D /* SourceListViewController.m */,
 				58526A4E16E38BEE00E7823D /* SourceListViewController.xib */,
+				5844F21F16E5291900E1F3DF /* SourceListViewControllerAndroid.xib */,
 			);
 			name = SourceListViewController;
 			sourceTree = "<group>";
@@ -674,6 +680,8 @@
 				5B7019E416E43DFF00FF95C3 /* HistoryViewController.xib in Resources */,
 				5844F21916E478F300E1F3DF /* barrel.png in Resources */,
 				5844F21B16E478FA00E1F3DF /* barrel_red.png in Resources */,
+				5844F21E16E5267300E1F3DF /* ViewControllerAndroid.xib in Resources */,
+				5844F22016E5291A00E1F3DF /* SourceListViewControllerAndroid.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,6 +727,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5844F21C16E5267300E1F3DF /* ViewControllerAndroid.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5844F21D16E5267300E1F3DF /* en */,
+			);
+			name = ViewControllerAndroid.xib;
+			sourceTree = "<group>";
+		};
 		585269B816E2D5F900E7823D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
