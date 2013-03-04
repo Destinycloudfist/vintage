@@ -14,6 +14,16 @@
 
 @implementation TankViewController
 
+- (id)initWithModel:(Model *)model
+{
+    self = [super initWithModel:model];
+    if (self)
+    {
+        self.tank = (Tank *)model;
+    }
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

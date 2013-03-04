@@ -16,7 +16,12 @@
 
 - (id)initWithModel:(Model *)model
 {
-    return [self initWithNibName:nil bundle:nil];
+    return [self initWithNibName:[self nibName] bundle:nil];
+}
+
++ (NSString *)nibName
+{
+    return [[self class] description];
 }
 
 - (void)viewDidLoad

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelViewController.h"
 #import "Barrel.h"
 
-@interface BarrelStatusViewController : UIViewController
+@interface BarrelStatusViewController : ModelViewController
 
 @property (nonatomic, strong) Barrel *barrel;
 

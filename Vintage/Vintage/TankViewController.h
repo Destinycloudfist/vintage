@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelViewController.h"
 
-@interface TankViewController : UIViewController
+@class Tank;
 
+@interface TankViewController : ModelViewController
+@property (nonatomic) Tank *tank;
 @end

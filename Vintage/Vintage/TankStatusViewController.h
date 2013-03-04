@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelViewController.h"
 
-@interface TankStatusViewController : UIViewController
+@interface TankStatusViewController : ModelViewController
 
 @end

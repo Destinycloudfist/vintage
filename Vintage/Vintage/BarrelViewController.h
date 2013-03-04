@@ -10,7 +10,7 @@
 #import "ModelViewController.h"
 #import "Barrel.h"
 
-@interface BarrelViewController : UIViewController
+@interface BarrelViewController : ModelViewController
 
 @property (nonatomic, strong) Barrel *barrel;
 

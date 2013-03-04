@@ -11,6 +11,7 @@
 #import "TrackableListViewController.h"
 #import "BarrelViewController.h"
 
+
 @interface BarrelStatusViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *name;
@@ -20,6 +21,17 @@
 @end
 
 @implementation BarrelStatusViewController
+
+
+- (id)initWithModel:(Model *)model
+{
+    self = [super initWithModel:model];
+    if (self)
+    {
+        self.barrel = (Barrel *)model;
+    }
+    return self;
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {

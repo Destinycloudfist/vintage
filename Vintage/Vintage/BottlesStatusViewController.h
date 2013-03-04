@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ModelViewController.h"
 
-@interface BottlesStatusViewController : UIViewController
+@interface BottlesStatusViewController : ModelViewController
 
 @end

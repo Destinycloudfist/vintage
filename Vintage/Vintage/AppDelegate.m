@@ -42,7 +42,7 @@
     {
         return NO;
     }
-    NSString *uuid = [url path];
+    NSString *uuid = [[url path] lastPathComponent];
     if ([uuid length] == 0)
     {
         return NO;
@@ -54,7 +54,7 @@
         return NO;
     }
     
-    Class viewControllerClass = NSClassFromString([NSString stringWithFormat:@"%@ViewController", className]);
+    Class viewControllerClass = NSClassFromString([NSString stringWithFormat:@"%@StatusViewController", className]);
     Model *model = [Model loadModel:modelClass withUniqueId:uuid];
     if (viewControllerClass != Nil)
     {

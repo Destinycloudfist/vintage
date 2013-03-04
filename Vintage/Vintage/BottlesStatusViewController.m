@@ -7,12 +7,23 @@
 //
 
 #import "BottlesStatusViewController.h"
+#import "Bottles.h"
 
 @interface BottlesStatusViewController ()
-
+@property (nonatomic) Bottles *bottles;
 @end
 
 @implementation BottlesStatusViewController
+
+- (id)initWithModel:(Model *)model
+{
+    self = [super initWithModel:model];
+    if (self)
+    {
+        self.bottles = (Bottles *)model;
+    }
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

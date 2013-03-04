@@ -130,6 +130,7 @@
 
     // Mixpanel token for integrating Mixpanel analytics into the app.  Supplied by Apportable.
     //"MPMETRICS_API_KEY": ""
+    "NFC_SCHEME" : "vintage"
   },
 
   // Sometimes header include path ordering matters.  If so, put the ordering constraints into this

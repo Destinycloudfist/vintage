@@ -7,12 +7,23 @@
 //
 
 #import "TankStatusViewController.h"
+#import "Tank.h"
 
 @interface TankStatusViewController ()
-
+@property (nonatomic) Tank *tank;
 @end
 
 @implementation TankStatusViewController
+
+- (id)initWithModel:(Model *)model
+{
+    self = [super initWithModel:model];
+    if (self)
+    {
+        self.tank = (Tank *)model;
+    }
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
