@@ -110,8 +110,8 @@
     if(trackable.volume.doubleValue > 0.0)
         capacity = trackable.volume.doubleValue / barrel.volume.doubleValue;
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%.0f Gallons)%s%@",
-                           barrel.name, barrel.volume.doubleValue, str, vintage];
+    cell.textLabel.text = [NSString stringWithFormat:@"%.0f%% %@ (%.0f Gallons)%s%@",
+                           capacity * 100, barrel.name, barrel.volume.doubleValue, str, vintage];
     
     cell.imageView.image = [UIImage imageNamed:@"barrel.png"];
     
