@@ -22,7 +22,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+#ifdef APPORTABLE
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+#else
+    self.viewController = [[ViewController alloc] initWithNibName:@"ViewControllerAndroid" bundle:nil];
+#endif
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     nav.navigationBar.barStyle = UIBarStyleBlack;
