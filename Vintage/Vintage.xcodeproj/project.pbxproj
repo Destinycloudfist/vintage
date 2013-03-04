@@ -13,6 +13,8 @@
 		5844F22016E5291A00E1F3DF /* SourceListViewControllerAndroid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5844F21F16E5291900E1F3DF /* SourceListViewControllerAndroid.xib */; };
 		5844F22416E5318C00E1F3DF /* Stubs.m in Sources */ = {isa = PBXBuildFile; fileRef = 5844F22316E5318C00E1F3DF /* Stubs.m */; };
 		5844F22616E5323A00E1F3DF /* TankStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5844F22516E5323A00E1F3DF /* TankStatusViewController.xib */; };
+		5844F22D16E53EC700E1F3DF /* tank_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 5844F22B16E53EC700E1F3DF /* tank_red.png */; };
+		5844F22E16E53EC700E1F3DF /* tank.png in Resources */ = {isa = PBXBuildFile; fileRef = 5844F22C16E53EC700E1F3DF /* tank.png */; };
 		585269B016E2D5F900E7823D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269AF16E2D5F900E7823D /* UIKit.framework */; };
 		585269B216E2D5F900E7823D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269B116E2D5F900E7823D /* Foundation.framework */; };
 		585269B416E2D5F900E7823D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269B316E2D5F900E7823D /* CoreGraphics.framework */; };
@@ -84,6 +86,8 @@
 		5844F22216E5318C00E1F3DF /* Stubs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stubs.h; sourceTree = "<group>"; };
 		5844F22316E5318C00E1F3DF /* Stubs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stubs.m; sourceTree = "<group>"; };
 		5844F22516E5323A00E1F3DF /* TankStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TankStatusViewController.xib; sourceTree = "<group>"; };
+		5844F22B16E53EC700E1F3DF /* tank_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tank_red.png; sourceTree = "<group>"; };
+		5844F22C16E53EC700E1F3DF /* tank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tank.png; sourceTree = "<group>"; };
 		585269AC16E2D5F900E7823D /* Vintage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vintage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		585269AF16E2D5F900E7823D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		585269B116E2D5F900E7823D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -262,6 +266,8 @@
 		585269B616E2D5F900E7823D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5844F22B16E53EC700E1F3DF /* tank_red.png */,
+				5844F22C16E53EC700E1F3DF /* tank.png */,
 				5844F21816E478F300E1F3DF /* barrel.png */,
 				5844F21A16E478FA00E1F3DF /* barrel_red.png */,
 				5B7019DC16E3FD0E00FF95C3 /* bottom_shadow.png */,
@@ -695,6 +701,8 @@
 				5844F21E16E5267300E1F3DF /* ViewControllerAndroid.xib in Resources */,
 				5844F22016E5291A00E1F3DF /* SourceListViewControllerAndroid.xib in Resources */,
 				5844F22616E5323A00E1F3DF /* TankStatusViewController.xib in Resources */,
+				5844F22D16E53EC700E1F3DF /* tank_red.png in Resources */,
+				5844F22E16E53EC700E1F3DF /* tank.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

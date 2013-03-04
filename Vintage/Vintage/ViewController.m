@@ -145,19 +145,21 @@
 #ifndef APPORTABLE
     BOOL showImage = YES;
     
-    if([barrel isKindOfClass:[Barrel class]])
+    if([barrel isMemberOfClass:[Barrel class]])
     {
         cell.imageView.image = [UIImage imageNamed:@"barrel.png"];
         
         redBarrel.image = [UIImage imageNamed:@"barrel_red.png"];
     }
-    else if([barrel isKindOfClass:[Tank class]])
+    else if([barrel isMemberOfClass:[Tank class]])
     {
         cell.imageView.image = [UIImage imageNamed:@"tank"];
         
         redBarrel.image = [UIImage imageNamed:@"tank_red.png"];
     }
     else {
+        
+        cell.imageView.image = nil;
         
         showImage = NO;
     }
