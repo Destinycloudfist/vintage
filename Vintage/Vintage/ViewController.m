@@ -50,10 +50,12 @@
     return self.barrels.count;
 }
 
+#ifndef APPORTABLE
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 120.0f;
 }
+#endif
 
 #define FUZZY_EQUALS(a, b, fuzz) (a > b - fuzz && a < b + fuzz)
 
@@ -76,6 +78,7 @@
             80.0f, 0.0f
         };
         
+#ifndef APPORTABLE
         redBarrel = [[UIImageView alloc] initWithFrame:frame];
         
         redBarrel.image = [UIImage imageNamed:@"barrel_red.png"];
@@ -89,6 +92,7 @@
         redBarrel.tag = RedBarrelTag;
         
         [cell.imageView addSubview:redBarrel];
+#endif
     }
     
     redBarrel = (id)[cell.imageView viewWithTag:RedBarrelTag];
@@ -113,6 +117,7 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%.0f%% %@ (%.0f Gallons)%s%@",
                            capacity * 100, barrel.name, barrel.volume.doubleValue, str, vintage];
     
+#ifndef APPORTABLE
     cell.imageView.image = [UIImage imageNamed:@"barrel.png"];
     
     redBarrel.frame = (CGRect)
@@ -120,6 +125,7 @@
         0, (1 - capacity) * cell.imageView.frame.size.height,
         cell.imageView.frame.size.width, capacity * cell.imageView.frame.size.height
     };
+#endif
     
     return cell;
 }
