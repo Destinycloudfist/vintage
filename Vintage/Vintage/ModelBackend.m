@@ -70,7 +70,7 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
     DustyBase *fb = [self.dustybase child:@"keys"];
     
     // Spawn initial key change monitor
-    self.keys = self.keys;
+    [self _setKeys:self.keys monitorDiffsFrom:nil];
     
     __weak ModelBackend *weakSelf = self;
     
@@ -80,7 +80,7 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
             
             if(value && ![value isEqual:[NSNull null]]) {
                 
-                NSArray *newKeys = [weakSelf _setKeys:value];
+                NSArray *newKeys = [weakSelf _setKeys:value monitorDiffsFrom:self.keys];
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:ModelBackendKeysUpdated object:newKeys];
             }
@@ -100,10 +100,9 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
     return [[NSUserDefaults standardUserDefaults] arrayForKey:@"firebase_keys"];
 }
 
-- (NSArray*)_setKeys:(NSArray*)keys
+- (NSArray*)_setKeys:(NSArray*)keys monitorDiffsFrom:(NSArray*)ourKeys
 {
     NSMutableArray *newKeys = [@[] mutableCopy];
-    NSArray *ourKeys = self.keys;
     
     if(![ourKeys isEqualToArray:keys]) {
         for(NSString *key in keys) {
@@ -124,7 +123,7 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
 
 - (void)setKeys:(NSArray*)keys
 {
-    if([self _setKeys:keys].count) {
+    if([self _setKeys:keys monitorDiffsFrom:self.keys].count) {
         
         DustyBase *fb = [self.dustybase child:@"keys"];
         
