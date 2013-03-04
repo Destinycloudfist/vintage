@@ -14,6 +14,11 @@
 
 @implementation AppDelegate
 
++ (instancetype)sharedInstance
+{
+    return [[UIApplication sharedApplication] delegate];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -53,16 +58,25 @@
     {
         return NO;
     }
-    
-    Class viewControllerClass = NSClassFromString([NSString stringWithFormat:@"%@StatusViewController", className]);
+
     Model *model = [Model loadModel:modelClass withUniqueId:uuid];
-    if (viewControllerClass != Nil)
-    {
-        ModelViewController *mvc = [[viewControllerClass alloc] initWithModel:model];
-        [self.viewController.navigationController pushViewController:mvc animated:YES];
-    }
     
-    return YES;
+    if (self.NCFAction == NULL)
+    {    
+        Class viewControllerClass = NSClassFromString([NSString stringWithFormat:@"%@StatusViewController", className]);
+
+        if (viewControllerClass != Nil)
+        {
+            ModelViewController *mvc = [[viewControllerClass alloc] initWithModel:model];
+            [self.viewController.navigationController pushViewController:mvc animated:YES];
+        }
+        return YES;
+    }
+    else
+    {
+        return self.NCFAction(model);
+    }
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -10,6 +10,7 @@
 #import "Barrel.h"
 #import "Bottles.h"
 #import "Tank.h"
+#import "AppDelegate.h"
 
 @interface VesselListViewcontroller ()
 
@@ -19,6 +20,15 @@
 @end
 
 @implementation VesselListViewcontroller
+
+- (void)viewDidLoad
+{
+    [[AppDelegate sharedInstance] setNCFAction:^(Model *model){
+        [self.delegate vesselList:self selectedVessel:(Vessel *)model];
+        [[AppDelegate sharedInstance] setNCFAction:nil];
+        return YES;
+    }];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {

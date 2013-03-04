@@ -9,6 +9,7 @@
 #import "TrackableListViewController.h"
 #import "Trackable.h"
 #import "TransferViewController.h"
+#import "AppDelegate.h"
 
 @interface TrackableListViewController ()
 
@@ -17,6 +18,24 @@
 @end
 
 @implementation TrackableListViewController
+
+- (void)showVesselList
+{
+    VesselListViewcontroller *controller = [VesselListViewcontroller new];
+    
+    controller.delegate = self;
+    [[AppDelegate sharedInstance] setNCFAction:nil];
+    [self presentModalViewController:controller animated:YES];
+}
+
+- (void)viewDidLoad
+{
+    [[AppDelegate sharedInstance] setNCFAction:^(Model *model){
+        self.trackable = (Trackable *)model;
+        [self showVesselList];
+        return YES;
+    }];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -66,11 +85,7 @@
 {
     self.trackable = [Model loadModelForKey:[self keyForIndexPath:indexPath]];
     
-    VesselListViewcontroller *controller = [VesselListViewcontroller new];
-    
-    controller.delegate = self;
-    
-    [self presentModalViewController:controller animated:YES];
+    [self showVesselList];
 }
 
 @end
