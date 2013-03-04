@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ModelViewController.h"
 
+@class Tank;
+
 @interface TankStatusViewController : ModelViewController
+
+@property (nonatomic, strong) Tank *tank;
 
 @end

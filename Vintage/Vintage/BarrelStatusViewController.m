@@ -37,14 +37,14 @@
 {
     self.name.text = self.barrel.name;
     
-    self.label.text = [NSString stringWithFormat:@"%.1f gallon %@ %@",
+    self.label.text = [NSString stringWithFormat:@"%.0f Gallon %@ %@",
                        self.barrel.volume.doubleValue, self.barrel.toast, self.barrel.material];
     
     if(self.barrel.trackableKey) {
         
         Trackable *trackable = [Model loadModelForKey:self.barrel.trackableKey];
         
-        NSString *str = [NSString stringWithFormat:@"%@ gallons of %@", trackable.volume, trackable.vintage];
+        NSString *str = [NSString stringWithFormat:@"%.2f Gallons of %@", trackable.volume.doubleValue, trackable.vintage];
         
         [self.contentsButton setTitle:str forState:UIControlStateNormal];
     }

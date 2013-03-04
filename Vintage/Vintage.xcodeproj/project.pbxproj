@@ -11,6 +11,8 @@
 		5844F21B16E478FA00E1F3DF /* barrel_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 5844F21A16E478FA00E1F3DF /* barrel_red.png */; };
 		5844F21E16E5267300E1F3DF /* ViewControllerAndroid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5844F21C16E5267300E1F3DF /* ViewControllerAndroid.xib */; };
 		5844F22016E5291A00E1F3DF /* SourceListViewControllerAndroid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5844F21F16E5291900E1F3DF /* SourceListViewControllerAndroid.xib */; };
+		5844F22416E5318C00E1F3DF /* Stubs.m in Sources */ = {isa = PBXBuildFile; fileRef = 5844F22316E5318C00E1F3DF /* Stubs.m */; };
+		5844F22616E5323A00E1F3DF /* TankStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5844F22516E5323A00E1F3DF /* TankStatusViewController.xib */; };
 		585269B016E2D5F900E7823D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269AF16E2D5F900E7823D /* UIKit.framework */; };
 		585269B216E2D5F900E7823D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269B116E2D5F900E7823D /* Foundation.framework */; };
 		585269B416E2D5F900E7823D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269B316E2D5F900E7823D /* CoreGraphics.framework */; };
@@ -46,7 +48,6 @@
 		58526A3116E3798200E7823D /* WaitForTapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A2F16E3798200E7823D /* WaitForTapController.m */; };
 		58526A3216E3798200E7823D /* WaitForTapController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A3016E3798200E7823D /* WaitForTapController.xib */; };
 		58526A3716E37D5E00E7823D /* TankStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A3516E37D5E00E7823D /* TankStatusViewController.m */; };
-		58526A3816E37D5E00E7823D /* TankStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A3616E37D5E00E7823D /* TankStatusViewController.xib */; };
 		58526A3D16E37D7300E7823D /* BottlesStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A3B16E37D7300E7823D /* BottlesStatusViewController.m */; };
 		58526A3E16E37D7300E7823D /* BottlesStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58526A3C16E37D7300E7823D /* BottlesStatusViewController.xib */; };
 		58526A4316E37E2500E7823D /* BarrelStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58526A4116E37E2500E7823D /* BarrelStatusViewController.m */; };
@@ -80,6 +81,9 @@
 		5844F21A16E478FA00E1F3DF /* barrel_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrel_red.png; sourceTree = "<group>"; };
 		5844F21D16E5267300E1F3DF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewControllerAndroid.xib; sourceTree = "<group>"; };
 		5844F21F16E5291900E1F3DF /* SourceListViewControllerAndroid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SourceListViewControllerAndroid.xib; sourceTree = "<group>"; };
+		5844F22216E5318C00E1F3DF /* Stubs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stubs.h; sourceTree = "<group>"; };
+		5844F22316E5318C00E1F3DF /* Stubs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stubs.m; sourceTree = "<group>"; };
+		5844F22516E5323A00E1F3DF /* TankStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TankStatusViewController.xib; sourceTree = "<group>"; };
 		585269AC16E2D5F900E7823D /* Vintage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vintage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		585269AF16E2D5F900E7823D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		585269B116E2D5F900E7823D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -143,7 +147,6 @@
 		58526A3016E3798200E7823D /* WaitForTapController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaitForTapController.xib; sourceTree = "<group>"; };
 		58526A3416E37D5E00E7823D /* TankStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TankStatusViewController.h; sourceTree = "<group>"; };
 		58526A3516E37D5E00E7823D /* TankStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TankStatusViewController.m; sourceTree = "<group>"; };
-		58526A3616E37D5E00E7823D /* TankStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TankStatusViewController.xib; sourceTree = "<group>"; };
 		58526A3A16E37D7300E7823D /* BottlesStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottlesStatusViewController.h; sourceTree = "<group>"; };
 		58526A3B16E37D7300E7823D /* BottlesStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottlesStatusViewController.m; sourceTree = "<group>"; };
 		58526A3C16E37D7300E7823D /* BottlesStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottlesStatusViewController.xib; sourceTree = "<group>"; };
@@ -201,6 +204,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5844F22116E5317D00E1F3DF /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				5844F22216E5318C00E1F3DF /* Stubs.h */,
+				5844F22316E5318C00E1F3DF /* Stubs.m */,
+			);
+			name = Stubs;
+			sourceTree = "<group>";
+		};
 		585269A316E2D5F900E7823D = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +248,7 @@
 		585269B516E2D5F900E7823D /* Vintage */ = {
 			isa = PBXGroup;
 			children = (
+				5844F22116E5317D00E1F3DF /* Stubs */,
 				58526A6416E3977A00E7823D /* ModelInternals */,
 				585269E416E2EBDC00E7823D /* Models */,
 				58526A6316E3967B00E7823D /* Controllers */,
@@ -452,7 +465,7 @@
 			children = (
 				58526A3416E37D5E00E7823D /* TankStatusViewController.h */,
 				58526A3516E37D5E00E7823D /* TankStatusViewController.m */,
-				58526A3616E37D5E00E7823D /* TankStatusViewController.xib */,
+				5844F22516E5323A00E1F3DF /* TankStatusViewController.xib */,
 			);
 			name = TankStatusViewController;
 			sourceTree = "<group>";
@@ -662,7 +675,6 @@
 				58526A2616E3792D00E7823D /* BottlesViewController.xib in Resources */,
 				58526A2C16E3794F00E7823D /* TankViewController.xib in Resources */,
 				58526A3216E3798200E7823D /* WaitForTapController.xib in Resources */,
-				58526A3816E37D5E00E7823D /* TankStatusViewController.xib in Resources */,
 				58526A3E16E37D7300E7823D /* BottlesStatusViewController.xib in Resources */,
 				58526A4416E37E2500E7823D /* BarrelStatusViewController.xib in Resources */,
 				58526A4A16E3887B00E7823D /* TrackableListViewController.xib in Resources */,
@@ -682,6 +694,7 @@
 				5844F21B16E478FA00E1F3DF /* barrel_red.png in Resources */,
 				5844F21E16E5267300E1F3DF /* ViewControllerAndroid.xib in Resources */,
 				5844F22016E5291A00E1F3DF /* SourceListViewControllerAndroid.xib in Resources */,
+				5844F22616E5323A00E1F3DF /* TankStatusViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,6 +734,7 @@
 				58526A6F16E3B6FF00E7823D /* TransferViewController.m in Sources */,
 				5B7019E316E43DFF00FF95C3 /* HistoryViewController.m in Sources */,
 				58526A7416E412EA00E7823D /* DustyBase.m in Sources */,
+				5844F22416E5318C00E1F3DF /* Stubs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

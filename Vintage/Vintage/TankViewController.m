@@ -7,8 +7,16 @@
 //
 
 #import "TankViewController.h"
+#import "Tank.h"
+#import "TankStatusViewController.h"
+#import "Stubs.h"
 
 @interface TankViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextField *gallons;
+@property (weak, nonatomic) IBOutlet UITextField *shape;
+@property (weak, nonatomic) IBOutlet UISwitch *coolingJacket;
 
 @end
 
@@ -24,25 +32,58 @@
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.name.text = self.tank.name;
+    self.gallons.text = self.tank.volume.description;
+    self.shape.text = self.tank.shape;
+    self.coolingJacket.on = [self.tank.coolingJacket boolValue];
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)save:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if(!self.tank)
+        self.tank = [Tank new];
+    
+    self.tank.name = self.name.text;
+    self.tank.volume = @([self.gallons.text doubleValue]);
+    self.tank.shape = self.shape.text;
+    self.tank.coolingJacket = @(self.coolingJacket.on);
+    
+    [self.tank save];
+    
+    TankStatusViewController *controller = [TankStatusViewController new];
+    
+    controller.tank = self.tank;
+    
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (IBAction)tag:(id)sender
+{
+    if(!self.tank)
+        self.tank = [Tank new];
+    
+    self.tank.name = self.name.text;
+    self.tank.volume = @([self.gallons.text doubleValue]);
+    self.tank.shape = self.shape.text;
+    self.tank.coolingJacket = @(self.coolingJacket.on);
+    
+    [self.tank save];
+    
+    NSString *url = [NSString stringWithFormat:@"vintage://%@", self.tank.keyPath];
+    [APNFCManager writeNFCTagWithURLString:url completionBlock:^(BOOL success, NSString *payload){
+        if (success) {
+            TankStatusViewController *controller = [TankStatusViewController new];
+            
+            controller.tank = self.tank;
+            
+            [self.navigationController popToRootViewControllerAnimated:NO];
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+    }];
 }
 
 @end
