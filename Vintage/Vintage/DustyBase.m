@@ -119,6 +119,8 @@ NSString *DustyBaseNewIdNotification = @"DustyBaseNewIdNotification";
             
             NSParameterAssert(self.step);
             
+            [[NSUserDefaults standardUserDefaults] setInteger:self.step forKey:@"DustyBaseStep"];
+            
             __weak DustyBase *weakSelf = self;
             
             dispatch_sync(dispatch_get_main_queue(), ^{
