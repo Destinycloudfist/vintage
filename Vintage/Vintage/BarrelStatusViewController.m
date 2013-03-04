@@ -13,6 +13,7 @@
 
 @interface BarrelStatusViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIButton *contentsButton;
 
@@ -20,20 +21,12 @@
 
 @implementation BarrelStatusViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)viewWillAppear:(BOOL)animated
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+    self.name.text = self.barrel.name;
     
-    self.label.text = [NSString stringWithFormat:@"%@ gallon container %@ %@", self.barrel.volume, self.barrel.toast, self.barrel.material];
+    self.label.text = [NSString stringWithFormat:@"%.1f gallon %@ %@",
+                       self.barrel.volume.doubleValue, self.barrel.toast, self.barrel.material];
     
     if(self.barrel.trackableKey) {
         
