@@ -147,18 +147,20 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:str]];
     
-    [NSURLConnection
-     sendAsynchronousRequest:request
-     queue:[NSOperationQueue mainQueue]
-     completionHandler:^(NSURLResponse *resp, NSData *data, NSError *error) {
-         
-         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-         
-         if(str.length != 1)
-             callback(str.length ? (id)str : (id)error);
-         else
-             callback(error);
-     }];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            
+            if(str.length != 1)
+                callback(str.length ? (id)str : (id)error);
+            else
+                callback(error);
+        });
+    });
 }
 
 - (void)on:(DustyBaseEventType)eventType doCallback:(void (^) (id key, id value))callback
@@ -171,20 +173,25 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:str]];
     
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *resp, NSData *data, NSError *error) {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
-        NSDictionary *message = nil;
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
         
-        if(data)
-            message = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        
-        if(message) {
+        dispatch_async(dispatch_get_main_queue(), ^{
             
-            NSDictionary *objects = [message objectForKey:@"objects"];
+            NSDictionary *message = nil;
             
-            [self sendEvents:objects];
-        }
-    }];
+            if(data)
+                message = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            
+            if(message) {
+                
+                NSDictionary *objects = [message objectForKey:@"objects"];
+                
+                [self sendEvents:objects];
+            }
+        });
+    });
 }
 
 - (DustyBase*)child:(NSString*)name
