@@ -32,6 +32,9 @@
     nav.navigationBar.barStyle = UIBarStyleBlack;
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    
     return YES;
 }
 

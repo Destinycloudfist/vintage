@@ -12,6 +12,8 @@
 #import "NewVesselController.h"
 #import "BarrelStatusViewController.h"
 #import "SourceListViewController.h"
+#import "TankStatusViewController.h"
+#import "BottlesStatusViewController.h"
 #import "Bottles.h"
 #import "Tank.h"
 #import "Trackable.h"
@@ -42,7 +44,19 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    BOOL firstTime = self.barrels == nil;
+    
     [self reloadBarrels];
+    
+#ifndef APPORTABLE
+    if(firstTime) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self reloadBarrels];
+        });
+    }
+#endif
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -53,7 +67,12 @@
 #ifndef APPORTABLE
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 120.0f;
+    Vessel *vessel = [self.barrels objectAtIndex:indexPath.row];
+    
+    if([vessel isMemberOfClass:[Barrel class]])
+        return 120.0f;
+    
+    return 88.0f;
 }
 #endif
 
@@ -97,7 +116,7 @@
     
     redBarrel = (id)[cell.imageView viewWithTag:RedBarrelTag];
     
-    Barrel *barrel = [self.barrels objectAtIndex:indexPath.row];
+    Vessel *barrel = [self.barrels objectAtIndex:indexPath.row];
     
     Trackable *trackable = [Model loadModelForKey:barrel.trackableKey];
     
@@ -114,17 +133,47 @@
     if(trackable.volume.doubleValue > 0.0)
         capacity = trackable.volume.doubleValue / barrel.volume.doubleValue;
     
+    NSString *name = [[barrel class] description];
+    
+    if([barrel respondsToSelector:@selector(name)])
+        name = [(id)barrel name];
+    
     cell.textLabel.text = [NSString stringWithFormat:@"%.0f%% %@ (%.0f Gallons)%s%@",
-                           capacity * 100, barrel.name, barrel.volume.doubleValue, str, vintage];
+                           capacity * 100, name, barrel.volume.doubleValue, str, vintage];
     
 #ifndef APPORTABLE
-    cell.imageView.image = [UIImage imageNamed:@"barrel.png"];
+    BOOL showImage = YES;
     
-    redBarrel.frame = (CGRect)
+    if([barrel isKindOfClass:[Barrel class]]) {
+        
+        cell.imageView.image = [UIImage imageNamed:@"barrel.png"];
+    }
+    else if([barrel isKindOfClass:[Tank class]])
     {
-        0, (1 - capacity) * cell.imageView.frame.size.height,
-        cell.imageView.frame.size.width, capacity * cell.imageView.frame.size.height
-    };
+        showImage = NO;
+    }
+    else {
+        
+        showImage = NO;
+    }
+    
+    if(showImage) {
+        
+        redBarrel.hidden = NO;
+        
+        if(cell.imageView.frame.size.height > 0.0) {
+            
+            redBarrel.frame = (CGRect)
+            {
+                0, (1 - capacity) * cell.imageView.frame.size.height,
+                cell.imageView.frame.size.width, capacity * cell.imageView.frame.size.height
+            };
+        }
+    }
+    else {
+        
+        redBarrel.hidden = YES;
+    }
 #endif
     
     return cell;
@@ -132,18 +181,39 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Barrel *barrel = [self.barrels objectAtIndex:indexPath.row];
+    Vessel *vessel = [self.barrels objectAtIndex:indexPath.row];
     
-    BarrelStatusViewController *controller = [BarrelStatusViewController new];
+    if([vessel isMemberOfClass:[Barrel class]]) {
+        
+        BarrelStatusViewController *controller = [BarrelStatusViewController new];
+        
+        controller.barrel = (id)vessel;
+        
+        [self.navigationController pushViewController:controller animated:YES];
+    }
     
-    controller.barrel = barrel;
+    if([vessel isMemberOfClass:[Tank class]]) {
+        
+        TankStatusViewController *controller = [TankStatusViewController new];
+        
+        controller.tank = (id)vessel;
+        
+        [self.navigationController pushViewController:controller animated:YES];
+    }
     
-    [self.navigationController pushViewController:controller animated:YES];
+    if([vessel isMemberOfClass:[Bottles class]]) {
+        
+        BottlesStatusViewController *controller = [BottlesStatusViewController new];
+        
+//        controller.bottles = (id)vessel;
+        
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 - (void)reloadBarrels
 {
-    self.barrels = [Model loadModelsForClasses:@[[Barrel class]]];
+    self.barrels = [Model loadModelsForClasses:@[[Barrel class], [Tank class], [Bottles class]]];
     
     [self.tableView reloadData];
 }

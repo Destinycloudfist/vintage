@@ -10,27 +10,7 @@
 #import "Barrel.h"
 #import "BarrelStatusViewController.h"
 #import "WaitForTapController.h"
-
-#if TARGET_OS_ANDROID
-#import <NFC/APNFCManager.h>
-#else
-
-@implementation APNFCManager : NSObject
-
-+(void)readNFCTagWithCompletionBlock:(void(^)(BOOL success, NSString *payload))block
-{
-    block(YES, @"");
-}
-
-+(void)writeNFCTagWithURLString:(NSString *)urlString completionBlock:(void(^)(BOOL success, NSString *payload))block
-{
-    block(YES, @"");    
-}
-
-@end
-
-
-#endif
+#import "Stubs.h"
 
 
 @interface BarrelViewController ()
