@@ -5,21 +5,7 @@
         {
             "language": "objc", 
             "header_paths": [], 
-            "source": "Vintage/AppDelegate.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
-            "source": "Vintage/Tank.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
-            "source": "Vintage/ViewController.m", 
+            "source": "Vintage/ModelBackend.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -33,14 +19,7 @@
         {
             "language": "objc", 
             "header_paths": [], 
-            "source": "Vintage/main.m", 
-            "flags": [], 
-            "defines": {}
-        }, 
-        {
-            "language": "objc", 
-            "header_paths": [], 
-            "source": "Vintage/NewVesselController.m", 
+            "source": "Vintage/Vessel.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -54,7 +33,21 @@
         {
             "language": "objc", 
             "header_paths": [], 
-            "source": "Vintage/Model.m", 
+            "source": "Vintage/main.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/AppDelegate.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/ViewController.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -68,14 +61,14 @@
         {
             "language": "objc", 
             "header_paths": [], 
-            "source": "Vintage/ModelBackend.m", 
+            "source": "Vintage/Model.m", 
             "flags": [], 
             "defines": {}
         }, 
         {
             "language": "objc", 
             "header_paths": [], 
-            "source": "Vintage/Vessel.m", 
+            "source": "Vintage/Tank.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -97,6 +90,13 @@
             "language": "objc", 
             "header_paths": [], 
             "source": "Vintage/Trackable.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/NewVesselController.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -190,19 +190,60 @@
             "source": "Vintage/TransferViewController.m", 
             "flags": [], 
             "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/HistoryViewController.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "Vintage/DustyBase.m", 
+            "flags": [], 
+            "defines": {}
         }
     ], 
     "infoplists": [
         "./Vintage/Vintage-Info.plist"
     ], 
     "defines": {
+        "IBOutletCollection(ClassName)": "__attribute__((iboutletcollection(ClassName)))", 
         "__IPHONE_OS_VERSION_MIN_REQUIRED": 60100, 
-        "NS_BLOCK_ASSERTIONS": 1
+        "IBAction": "void)__attribute__((ibaction)", 
+        "NS_BLOCK_ASSERTIONS": 1, 
+        "IBOutlet": "__attribute__((iboutlet))"
     }, 
     "pchs": [
         "./Vintage/Vintage-Prefix.pch"
     ], 
     "assets": [
+        {
+            "asset": "Vintage/Default@2x.png", 
+            "target": "Default@2x.png"
+        }, 
+        {
+            "asset": "Vintage/Default.png", 
+            "target": "Default.png"
+        }, 
+        {
+            "asset": "Vintage/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
+        }, 
+        {
+            "asset": "Vintage/en.lproj/InfoPlist.strings", 
+            "target": "en.lproj/InfoPlist.strings"
+        }, 
+        {
+            "asset": "Vintage/en.lproj/ViewController.xib", 
+            "target": null
+        }, 
+        {
+            "asset": "Vintage/BarrelViewController.xib", 
+            "target": null
+        }, 
         {
             "asset": "Vintage/NewVesselController.xib", 
             "target": null
@@ -210,30 +251,6 @@
         {
             "asset": "Vintage/BottlesViewController.xib", 
             "target": null
-        }, 
-        {
-            "asset": "Vintage/Default@2x.png", 
-            "target": "Default@2x.png"
-        }, 
-        {
-            "asset": "Vintage/BarrelViewController.xib", 
-            "target": null
-        }, 
-        {
-            "asset": "Vintage/en.lproj/ViewController.xib", 
-            "target": null
-        }, 
-        {
-            "asset": "Vintage/Default-568h@2x.png", 
-            "target": "Default-568h@2x.png"
-        }, 
-        {
-            "asset": "Vintage/Default.png", 
-            "target": "Default.png"
-        }, 
-        {
-            "asset": "Vintage/en.lproj/InfoPlist.strings", 
-            "target": "en.lproj/InfoPlist.strings"
         }, 
         {
             "asset": "Vintage/TankViewController.xib", 
@@ -256,11 +273,11 @@
             "target": null
         }, 
         {
-            "asset": "Vintage/TrackableListViewController.xib", 
+            "asset": "Vintage/SourceListViewController.xib", 
             "target": null
         }, 
         {
-            "asset": "Vintage/SourceListViewController.xib", 
+            "asset": "Vintage/TrackableListViewController.xib", 
             "target": null
         }, 
         {
@@ -302,6 +319,18 @@
         {
             "asset": "Vintage/cell_gradient.png", 
             "target": "cell_gradient.png"
+        }, 
+        {
+            "asset": "Vintage/HistoryViewController.xib", 
+            "target": null
+        }, 
+        {
+            "asset": "Vintage/barrel.png", 
+            "target": "barrel.png"
+        }, 
+        {
+            "asset": "Vintage/barrel_red.png", 
+            "target": "barrel_red.png"
         }
     ], 
     "type": "app", 
@@ -335,6 +364,11 @@
                     "suffix": "TankViewController.h", 
                     "key": "TankViewController.h"
                 }, 
+                "DustyBase.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "DustyBase.h", 
+                    "key": "DustyBase.h"
+                }, 
                 "Trackable.h": {
                     "prefix": "Vintage/", 
                     "suffix": "Trackable.h", 
@@ -359,6 +393,11 @@
                     "prefix": "Vintage/", 
                     "suffix": "Vessel.h", 
                     "key": "Vessel.h"
+                }, 
+                "BarrelViewController.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "BarrelViewController.h", 
+                    "key": "BarrelViewController.h"
                 }, 
                 "FQuery.h": {
                     "prefix": "Headers/", 
@@ -430,11 +469,6 @@
                     "suffix": "SourceListViewController.h", 
                     "key": "SourceListViewController.h"
                 }, 
-                "NewVesselController.h": {
-                    "prefix": "Vintage/", 
-                    "suffix": "NewVesselController.h", 
-                    "key": "NewVesselController.h"
-                }, 
                 "FDataSnapshot.h": {
                     "prefix": "Headers/", 
                     "suffix": "FDataSnapshot.h", 
@@ -455,10 +489,10 @@
                     "suffix": "Tank.h", 
                     "key": "Tank.h"
                 }, 
-                "BarrelViewController.h": {
+                "NewVesselController.h": {
                     "prefix": "Vintage/", 
-                    "suffix": "BarrelViewController.h", 
-                    "key": "BarrelViewController.h"
+                    "suffix": "NewVesselController.h", 
+                    "key": "NewVesselController.h"
                 }, 
                 "VesselListViewcontroller.h": {
                     "prefix": "Vintage/", 
@@ -479,6 +513,11 @@
                     "prefix": "Vintage/", 
                     "suffix": "SourceViewController.h", 
                     "key": "SourceViewController.h"
+                }, 
+                "HistoryViewController.h": {
+                    "prefix": "Vintage/", 
+                    "suffix": "HistoryViewController.h", 
+                    "key": "HistoryViewController.h"
                 }, 
                 "TrackableViewController.h": {
                     "prefix": "Vintage/", 
@@ -533,6 +572,10 @@
         "CoreGraphics"
     ], 
     "config": {
+        "URL_SCHEME": [
+            "vintage", 
+            "vintage"
+        ], 
         "APPLICATION_IDENTIFIER": "com.dustin.Vintage", 
         "TEMPLATE_VALUES": {
             "PRODUCT_NAME": "Vintage", 
