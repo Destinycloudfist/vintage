@@ -84,7 +84,10 @@ NSString *DustyBaseNewIdNotification = @"DustyBaseNewIdNotification";
             
             for(void (^callback) (id key, id value) in self.eventBlocks) {
                 
-                callback(key, value);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    callback(key, value);
+                });
             }
         }
     }
@@ -123,25 +126,25 @@ NSString *DustyBaseNewIdNotification = @"DustyBaseNewIdNotification";
             
             __weak DustyBase *weakSelf = self;
             
-            dispatch_sync(dispatch_get_main_queue(), ^{
+            for(NSDictionary *object in objects) {
                 
-                for(NSDictionary *object in objects) {
-                    
-                    NSData *data = [[object objectForKey:@"value"] dataUsingEncoding:NSUTF8StringEncoding];
-                    
-                    NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                    
-                    NSString *key = [object objectForKey:@"key"];
-                    
-                    key = [key stringByReplacingOccurrencesOfString:@"/" withString:@"."];
-                    
-                    id value = [array objectAtIndex:0];
+                NSData *data = [[object objectForKey:@"value"] dataUsingEncoding:NSUTF8StringEncoding];
+                
+                NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                NSString *key = [object objectForKey:@"key"];
+                
+                key = [key stringByReplacingOccurrencesOfString:@"/" withString:@"."];
+                
+                id value = [array objectAtIndex:0];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
                     
                     [[NSNotificationCenter defaultCenter] postNotificationName:DustyBaseNewIdNotification object:@[key, value]];
-                }
-                
-                [weakSelf sendEvents:objects];
-            });
+                });
+            }
+            
+            [weakSelf sendEvents:objects];
         }
     }
 }
