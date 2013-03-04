@@ -27,7 +27,7 @@
 
 - (id)initWithTrackable:(Trackable *)trackable
 {
-    self = [super initWithStyle:UITableViewStylePlain];
+    self = [super initWithNibName:@"HistoryViewController" bundle:nil];
     if (self)
     {
         self.historyData = [[NSMutableArray alloc] init];
@@ -60,11 +60,13 @@
             break;
         }
     }
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self reloadData];
 }
 
 - (void)didReceiveMemoryWarning

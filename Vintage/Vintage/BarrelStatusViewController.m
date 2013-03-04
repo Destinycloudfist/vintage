@@ -10,7 +10,7 @@
 #import "Trackable.h"
 #import "TrackableListViewController.h"
 #import "BarrelViewController.h"
-
+#import "HistoryViewController.h"
 
 @interface BarrelStatusViewController ()
 
@@ -69,6 +69,10 @@
     
     [nav popToRootViewControllerAnimated:NO];
     [nav pushViewController:controller animated:YES];
+}
+
+- (IBAction)historyTap:(id)sender {
+    [self.navigationController pushViewController:[HistoryViewController history:(Trackable *)[Model loadModelForKey:self.barrel.trackableKey]] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
