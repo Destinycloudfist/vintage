@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5844F21916E478F300E1F3DF /* barrel.png in Resources */ = {isa = PBXBuildFile; fileRef = 5844F21816E478F300E1F3DF /* barrel.png */; };
+		5844F21B16E478FA00E1F3DF /* barrel_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 5844F21A16E478FA00E1F3DF /* barrel_red.png */; };
 		585269B016E2D5F900E7823D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269AF16E2D5F900E7823D /* UIKit.framework */; };
 		585269B216E2D5F900E7823D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269B116E2D5F900E7823D /* Foundation.framework */; };
 		585269B416E2D5F900E7823D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585269B316E2D5F900E7823D /* CoreGraphics.framework */; };
@@ -72,6 +74,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5844F21816E478F300E1F3DF /* barrel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrel.png; sourceTree = "<group>"; };
+		5844F21A16E478FA00E1F3DF /* barrel_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrel_red.png; sourceTree = "<group>"; };
 		585269AC16E2D5F900E7823D /* Vintage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vintage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		585269AF16E2D5F900E7823D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		585269B116E2D5F900E7823D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -241,6 +245,8 @@
 		585269B616E2D5F900E7823D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5844F21816E478F300E1F3DF /* barrel.png */,
+				5844F21A16E478FA00E1F3DF /* barrel_red.png */,
 				5B7019DC16E3FD0E00FF95C3 /* bottom_shadow.png */,
 				5B7019DA16E3FD0600FF95C3 /* top_shadow.png */,
 				5B7019D016E3FA2100FF95C3 /* button.png */,
@@ -570,6 +576,15 @@
 			name = TransferViewController;
 			sourceTree = "<group>";
 		};
+		58526A7116E412D700E7823D /* DustyBase */ = {
+			isa = PBXGroup;
+			children = (
+				58526A7216E412EA00E7823D /* DustyBase.h */,
+				58526A7316E412EA00E7823D /* DustyBase.m */,
+			);
+			name = DustyBase;
+			sourceTree = "<group>";
+		};
 		5B7019E516E43E0400FF95C3 /* HistoryViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,15 +593,6 @@
 				5B7019E216E43DFF00FF95C3 /* HistoryViewController.xib */,
 			);
 			name = HistoryViewController;
-			sourceTree = "<group>";
-		};
-		58526A7116E412D700E7823D /* DustyBase */ = {
-			isa = PBXGroup;
-			children = (
-				58526A7216E412EA00E7823D /* DustyBase.h */,
-				58526A7316E412EA00E7823D /* DustyBase.m */,
-			);
-			name = DustyBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -666,6 +672,8 @@
 				5B7019DD16E3FD0E00FF95C3 /* bottom_shadow.png in Resources */,
 				5B7019DF16E40F5A00FF95C3 /* cell_gradient.png in Resources */,
 				5B7019E416E43DFF00FF95C3 /* HistoryViewController.xib in Resources */,
+				5844F21916E478F300E1F3DF /* barrel.png in Resources */,
+				5844F21B16E478FA00E1F3DF /* barrel_red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
