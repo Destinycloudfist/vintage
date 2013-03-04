@@ -220,7 +220,7 @@
 
 - (void)reloadBarrels
 {
-    self.barrels = [Model loadModelsForClasses:@[[Barrel class], [Tank class], [Bottles class]]];
+    self.barrels = [Model loadModelsForClasses:@[[Tank class], [Barrel class], [Bottles class]]];
     
     [self.tableView reloadData];
 }
