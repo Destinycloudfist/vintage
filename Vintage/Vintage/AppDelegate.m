@@ -23,9 +23,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 #ifdef APPORTABLE
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-#else
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewControllerAndroid" bundle:nil];
+#else
+    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
 #endif
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
