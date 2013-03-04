@@ -5,24 +5,16 @@
     ], 
     "assets": [
         {
-            "asset": "Vintage/en.lproj/InfoPlist.strings", 
-            "target": "en.lproj/InfoPlist.strings"
-        }, 
-        {
-            "asset": "Vintage/Default@2x.png", 
-            "target": "Default@2x.png"
-        }, 
-        {
-            "asset": "Vintage/Default.png", 
-            "target": "Default.png"
-        }, 
-        {
-            "asset": "Vintage/Default-568h@2x.png", 
-            "target": "Default-568h@2x.png"
+            "asset": "Vintage/NewVesselController.xib", 
+            "target": null
         }, 
         {
             "asset": "Vintage/BottlesViewController.xib", 
             "target": null
+        }, 
+        {
+            "asset": "Vintage/Default@2x.png", 
+            "target": "Default@2x.png"
         }, 
         {
             "asset": "Vintage/BarrelViewController.xib", 
@@ -33,8 +25,16 @@
             "target": null
         }, 
         {
-            "asset": "Vintage/NewVesselController.xib", 
-            "target": null
+            "asset": "Vintage/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
+        }, 
+        {
+            "asset": "Vintage/Default.png", 
+            "target": "Default.png"
+        }, 
+        {
+            "asset": "Vintage/en.lproj/InfoPlist.strings", 
+            "target": "en.lproj/InfoPlist.strings"
         }, 
         {
             "asset": "Vintage/TankViewController.xib", 
@@ -99,6 +99,10 @@
         {
             "asset": "Vintage/bottom_shadow.png", 
             "target": "bottom_shadow.png"
+        }, 
+        {
+            "asset": "Vintage/cell_gradient.png", 
+            "target": "cell_gradient.png"
         }
     ], 
     "moms": [], 
@@ -312,28 +316,7 @@
     "modules": [], 
     "sources": [
         {
-            "source": "Vintage/ViewController.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
             "source": "Vintage/AppDelegate.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/Barrel.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/Source.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -347,28 +330,7 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/Bottles.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/NewVesselController.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/TankStatusViewController.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/main.m", 
+            "source": "Vintage/ViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -382,7 +344,35 @@
             "defines": {}
         }, 
         {
+            "source": "Vintage/main.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/NewVesselController.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/Source.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
             "source": "Vintage/Model.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/Barrel.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -404,6 +394,13 @@
         }, 
         {
             "source": "Vintage/ModelViewController.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/Bottles.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -432,6 +429,13 @@
         }, 
         {
             "source": "Vintage/WaitForTapController.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/TankStatusViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -536,7 +540,8 @@
         "UIKit", 
         "Foundation", 
         "CoreGraphics", 
-        "icu"
+        "icu", 
+        "NFC"
     ], 
     "libs": [
         "libs/android/libFirebase.a"
