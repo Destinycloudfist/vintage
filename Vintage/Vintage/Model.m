@@ -328,13 +328,11 @@
 
 + (NSArray*)loadModelsForClasses:(NSArray*)classes
 {
-    NSMutableArray *array = [@[] mutableCopy];
+    NSMutableArray *keys = [@[] mutableCopy];
     
-    NSMutableSet *set = [NSMutableSet set];
-    
-    for(NSString *key in [[ModelBackend shared] keys]) {
+    for(Class class in classes) {
         
-        for(Class class in classes) {
+        for(NSString *key in [[ModelBackend shared] keys]) {
             
             NSString *className = [class description];
             
@@ -342,12 +340,17 @@
                 
                 NSArray *array = [[key componentsSeparatedByString:@"."] subarrayWithRange:NSMakeRange(0, 2)];
                 
-                [set addObject:[array componentsJoinedByString:@"."]];
+                NSString *object = [array componentsJoinedByString:@"."];
+                
+                if(![keys containsObject:object])
+                    [keys addObject:object];
             }
         }
     }
     
-    for(NSString *key in set) {
+    NSMutableArray *array = [@[] mutableCopy];
+    
+    for(NSString *key in keys) {
         
         id model = [self loadModelForKey:key];
         
