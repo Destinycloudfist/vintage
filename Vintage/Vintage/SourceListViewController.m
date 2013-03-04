@@ -20,6 +20,15 @@
 
 @implementation SourceListViewController
 
+#ifdef APPORTABLE
+- (id)init
+{
+    self = [super initWithNibName:[[[self class] description] stringByAppendingString:@"Android"] bundle:nil];
+    
+    return self;
+}
+#endif
+
 - (IBAction)addSource:(id)sender {
     
     SourceViewController *controller = [SourceViewController new];
