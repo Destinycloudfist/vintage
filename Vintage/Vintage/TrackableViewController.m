@@ -60,7 +60,7 @@
     
     controller.delegate = self;
     
-    [self presentViewController:controller animated:YES completion:nil];
+    [self presentModalViewController:controller animated:YES];
 }
 
 - (void)vesselList:(VesselListViewcontroller *)controller selectedVessel:(Vessel *)vessel

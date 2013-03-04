@@ -70,7 +70,7 @@
     
     controller.delegate = self;
     
-    [self presentViewController:controller animated:YES completion:nil];
+    [self presentModalViewController:controller animated:YES];
 }
 
 @end
