@@ -72,6 +72,9 @@
     if([vessel isMemberOfClass:[Barrel class]])
         return 120.0f;
     
+    if([vessel isMemberOfClass:[Tank class]])
+        return 120.0f;
+    
     return 88.0f;
 }
 #endif
@@ -99,8 +102,6 @@
         
 #ifndef APPORTABLE
         redBarrel = [[UIImageView alloc] initWithFrame:frame];
-        
-        redBarrel.image = [UIImage imageNamed:@"barrel_red.png"];
         
         redBarrel.autoresizingMask = UIViewAutoresizingNone;
         
@@ -144,13 +145,17 @@
 #ifndef APPORTABLE
     BOOL showImage = YES;
     
-    if([barrel isKindOfClass:[Barrel class]]) {
-        
+    if([barrel isKindOfClass:[Barrel class]])
+    {
         cell.imageView.image = [UIImage imageNamed:@"barrel.png"];
+        
+        redBarrel.image = [UIImage imageNamed:@"barrel_red.png"];
     }
     else if([barrel isKindOfClass:[Tank class]])
     {
-        showImage = NO;
+        cell.imageView.image = [UIImage imageNamed:@"tank"];
+        
+        redBarrel.image = [UIImage imageNamed:@"tank_red.png"];
     }
     else {
         
