@@ -67,7 +67,12 @@
 #ifndef APPORTABLE
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 120.0f;
+    Vessel *vessel = [self.barrels objectAtIndex:indexPath.row];
+    
+    if([vessel isMemberOfClass:[Barrel class]])
+        return 120.0f;
+    
+    return 88.0f;
 }
 #endif
 
@@ -137,16 +142,37 @@
                            capacity * 100, name, barrel.volume.doubleValue, str, vintage];
     
 #ifndef APPORTABLE
+    BOOL showImage = YES;
     
-    cell.imageView.image = [UIImage imageNamed:@"barrel.png"];
-    
-    if(cell.imageView.frame.size.height > 0.0) {
+    if([barrel isKindOfClass:[Barrel class]]) {
         
-        redBarrel.frame = (CGRect)
-        {
-            0, (1 - capacity) * cell.imageView.frame.size.height,
-            cell.imageView.frame.size.width, capacity * cell.imageView.frame.size.height
-        };
+        cell.imageView.image = [UIImage imageNamed:@"barrel.png"];
+    }
+    else if([barrel isKindOfClass:[Tank class]])
+    {
+        showImage = NO;
+    }
+    else {
+        
+        showImage = NO;
+    }
+    
+    if(showImage) {
+        
+        redBarrel.hidden = NO;
+        
+        if(cell.imageView.frame.size.height > 0.0) {
+            
+            redBarrel.frame = (CGRect)
+            {
+                0, (1 - capacity) * cell.imageView.frame.size.height,
+                cell.imageView.frame.size.width, capacity * cell.imageView.frame.size.height
+            };
+        }
+    }
+    else {
+        
+        redBarrel.hidden = YES;
     }
 #endif
     
