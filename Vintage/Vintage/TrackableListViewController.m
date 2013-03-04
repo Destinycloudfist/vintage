@@ -69,6 +69,7 @@
     VesselListViewcontroller *controller = [VesselListViewcontroller new];
     
     controller.delegate = self;
+    controller.excludeKeys = @[self.vessel.key];
     
     [self presentModalViewController:controller animated:YES];
 }
