@@ -5,35 +5,35 @@
     ], 
     "assets": [
         {
-            "asset": "Vintage/Default@2x.png", 
-            "target": "Default@2x.png"
-        }, 
-        {
-            "asset": "Vintage/BarrelViewController.xib", 
-            "target": null
-        }, 
-        {
-            "asset": "Vintage/en.lproj/ViewController.xib", 
-            "target": null
-        }, 
-        {
             "asset": "Vintage/Default.png", 
             "target": "Default.png"
         }, 
         {
-            "asset": "Vintage/Default-568h@2x.png", 
-            "target": "Default-568h@2x.png"
+            "asset": "Vintage/Default@2x.png", 
+            "target": "Default@2x.png"
         }, 
         {
             "asset": "Vintage/en.lproj/InfoPlist.strings", 
             "target": "en.lproj/InfoPlist.strings"
         }, 
         {
-            "asset": "Vintage/BottlesViewController.xib", 
+            "asset": "Vintage/Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
+        }, 
+        {
+            "asset": "Vintage/en.lproj/ViewController.xib", 
+            "target": null
+        }, 
+        {
+            "asset": "Vintage/BarrelViewController.xib", 
             "target": null
         }, 
         {
             "asset": "Vintage/NewVesselController.xib", 
+            "target": null
+        }, 
+        {
+            "asset": "Vintage/BottlesViewController.xib", 
             "target": null
         }, 
         {
@@ -115,6 +115,14 @@
         {
             "asset": "Vintage/barrel_red.png", 
             "target": "barrel_red.png"
+        }, 
+        {
+            "asset": "Vintage/en.lproj/ViewControllerAndroid.xib", 
+            "target": null
+        }, 
+        {
+            "asset": "Vintage/SourceListViewControllerAndroid.xib", 
+            "target": null
         }
     ], 
     "moms": [], 
@@ -350,49 +358,28 @@
             "defines": {}
         }, 
         {
+            "source": "Vintage/Barrel.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/ModelBackend.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/BottlesViewController.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
             "source": "Vintage/main.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/Trackable.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/Source.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/BottlesStatusViewController.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/SourceViewController.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/HistoryViewController.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
-            "source": "Vintage/Vessel.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -413,13 +400,6 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/Barrel.m", 
-            "header_paths": [], 
-            "flags": [], 
-            "language": "objc", 
-            "defines": {}
-        }, 
-        {
             "source": "Vintage/Model.m", 
             "header_paths": [], 
             "flags": [], 
@@ -427,14 +407,14 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/ModelBackend.m", 
+            "source": "Vintage/Tank.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
             "defines": {}
         }, 
         {
-            "source": "Vintage/Tank.m", 
+            "source": "Vintage/Vessel.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -455,14 +435,21 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/NewVesselController.m", 
+            "source": "Vintage/Trackable.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
             "defines": {}
         }, 
         {
-            "source": "Vintage/BottlesViewController.m", 
+            "source": "Vintage/Source.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/NewVesselController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -490,14 +477,14 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/BarrelStatusViewController.m", 
+            "source": "Vintage/BottlesStatusViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
             "defines": {}
         }, 
         {
-            "source": "Vintage/SourceListViewController.m", 
+            "source": "Vintage/BarrelStatusViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -511,7 +498,14 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/TrackableViewController.m", 
+            "source": "Vintage/SourceListViewController.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/SourceViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -525,7 +519,7 @@
             "defines": {}
         }, 
         {
-            "source": "Vintage/TransferViewController.m", 
+            "source": "Vintage/TrackableViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -533,6 +527,20 @@
         }, 
         {
             "source": "Vintage/VesselListViewcontroller.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/TransferViewController.m", 
+            "header_paths": [], 
+            "flags": [], 
+            "language": "objc", 
+            "defines": {}
+        }, 
+        {
+            "source": "Vintage/HistoryViewController.m", 
             "header_paths": [], 
             "flags": [], 
             "language": "objc", 
@@ -589,7 +597,10 @@
     ], 
     "type": "app", 
     "defines": {
+        "IBOutletCollection(ClassName)": "__attribute__((iboutletcollection(ClassName)))", 
         "__IPHONE_OS_VERSION_MIN_REQUIRED": 60100, 
-        "NS_BLOCK_ASSERTIONS": 1
+        "IBAction": "void)__attribute__((ibaction)", 
+        "NS_BLOCK_ASSERTIONS": 1, 
+        "IBOutlet": "__attribute__((iboutlet))"
     }
 }
