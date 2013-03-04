@@ -34,7 +34,15 @@
 {
     BOOL firstTime = self.vessels == nil;
     
-    self.vessels = [Model loadModelsForClasses:@[[Barrel class], [Bottles class], [Tank class]]];
+    NSMutableArray *array = [@[] mutableCopy];
+    
+    id items = [Model loadModelsForClasses:@[[Barrel class], [Bottles class], [Tank class]]];
+    
+    for(Vessel *vessel in items)
+        if(![self.excludeKeys containsObject:vessel.key])
+            [array addObject:vessel];
+    
+    self.vessels = array;
     
     if(!firstTime)
         [self.tableView reloadData];
@@ -52,7 +60,14 @@
     if(!cell)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     
-    cell.textLabel.text = [[self.vessels objectAtIndex:indexPath.row] prettyDescription];
+    Vessel *vessel = [self.vessels objectAtIndex:indexPath.row];
+    
+    NSString *name = [[vessel class] description];
+    
+    if([vessel respondsToSelector:@selector(name)])
+       name = [(id)vessel name];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %.0f Gallons", name, vessel.volume.doubleValue];
     
     return cell;
 }

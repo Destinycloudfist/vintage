@@ -23,7 +23,9 @@
 {
     VesselListViewcontroller *controller = [VesselListViewcontroller new];
     
-    controller.delegate = self;
+	controller.delegate = self;
+    controller.excludeKeys = @[self.vessel.key];
+
     [[AppDelegate sharedInstance] setNCFAction:nil];
     [self presentModalViewController:controller animated:YES];
 }

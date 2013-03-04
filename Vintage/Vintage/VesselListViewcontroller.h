@@ -21,4 +21,6 @@
 
 @property (nonatomic, weak) id<VesselListDelegate> delegate;
 
+@property (nonatomic, strong) NSArray *excludeKeys;
+
 @end
