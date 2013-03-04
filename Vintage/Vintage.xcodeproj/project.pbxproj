@@ -66,6 +66,8 @@
 		5B7019DB16E3FD0600FF95C3 /* top_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019DA16E3FD0600FF95C3 /* top_shadow.png */; };
 		5B7019DD16E3FD0E00FF95C3 /* bottom_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019DC16E3FD0E00FF95C3 /* bottom_shadow.png */; };
 		5B7019DF16E40F5A00FF95C3 /* cell_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019DE16E40F5A00FF95C3 /* cell_gradient.png */; };
+		5B7019E316E43DFF00FF95C3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7019E116E43DFF00FF95C3 /* HistoryViewController.m */; };
+		5B7019E416E43DFF00FF95C3 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019E216E43DFF00FF95C3 /* HistoryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +167,9 @@
 		5B7019DA16E3FD0600FF95C3 /* top_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_shadow.png; sourceTree = "<group>"; };
 		5B7019DC16E3FD0E00FF95C3 /* bottom_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_shadow.png; sourceTree = "<group>"; };
 		5B7019DE16E40F5A00FF95C3 /* cell_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_gradient.png; sourceTree = "<group>"; };
+		5B7019E016E43DFF00FF95C3 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		5B7019E116E43DFF00FF95C3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		5B7019E216E43DFF00FF95C3 /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -511,6 +516,7 @@
 		58526A6316E3967B00E7823D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5B7019E516E43E0400FF95C3 /* HistoryViewController */,
 				585269D416E2D92B00E7823D /* BarrelViewController */,
 				58526A3F16E37D7600E7823D /* BarrelStatusViewController */,
 				58526A2116E3791200E7823D /* BottlesViewController */,
@@ -558,6 +564,16 @@
 				58526A6E16E3B6FF00E7823D /* TransferViewController.xib */,
 			);
 			name = TransferViewController;
+			sourceTree = "<group>";
+		};
+		5B7019E516E43E0400FF95C3 /* HistoryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5B7019E016E43DFF00FF95C3 /* HistoryViewController.h */,
+				5B7019E116E43DFF00FF95C3 /* HistoryViewController.m */,
+				5B7019E216E43DFF00FF95C3 /* HistoryViewController.xib */,
+			);
+			name = HistoryViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,6 +652,7 @@
 				5B7019DB16E3FD0600FF95C3 /* top_shadow.png in Resources */,
 				5B7019DD16E3FD0E00FF95C3 /* bottom_shadow.png in Resources */,
 				5B7019DF16E40F5A00FF95C3 /* cell_gradient.png in Resources */,
+				5B7019E416E43DFF00FF95C3 /* HistoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +690,7 @@
 				58526A6116E3900B00E7823D /* TrackableViewController.m in Sources */,
 				58526A6916E3B28E00E7823D /* VesselListViewcontroller.m in Sources */,
 				58526A6F16E3B6FF00E7823D /* TransferViewController.m in Sources */,
+				5B7019E316E43DFF00FF95C3 /* HistoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
