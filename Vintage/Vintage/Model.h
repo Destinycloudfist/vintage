@@ -31,6 +31,7 @@
 - (NSString*)prettyDescription;
 
 - (NSString*)key;
+- (NSString*)keyPath;
 
 + (id<ModelProtocol>)loadModelForKey:(NSString*)key;
 

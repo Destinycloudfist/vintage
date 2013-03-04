@@ -189,6 +189,11 @@
     return [[[self class] description] stringByAppendingFormat:@".%@", self.uniqueId];
 }
 
+- (NSString*)keyPath
+{
+    return [[[self class] description] stringByAppendingFormat:@"/%@", self.uniqueId];
+}
+
 - (NSString*)keyForProperty:(NSString*)name
 {
     return [self.key stringByAppendingFormat:@".%@", name];

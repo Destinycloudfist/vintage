@@ -76,9 +76,19 @@
 
 - (IBAction)tag:(id)sender
 {
+    if(!self.barrel)
+        self.barrel = [Barrel new];
+    
+    self.barrel.name = self.name.text;
+    self.barrel.volume = @([self.gallons.text doubleValue]);
+    self.barrel.toast = self.toast.text;
+    self.barrel.material = self.material.text;
+    
+    [self.barrel save];
+    
     WaitForTapController *waitController = [[WaitForTapController alloc] initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:waitController animated:YES];
-    NSString *url = [[[NSURL alloc] initWithScheme:@"vintage" host:@"Barrel" path:self.barrel.uniqueId] absoluteString];
+    NSString *url = [NSString stringWithFormat:@"vintage://%@", self.barrel.keyPath];
     [APNFCManager writeNFCTagWithURLString:url completionBlock:^(BOOL success, NSString *payload){
         if (success) {
             BarrelStatusViewController *controller = [BarrelStatusViewController new];
