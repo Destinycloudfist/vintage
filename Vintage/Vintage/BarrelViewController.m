@@ -35,6 +35,7 @@
 
 @interface BarrelViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *gallons;
 @property (weak, nonatomic) IBOutlet UITextField *toast;
 @property (weak, nonatomic) IBOutlet UITextField *material;
@@ -47,6 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.name.text = self.barrel.name;
     self.gallons.text = self.barrel.volume.description;
     self.toast.text = self.barrel.toast;
     self.material.text = self.barrel.material;
@@ -57,6 +59,7 @@
     if(!self.barrel)
         self.barrel = [Barrel new];
     
+    self.barrel.name = self.name.text;
     self.barrel.volume = @([self.gallons.text doubleValue]);
     self.barrel.toast = self.toast.text;
     self.barrel.material = self.material.text;

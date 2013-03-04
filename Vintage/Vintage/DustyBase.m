@@ -146,8 +146,11 @@ NSString *DustyBaseNewIdNotification = @"DustyBaseNewIdNotification";
 
 - (void)set:(id)value onComplete:(void (^)(NSError* error))callback
 {
-    if(!value || [value isKindOfClass:[NSDate class]])
+    if([value isKindOfClass:[NSDate class]])
         return;
+    
+    if(!value)
+        value = [NSNull null];
     
     NSMutableString *str = [NSMutableString string];
     

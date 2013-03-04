@@ -18,11 +18,11 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *tagIdField;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) NSArray *barrels;
+
+@property (nonatomic, strong) NSMutableDictionary *capacityByIndexPath;
 
 @end
 
@@ -42,8 +42,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.tagIdField.text = @"";
-    
     [self reloadBarrels];
 }
 
@@ -52,35 +50,76 @@
     return self.barrels.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 120.0f;
+}
+
+#define FUZZY_EQUALS(a, b, fuzz) (a > b - fuzz && a < b + fuzz)
+
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *identifier = @"UITableViewCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
+    int RedBarrelTag = 1;
+    UIImageView *redBarrel = nil;
+    
     if(!cell) {
         
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
+        CGRect frame =
+        {
+            0.0f, 119.0f,
+            80.0f, 0.0f
+        };
+        
+        redBarrel = [[UIImageView alloc] initWithFrame:frame];
+        
+        redBarrel.image = [UIImage imageNamed:@"barrel_red.png"];
+        
+        redBarrel.autoresizingMask = UIViewAutoresizingNone;
+        
+        redBarrel.clipsToBounds = YES;
+        
+        redBarrel.contentMode = UIViewContentModeBottom;
+        
+        redBarrel.tag = RedBarrelTag;
+        
+        [cell.imageView addSubview:redBarrel];
     }
+    
+    redBarrel = (id)[cell.imageView viewWithTag:RedBarrelTag];
     
     Barrel *barrel = [self.barrels objectAtIndex:indexPath.row];
     
     Trackable *trackable = [Model loadModelForKey:barrel.trackableKey];
     
-    float capacity = 0.0f;
+    double capacity = 0.0f;
     NSString *vintage = @"";
     const char *str = "";
     
-    if(trackable.vintage) {
+    if(trackable.vintage.length) {
         
         vintage = trackable.vintage;
-        str = "of ";
+        str = " ";
     }
     
     if(trackable.volume.doubleValue > 0.0)
-        capacity = 100 * trackable.volume.doubleValue / barrel.volume.doubleValue;
+        capacity = trackable.volume.doubleValue / barrel.volume.doubleValue;
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%.0f Gallon %@ at %.0f%% capacity %s%@", barrel.volume.doubleValue, [barrel class], capacity, str, vintage];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%.0f Gallons)%s%@",
+                           barrel.name, barrel.volume.doubleValue, str, vintage];
+    
+    cell.imageView.image = [UIImage imageNamed:@"barrel.png"];
+    
+    redBarrel.frame = (CGRect)
+    {
+        0, (1 - capacity) * cell.imageView.frame.size.height,
+        cell.imageView.frame.size.width, capacity * cell.imageView.frame.size.height
+    };
     
     return cell;
 }
@@ -113,6 +152,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.capacityByIndexPath = [@{} mutableCopy];
     
     self.title = @"Vintage";
     
