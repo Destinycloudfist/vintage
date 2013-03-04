@@ -136,12 +136,18 @@ NSString *DustyBaseNewIdNotification = @"DustyBaseNewIdNotification";
                 
                 key = [key stringByReplacingOccurrencesOfString:@"/" withString:@"."];
                 
-                id value = [array objectAtIndex:0];
+                id value = !array.count ? nil : [array objectAtIndex:0];
                 
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    
-                    [[NSNotificationCenter defaultCenter] postNotificationName:DustyBaseNewIdNotification object:@[key, value]];
-                });
+                if(key)
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        NSMutableArray *ary = [@[key] mutableCopy];
+                        
+                        if(value)
+                            [ary addObject:value];
+                        
+                        [[NSNotificationCenter defaultCenter] postNotificationName:DustyBaseNewIdNotification object:ary];
+                    });
             }
             
             [weakSelf sendEvents:objects];

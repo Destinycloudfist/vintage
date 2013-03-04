@@ -113,8 +113,8 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
 {
     NSArray *array = note.object;
     
-    id key = [array objectAtIndex:0];
-    id value = [array objectAtIndex:1];
+    id key = array.count < 1 ? nil : [array objectAtIndex:0];
+    id value = array.count < 2 ? nil : [array objectAtIndex:1];
     
     if([value isEqual:[NSNull null]])
         value = nil;
