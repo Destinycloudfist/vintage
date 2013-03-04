@@ -113,9 +113,15 @@ NSString *ModelBackendObjectsUpdated = @"ModelBackendObjectsUpdated";
 {
     NSArray *array = note.object;
     
-    [self setObjectInLocalCache:[array objectAtIndex:1] forKey:[array objectAtIndex:0]];
+    id key = [array objectAtIndex:0];
+    id value = [array objectAtIndex:1];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:ModelBackendKeysUpdated object:nil];
+    if([value isEqual:[NSNull null]])
+        value = nil;
+    
+    [self setObjectInLocalCache:value forKey:key];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ModelBackendKeysUpdated object:@[key]];
 }
 
 - (void)setObject:(id)object forKey:(NSString *)key
