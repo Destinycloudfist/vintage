@@ -66,6 +66,7 @@
 		5B7019D316E3FA2100FF95C3 /* gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019D116E3FA2100FF95C3 /* gradient.png */; };
 		5B7019DB16E3FD0600FF95C3 /* top_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019DA16E3FD0600FF95C3 /* top_shadow.png */; };
 		5B7019DD16E3FD0E00FF95C3 /* bottom_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019DC16E3FD0E00FF95C3 /* bottom_shadow.png */; };
+		5B7019DF16E40F5A00FF95C3 /* cell_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7019DE16E40F5A00FF95C3 /* cell_gradient.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,6 +167,7 @@
 		5B7019D116E3FA2100FF95C3 /* gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gradient.png; sourceTree = "<group>"; };
 		5B7019DA16E3FD0600FF95C3 /* top_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_shadow.png; sourceTree = "<group>"; };
 		5B7019DC16E3FD0E00FF95C3 /* bottom_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_shadow.png; sourceTree = "<group>"; };
+		5B7019DE16E40F5A00FF95C3 /* cell_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_gradient.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				5B7019DA16E3FD0600FF95C3 /* top_shadow.png */,
 				5B7019D016E3FA2100FF95C3 /* button.png */,
 				5B7019D116E3FA2100FF95C3 /* gradient.png */,
+				5B7019DE16E40F5A00FF95C3 /* cell_gradient.png */,
 				585269F716E3129200E7823D /* Firebase.a */,
 				585269B716E2D5F900E7823D /* Vintage-Info.plist */,
 				585269B816E2D5F900E7823D /* InfoPlist.strings */,
@@ -645,6 +648,7 @@
 				5B7019D316E3FA2100FF95C3 /* gradient.png in Resources */,
 				5B7019DB16E3FD0600FF95C3 /* top_shadow.png in Resources */,
 				5B7019DD16E3FD0E00FF95C3 /* bottom_shadow.png in Resources */,
+				5B7019DF16E40F5A00FF95C3 /* cell_gradient.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

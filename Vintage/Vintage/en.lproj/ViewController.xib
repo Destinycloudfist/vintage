@@ -37,7 +37,7 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIImageView" id="291411371">
+					<object class="IBUIImageView" id="303171869">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">290</int>
 						<string key="NSFrame">{{0, -2}, {320, 10}}</string>
@@ -52,7 +52,7 @@
 							<string key="NSResourceName">top_shadow.png</string>
 						</object>
 					</object>
-					<object class="IBUIImageView" id="423484882">
+					<object class="IBUIImageView" id="916414098">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">298</int>
 						<string key="NSFrame">{{0, 56}, {320, 12}}</string>
@@ -73,7 +73,7 @@
 						<string key="NSFrame">{{178, 9}, {122, 44}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="423484882"/>
+						<reference key="NSNextKeyView" ref="916414098"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -81,17 +81,17 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUITitleShadowOffset">{1, 1}</string>
-						<string key="IBUINormalTitle">Item Scanned</string>
+						<string key="IBUINormalTitle">Scan</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="299273216">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
 						<reference key="IBUINormalTitleColor" ref="299273216"/>
-						<object class="NSColor" key="IBUINormalTitleShadowColor" id="949248435">
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="537183230">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC41MDU0MzQ3ODI2IDAuNTA1NDM0NzgyNiAwLjUwNTQzNDc4MjYgMC41AA</bytes>
 						</object>
-						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="239522161">
+						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="389472734">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">gradient.png</string>
 						</object>
@@ -122,8 +122,8 @@
 						<string key="IBUINormalTitle">Sources</string>
 						<reference key="IBUIHighlightedTitleColor" ref="299273216"/>
 						<reference key="IBUINormalTitleColor" ref="299273216"/>
-						<reference key="IBUINormalTitleShadowColor" ref="949248435"/>
-						<reference key="IBUINormalBackgroundImage" ref="239522161"/>
+						<reference key="IBUINormalTitleShadowColor" ref="537183230"/>
+						<reference key="IBUINormalBackgroundImage" ref="389472734"/>
 						<reference key="IBUIFontDescription" ref="578736393"/>
 						<reference key="IBUIFont" ref="127556193"/>
 					</object>
@@ -150,7 +150,7 @@
 				<string key="NSFrame">{{0, 20}, {320, 548}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="291411371"/>
+				<reference key="NSNextKeyView" ref="303171869"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
@@ -256,8 +256,8 @@
 							<reference ref="10965693"/>
 							<reference ref="114868615"/>
 							<reference ref="397291670"/>
-							<reference ref="423484882"/>
-							<reference ref="291411371"/>
+							<reference ref="916414098"/>
+							<reference ref="303171869"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -278,12 +278,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">27</int>
-						<reference key="object" ref="291411371"/>
+						<reference key="object" ref="303171869"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">29</int>
-						<reference key="object" ref="423484882"/>
+						<reference key="object" ref="916414098"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</array>

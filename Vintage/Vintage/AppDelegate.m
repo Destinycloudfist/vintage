@@ -27,7 +27,7 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    if ([[url scheme] isEqualToString:@"nfc"])
+    if ([[url scheme] isEqualToString:@"vintage"])
     {
         return [self readNFCTag:url];
     }
@@ -62,16 +62,6 @@
     }
     
     return YES;
-}
-
-- (void)writeNFCTag:(NSString *)uuid class:(Class)c
-{
-    NSURL *tagUrl = [[NSURL alloc] initWithScheme:@"nfc-write" host:NSStringFromClass(c) path:uuid];
-    UIApplication *app = [UIApplication sharedApplication];
-    if ([app canOpenURL:tagUrl])
-    {
-        [app openURL:tagUrl];
-    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

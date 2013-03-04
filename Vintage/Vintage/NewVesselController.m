@@ -33,8 +33,14 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableCiewCell"];
     
-    if(!cell)
+    if(!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableCiewCell"];
+        UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:cell.bounds];
+        backgroundImageView.image = [UIImage imageNamed:@"cell_gradient.png"];
+        backgroundImageView.contentMode = UIViewContentModeScaleToFill;
+        backgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        cell.backgroundView = backgroundImageView;
+    }
     
     if(indexPath.row == 0)
         cell.textLabel.text = @"New Barrel";
